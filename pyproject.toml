@@ -5,6 +5,7 @@ description = "Create slides from Jupyter Notebooks"
 authors = ["Antonio Feregrino <antonio.feregrino@gmail.com>"]
 license = "MIT"
 readme = "readme.md"
+include = ["src/presentpy/**/*"]
 
 [tool.poetry.scripts]
 presentpy = "presentpy.__main__:run_presentpy"
@@ -13,9 +14,18 @@ presentpy = "presentpy.__main__:run_presentpy"
 click = "^8.1.3"
 python = "^3.8"
 
-
 [tool.poetry.group.dev.dependencies]
 ruff = "^0.0.272"
+pytest = "^7.3.2"
+
+[tool.poetry.group.juptyter.dependencies]
+jupyter = "^1.0.0"
+jupyterlab = "^4.0.2"
+
+[tool.ruff]
+select = ["E", "F", "I","C90", "N"]
+ignore = []
+line-length = 120
 
 [build-system]
 requires = ["poetry-core"]

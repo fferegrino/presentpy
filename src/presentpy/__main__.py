@@ -1,5 +1,7 @@
-import click
 from pathlib import Path
+
+import click
+
 
 @click.command()
 @click.argument('notebook', type=click.Path(exists=True))
