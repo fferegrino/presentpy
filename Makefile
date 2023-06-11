@@ -14,3 +14,12 @@ lint:
 	black --check .
 	isort --check .
 	ruff .
+
+release-patch:
+	bumpversion patch
+
+release-minor:
+	bumpversion minor
+
+release-major:
+	bumpversion major
