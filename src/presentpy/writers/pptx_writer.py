@@ -1,6 +1,7 @@
 from pathlib import Path
 from typing import Any, Dict
 
+import pkg_resources
 import pygments.styles
 from pptx import Presentation
 from pptx.dml.color import RGBColor
@@ -45,9 +46,7 @@ def get_theme(theme: str = "light") -> Dict[Any, RGBColor]:
             continue
 
         pad = 1 if len(color) == 3 else 2
-        token_colors[token] = RGBColor(
-            *[int(color[i : i + pad], 16) for i in range(0, len(color), pad)]
-        )
+        token_colors[token] = RGBColor(*[int(color[i : i + pad], 16) for i in range(0, len(color), pad)])
 
     token_colors.update(EXTRA_STYLES.get(theme, {}))
 
@@ -55,17 +54,16 @@ def get_theme(theme: str = "light") -> Dict[Any, RGBColor]:
 
 
 class PptxWriter:
-    SLD_LAYOUT_TITLE_AND_CONTENT = 1
+    TEMPLATE_CODE_SLIDE_INDEX = 2
 
     def __init__(self):
-        self.presentation = Presentation()
+        template = pkg_resources.resource_filename("presentpy", "slide_templates/Template-Light.pptx")
+        self.presentation = Presentation(template)
         self.theme = get_theme("light")
 
     def _write_code_slide(self, slide_title, parsed_tokens, lines_to_highlight):
 
-        slide_layout = self.presentation.slide_layouts[
-            PptxWriter.SLD_LAYOUT_TITLE_AND_CONTENT
-        ]
+        slide_layout = self.presentation.slide_layouts[PptxWriter.TEMPLATE_CODE_SLIDE_INDEX]
         slide = self.presentation.slides.add_slide(slide_layout)
 
         title = slide.shapes.title
