@@ -11,7 +11,6 @@ CARRIAGE_RETURN = "\x0A"
 @click.command()
 @click.argument("notebook", type=click.Path(exists=True))
 def run_presentpy(notebook):
-
     notebook_path = Path(notebook)
     output_file_name = Path(notebook_path.stem + ".pptx")
 

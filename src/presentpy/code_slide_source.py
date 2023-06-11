@@ -1,6 +1,6 @@
 import shlex
 from dataclasses import dataclass, field
-from typing import List, Optional, Tuple, Any
+from typing import Any, List, Optional, Tuple
 
 from pygments import lex
 from pygments.lexers import get_lexer_by_name

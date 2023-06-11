@@ -7,7 +7,6 @@ from pptx import Presentation
 from pptx.dml.color import RGBColor
 from pptx.enum.text import MSO_VERTICAL_ANCHOR
 from pptx.util import Pt
-
 from pygments.token import Token
 
 from presentpy.code_slide_source import CodeSlideSource, get_parsed_lines
@@ -62,7 +61,6 @@ class PptxWriter:
         self.theme = get_theme("light")
 
     def _write_code_slide(self, slide_title, parsed_tokens, lines_to_highlight):
-
         slide_layout = self.presentation.slide_layouts[PptxWriter.TEMPLATE_CODE_SLIDE_INDEX]
         slide = self.presentation.slides.add_slide(slide_layout)
 

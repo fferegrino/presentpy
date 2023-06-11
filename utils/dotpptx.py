@@ -1,11 +1,9 @@
-from pathlib import Path
 import shutil
-
+import xml.dom.minidom
 import zipfile
+from pathlib import Path
 
 import click
-
-import xml.dom.minidom
 
 
 @click.group()
