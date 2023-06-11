@@ -15,4 +15,6 @@ dist/
 .idea/
 .vscode/
 
+.ruff_cache/
+.pytest_cache/
 *.pptx

@@ -2,6 +2,28 @@ import shlex
 from dataclasses import dataclass, field
 from typing import List, Optional
 
+from pygments import lex
+from pygments.lexers import get_lexer_by_name
+from pygments.token import Token
+
+
+def get_parsed_lines(
+    source: str, language: str = "python"
+):  # -> List[List[Tuple[Token, str]]]:
+    lines = []
+    line = []
+    lexer = get_lexer_by_name(language)
+    for token, value in lex(source, lexer):
+        if token is Token.Text and value == "\n":
+            lines.append(line)
+            line = []
+        else:
+            line.append((token, value))
+
+    lines.append(line)
+
+    return lines
+
 
 @dataclass
 class CodeSlideSource:
@@ -17,8 +39,10 @@ class CodeSlideSource:
         last_line = source_lines[-1]
         if last_line.startswith("#%"):
             config = {
-                key: value for key, _, value in
-                [conf.partition("=") for conf in shlex.split(last_line[2:].strip())]
+                key: value
+                for key, _, value in [
+                    conf.partition("=") for conf in shlex.split(last_line[2:].strip())
+                ]
             }
 
             source_code = "\n".join(source_lines[:-1])
@@ -37,4 +61,7 @@ class CodeSlideSource:
 
             dataclass_atrributes["highlights"] = highlight_ints
 
-        return cls(code=source_code,**dataclass_atrributes)
+        return cls(
+            code=source_code,
+            **dataclass_atrributes,
+        )
