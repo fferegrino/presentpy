@@ -18,18 +18,37 @@ class NotebookProcessor:
                 code_slide_source = CodeSlideSource.from_source_code(cell.source)
                 self.output_device.write(code_slide_source)
 
+from pptx import Presentation
+class PptxOutputDevice:
+    SLD_LAYOUT_TITLE_AND_CONTENT = 1
+    def __init__(self, output_path: Path):
+        self.presentation = Presentation()
+    def write(self, code_slide_source: CodeSlideSource):
+        title_slide  = self.presentation.slide_layouts[PptxOutputDevice.SLD_LAYOUT_TITLE_AND_CONTENT]
+        slide = self.presentation.slides.add_slide(title_slide)
+        title = slide.shapes.title
+        content = slide.placeholders[1]
+        title.text = code_slide_source.title or ""
+        content.text = code_slide_source.code
+
+    def save(self, output_path: Path):
+        self.presentation.save(output_path)
+
+
+
 
 @click.command()
 @click.argument('notebook', type=click.Path(exists=True))
 def run_presentpy(notebook):
 
-    class PrintOutputDevice:
-        def write(self, code_slide_source: CodeSlideSource):
-            print(code_slide_source)
-
     notebook_path = Path(notebook)
-    notebook_processor = NotebookProcessor(notebook_path, PrintOutputDevice())
+    output_file_name = Path(notebook_path.stem + ".pptx")
+
+    pptx_output_device = PptxOutputDevice(notebook_path)
+    notebook_processor = NotebookProcessor(notebook_path, pptx_output_device)
     notebook_processor.process()
+
+    pptx_output_device.save(output_file_name)
 
 
     print(f'Running {notebook_path}...')
