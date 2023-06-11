@@ -1,4 +1,5 @@
 from pathlib import Path
+import shutil
 
 import zipfile
 
@@ -25,7 +26,6 @@ def unpptx(pptx_folder):
             zip_ref.extractall(output_folder)
 
         def prettify_files(pattern):
-            # Pretty print the XML files
             for xml_file in output_folder.glob(pattern):
                 with open(xml_file, "r") as f:
                     xml_string = f.read()
@@ -36,6 +36,22 @@ def unpptx(pptx_folder):
 
         prettify_files("**/*.xml")
         prettify_files("**/*.rels")
+
+
+@cli.command()
+@click.argument("pptx-folder", type=click.Path(exists=True, file_okay=False))
+@click.option("--delete-original", is_flag=True, default=False)
+def dopptx(pptx_folder, delete_original):
+    for pptx_exploded_folder in Path(pptx_folder).glob("*_pptx"):
+        deck_name = pptx_exploded_folder.stem[:-5]
+        pptx_file = Path(pptx_folder) / f"{deck_name}.pptx"
+
+        with zipfile.ZipFile(pptx_file, "w") as zip_ref:
+            for file in pptx_exploded_folder.glob("**/*"):
+                zip_ref.write(file, file.relative_to(pptx_exploded_folder))
+
+        if delete_original:
+            shutil.rmtree(pptx_exploded_folder)
 
 
 if __name__ == "__main__":
