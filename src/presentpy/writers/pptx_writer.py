@@ -55,10 +55,10 @@ def get_theme(theme: str = "light") -> Dict[Any, RGBColor]:
 class PptxWriter:
     TEMPLATE_CODE_SLIDE_INDEX = 2
 
-    def __init__(self):
-        template = pkg_resources.resource_filename("presentpy", "slide_templates/Template-Light.pptx")
+    def __init__(self, theme: str = "light"):
+        template = pkg_resources.resource_filename("presentpy", f"slide_templates/template-{theme}.pptx")
         self.presentation = Presentation(template)
-        self.theme = get_theme("light")
+        self.theme = get_theme(theme)
 
     def _write_code_slide(self, slide_title, parsed_tokens, lines_to_highlight):
         slide_layout = self.presentation.slide_layouts[PptxWriter.TEMPLATE_CODE_SLIDE_INDEX]

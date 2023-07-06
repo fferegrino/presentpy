@@ -18,3 +18,4 @@ dist/
 .ruff_cache/
 .pytest_cache/
 *.pptx
+.DS_Store

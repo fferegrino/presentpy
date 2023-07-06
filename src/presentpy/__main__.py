@@ -10,11 +10,12 @@ CARRIAGE_RETURN = "\x0A"
 
 @click.command()
 @click.argument("notebook", type=click.Path(exists=True))
-def run_presentpy(notebook):
+@click.option("--theme", default="light")
+def run_presentpy(notebook, theme):
     notebook_path = Path(notebook)
     output_file_name = Path(notebook_path.stem + ".pptx")
 
-    pptx_writer = PptxWriter()
+    pptx_writer = PptxWriter(theme=theme)
     notebook_processor = NotebookProcessor(notebook_path, pptx_writer)
     notebook_processor.process()
 
