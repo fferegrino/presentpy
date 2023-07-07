@@ -65,76 +65,91 @@
 					<a:bodyPr/>
 					<a:lstStyle>
 						<a:lvl1pPr marL="0" indent="0">
+							<a:spcBef>
+								<a:spcPts val="0"/>
+							</a:spcBef>
 							<a:buNone/>
 							<a:defRPr>
-								<a:latin typeface="Courier New" panose="02070309020205020404" pitchFamily="49" charset="0"/>
-								<a:cs typeface="Courier New" panose="02070309020205020404" pitchFamily="49" charset="0"/>
+								<a:latin typeface="Consolas" panose="020B0609020204030204" pitchFamily="49" charset="0"/>
+								<a:cs typeface="Consolas" panose="020B0609020204030204" pitchFamily="49" charset="0"/>
 							</a:defRPr>
 						</a:lvl1pPr>
-						<a:lvl2pPr marL="457200" indent="0">
+						<a:lvl2pPr marL="0" indent="0">
+							<a:spcBef>
+								<a:spcPts val="0"/>
+							</a:spcBef>
 							<a:buNone/>
 							<a:defRPr>
-								<a:latin typeface="Courier New" panose="02070309020205020404" pitchFamily="49" charset="0"/>
-								<a:cs typeface="Courier New" panose="02070309020205020404" pitchFamily="49" charset="0"/>
+								<a:latin typeface="Consolas" panose="020B0609020204030204" pitchFamily="49" charset="0"/>
+								<a:cs typeface="Consolas" panose="020B0609020204030204" pitchFamily="49" charset="0"/>
 							</a:defRPr>
 						</a:lvl2pPr>
-						<a:lvl3pPr marL="914400" indent="0">
+						<a:lvl3pPr marL="0" indent="0">
+							<a:spcBef>
+								<a:spcPts val="0"/>
+							</a:spcBef>
 							<a:buNone/>
 							<a:defRPr>
-								<a:latin typeface="Courier New" panose="02070309020205020404" pitchFamily="49" charset="0"/>
-								<a:cs typeface="Courier New" panose="02070309020205020404" pitchFamily="49" charset="0"/>
+								<a:latin typeface="Consolas" panose="020B0609020204030204" pitchFamily="49" charset="0"/>
+								<a:cs typeface="Consolas" panose="020B0609020204030204" pitchFamily="49" charset="0"/>
 							</a:defRPr>
 						</a:lvl3pPr>
-						<a:lvl4pPr marL="1371600" indent="0">
+						<a:lvl4pPr marL="0" indent="0">
+							<a:spcBef>
+								<a:spcPts val="0"/>
+							</a:spcBef>
 							<a:buNone/>
 							<a:defRPr>
-								<a:latin typeface="Courier New" panose="02070309020205020404" pitchFamily="49" charset="0"/>
-								<a:cs typeface="Courier New" panose="02070309020205020404" pitchFamily="49" charset="0"/>
+								<a:latin typeface="Consolas" panose="020B0609020204030204" pitchFamily="49" charset="0"/>
+								<a:cs typeface="Consolas" panose="020B0609020204030204" pitchFamily="49" charset="0"/>
 							</a:defRPr>
 						</a:lvl4pPr>
-						<a:lvl5pPr marL="1828800" indent="0">
+						<a:lvl5pPr marL="0" indent="0">
+							<a:spcBef>
+								<a:spcPts val="0"/>
+							</a:spcBef>
 							<a:buNone/>
 							<a:defRPr>
-								<a:latin typeface="Courier New" panose="02070309020205020404" pitchFamily="49" charset="0"/>
-								<a:cs typeface="Courier New" panose="02070309020205020404" pitchFamily="49" charset="0"/>
+								<a:latin typeface="Consolas" panose="020B0609020204030204" pitchFamily="49" charset="0"/>
+								<a:cs typeface="Consolas" panose="020B0609020204030204" pitchFamily="49" charset="0"/>
 							</a:defRPr>
 						</a:lvl5pPr>
 					</a:lstStyle>
 					<a:p>
 						<a:pPr lvl="0"/>
 						<a:r>
-							<a:rPr lang="en-GB"/>
+							<a:rPr lang="en-GB" dirty="0"/>
 							<a:t>Click to edit Master text styles</a:t>
 						</a:r>
 					</a:p>
 					<a:p>
 						<a:pPr lvl="1"/>
 						<a:r>
-							<a:rPr lang="en-GB"/>
+							<a:rPr lang="en-GB" dirty="0"/>
 							<a:t>Second level</a:t>
 						</a:r>
 					</a:p>
 					<a:p>
 						<a:pPr lvl="2"/>
 						<a:r>
-							<a:rPr lang="en-GB"/>
+							<a:rPr lang="en-GB" dirty="0"/>
 							<a:t>Third level</a:t>
 						</a:r>
 					</a:p>
 					<a:p>
 						<a:pPr lvl="3"/>
 						<a:r>
-							<a:rPr lang="en-GB"/>
+							<a:rPr lang="en-GB" dirty="0"/>
 							<a:t>Fourth level</a:t>
 						</a:r>
 					</a:p>
 					<a:p>
 						<a:pPr lvl="4"/>
 						<a:r>
-							<a:rPr lang="en-GB"/>
+							<a:rPr lang="en-GB" dirty="0"/>
 							<a:t>Fifth level</a:t>
 						</a:r>
-						<a:endParaRPr lang="en-US"/>
+						<a:endParaRPr lang="en-US" dirty="0"/>
 					</a:p>
 				</p:txBody>
 			</p:sp>
