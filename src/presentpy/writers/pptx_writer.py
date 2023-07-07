@@ -83,7 +83,6 @@ class PptxWriter:
                 font = run.font
                 font.bold = line_number in lines_to_highlight
                 font.color.rgb = self.theme.get(kind, RGBColor(0, 0, 0))
-                font.name = "Courier"
                 font.size = Pt(14)
             run = p.add_run()
             run.font.size = Pt(14)
