@@ -12,7 +12,7 @@ def get_parsed_lines(source: str, language: str = "python") -> List[List[Tuple[A
     line = []
     lexer = get_lexer_by_name(language)
     for token, value in lex(source, lexer):
-        if token is Token.Text and value == "\n":
+        if token is Token.Text.Whitespace and value == "\n":
             lines.append(line)
             line = []
         else:
