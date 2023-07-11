@@ -15,6 +15,9 @@ lint:
 	isort --check .
 	ruff .
 
+docs-serve:
+	mkdocs serve
+
 release-patch:
 	bumpversion patch
 
