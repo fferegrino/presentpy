@@ -8,12 +8,10 @@ reset-templates:
 fmt:
 	black .
 	isort .
-	ruff --fix .
 
 lint:
 	black --check .
 	isort --check .
-	ruff .
 
 docs-serve:
 	mkdocs serve
