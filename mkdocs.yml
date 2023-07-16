@@ -5,6 +5,10 @@ site_name: PresentPy
 theme:
   name: material
 
+nav:
+  - Home: index.md
+  - Configuration file: configuration-file.md
+
 markdown_extensions:
   - pymdownx.highlight:
       anchor_linenums: true
