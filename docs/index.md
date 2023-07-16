@@ -6,9 +6,13 @@ _PresentPy_ allows you to take your Jupyter Notebooks and turn them into PowerPo
 
 ## Installation
 
+I strongly recommend using `pipx` to install _PresentPy_:
+
 ```bash
 pipx install presentpy
 ```
+
+Otherwise, you can install it using `pip` or your favorite package manager – the package is called `presentpy`.
 
 ## Usage
 
@@ -38,4 +42,8 @@ def compute_hcf(x, y):
 #% title="Find the H.C.F of two numbers" highlights=1,2-3,4-5,9
 ```
 
-The code above will generate 5 slides showing the same code but highlighting different lines in each slide.
+The code above will generate 5 slides showing the same code but highlighting different lines in each slide – see how it looks below:
+
+<iframe src="https://docs.google.com/presentation/d/e/2PACX-1vSOMEZNqOr9F3sNAxuqGvZAPMWlaRDqmc94NIOPDEzHTM8jzZ7vEAmeMZoR-o5-ZA/embed?start=false&loop=false&delayms=3000" frameborder="0" width="1280" height="449" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
+
+You can then use these slides in your presentation deck.
