@@ -24,6 +24,7 @@ isort = "^5.12.0"
 mkdocs-material = "^9.1.18"
 pytest = "^7.3.2"
 ruff = "^0.0.272"
+tomli-w = "^1.0.0"
 
 [tool.poetry.group.juptyter.dependencies]
 jupyter = "^1.0.0"

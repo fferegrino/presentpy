@@ -55,10 +55,11 @@ def get_theme(theme: str = "light") -> Dict[Any, RGBColor]:
 class PptxWriter:
     TEMPLATE_CODE_SLIDE_INDEX = 2
 
-    def __init__(self, theme: str = "light"):
+    def __init__(self, configuration, theme: str = "light"):
         template = pkg_resources.resource_filename("presentpy", f"slide_templates/template-{theme}.pptx")
         self.presentation = Presentation(template)
         self.theme = get_theme(theme)
+        self.configuration = configuration
 
     def _write_code_slide(self, slide_title, parsed_tokens, lines_to_highlight):
         slide_layout = self.presentation.slide_layouts[PptxWriter.TEMPLATE_CODE_SLIDE_INDEX]
@@ -81,11 +82,13 @@ class PptxWriter:
                 run = p.add_run()
                 run.text = text
                 font = run.font
-                font.bold = line_number in lines_to_highlight
                 font.color.rgb = self.theme.get(kind, RGBColor(0, 0, 0))
-                font.size = Pt(14)
+                font.size = Pt(self.configuration.font_size)
+                if line_number in lines_to_highlight:
+                    font.size = Pt(self.configuration.highlight.font_size)
+                    font.bold = self.configuration.highlight.bold
             run = p.add_run()
-            run.font.size = Pt(14)
+            run.font.size = Pt(self.configuration.font_size)
             run.text = CARRIAGE_RETURN
 
     def write(self, code_slide_source: CodeSlideSource):
