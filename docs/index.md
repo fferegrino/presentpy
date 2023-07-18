@@ -16,8 +16,16 @@ Otherwise, you can install it using `pip` or your favorite package manager – t
 
 ## Usage
 
+To turn a notebook into slides, simply run:
+
 ```bash
-presentpy [OPTIONS] NOTEBOOK_PATH
+presentpy [OPTIONS] nb NOTEBOOK_PATH
+```
+
+It also works with Python scripts:
+
+```bash
+presentpy [OPTIONS] py SCRIPT_PATH
 ```
 
 ## Code configuration
