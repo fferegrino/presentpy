@@ -1,4 +1,1 @@
-PresentPy
-=========
-
-Create slides from Jupyter Notebooks
+docs/index.md
