@@ -9,7 +9,7 @@ from lxml import etree
 from presentpy.code_slide_source import CodeSlideSource
 from presentpy.namespaces import Namespaces
 from presentpy.templates import Content, Styles
-from presentpy.writer.slide_tag import SlideTag
+from presentpy.writer.slide_tag import SlideTag, TitleSlide
 from presentpy.writer.tag import Tag
 from presentpy.writer.theme import Theme
 
@@ -25,7 +25,7 @@ class Presentation:
     def new_slide(self, name=None):
         if name is None:
             name = f"slide{self.current_slide_count}"
-        slide_tag = SlideTag(name, self.namespaces, self.theme)
+        slide_tag = TitleSlide(name, self.namespaces, self.theme)
         self.slides.append(slide_tag)
         self.current_slide_count += 1
         return slide_tag
@@ -66,7 +66,7 @@ class Presentation:
                     else:
                         span.text = value
                     p.append(span)
-                new_slide.text_box.append(p)
+                new_slide.content_text_box.append(p)
 
     def write(self, path: str, prettify: bool = False):
         path = Path(path)

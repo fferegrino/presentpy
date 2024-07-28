@@ -16,61 +16,48 @@ class SlideTag(Tag):
         self.name = name
         self.theme = theme
 
-        x = 1.0
-        y = 1.0
-        w = self.theme.width - 2
-        h = self.theme.height - 2
-
+    def add_text_box(self, container_style, x, y, w, h, text_box_style=None):
         frame = Tag(
             "draw:frame",
             self.namespaces,
             {
-                "draw:style-name": Theme.CODE_FRAME_STYLE_NAME,
+                "draw:style-name": container_style,
                 "svg:x": f"{x:.2}in",
                 "svg:y": f"{y:.2}in",
                 "svg:width": f"{w:.2f}in",
                 "svg:height": f"{h:.2f}in",
             },
         )
-        self.text_box = Tag("draw:text-box", self.namespaces, {})
 
-        frame.append(self.text_box)
+        text_box_style_def = {}
+        if text_box_style:
+            text_box_style_def = {"draw:style-name": text_box_style}
+        text_box = Tag("draw:text-box", self.namespaces, text_box_style_def)
+
+        frame.append(text_box)
         self.append(frame)
 
-    def add_source_code(self, code: CodeSlideSource):
+        return text_box
 
-        for highlight in code.highlights:
-            for line_no, line in enumerate(code.lines, 1):
-                p = Tag(
-                    "text:p",
-                    self.namespaces,
-                    {
-                        "text:style-name": (
-                            Theme.CODE_PARAGRAPH_STYLE_NAME
-                            if line_no not in highlight
-                            else Theme.CODE_HIGHLIGHT_PARAGRAPH_STYLE_NAME
-                        ),
-                        "text:class-names": "",
-                        "text:cond-style-name": "",
-                    },
-                )
-                for token, value in line:
-                    token_style_name = f"span__{self.theme.pygments_style}__{token}".replace(".", "_").lower()
-                    if token_style_name not in self.theme.token_styles:
-                        for tt in reversed(token.split()):
-                            token_style_name = f"span__{self.theme.pygments_style}__{tt}".replace(".", "_").lower()
-                            if token_style_name in self.theme.token_styles:
-                                break
 
-                    span = Tag(
-                        "text:span",
-                        self.namespaces,
-                        {"text:style-name": token_style_name, "text:class-names": ""},
-                    )
-                    if value.isspace():
-                        space_tag = Tag("text:s", self.namespaces, {"text:c": str(len(value))})
-                        span.append(space_tag)
-                    else:
-                        span.text = value
-                    p.append(span)
-                self.text_box.append(p)
+class TitleSlide(SlideTag):
+    def __init__(self, name, namespaces: Namespaces, theme: Theme):
+        super().__init__(
+            name,
+            namespaces,
+            theme,
+        )
+        self.name = name
+        self.theme = theme
+
+        x = 0.9
+        title_y = 0.4
+        w = self.theme.width - (2 * x)
+        title_h = 1
+
+        self.title_text_box = super().add_text_box("", x, title_y, w, title_h)
+
+        content_y = title_y + title_h + 0.2
+        content_h = self.theme.height - content_y - 0.4
+
+        self.content_text_box = super().add_text_box(Theme.CODE_FRAME_STYLE_NAME, x, content_y, w, content_h)
