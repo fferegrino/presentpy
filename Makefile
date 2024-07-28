@@ -1,8 +1,8 @@
 dopptx:
-	python slides.py dopptx .
+	python src/presentpy/writer/slides.py dopptx .
 
 unpptx:
-	python slides.py unpptx .
+	python src/presentpy/writer/slides.py unpptx .
 
 fmt:
 	black .
