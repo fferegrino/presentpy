@@ -20,15 +20,19 @@ class Presentation:
         self.namespaces = namespaces
         self.styles: List[Tag] = []
         self.slides: List[SlideTag] = []
+        self.current_slide_count = 0
 
-    def new_slide(self, name):
+    def new_slide(self, name=None):
+        if name is None:
+            name = f"slide{self.current_slide_count}"
         slide_tag = SlideTag(name, self.namespaces, self.theme)
         self.slides.append(slide_tag)
+        self.current_slide_count += 1
         return slide_tag
 
-    def add_source_code(self, code: CodeSlideSource):
-        for idx, highlight in enumerate(code.highlights):
-            new_slide = self.new_slide(f"code{idx}")
+    def add_source_code(self, code: CodeSlideSource, slide_name: str = None):
+        for highlight in code.highlights:
+            new_slide = self.new_slide(slide_name)
             for line_no, line in enumerate(code.lines, 1):
                 p = Tag(
                     "text:p",

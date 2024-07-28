@@ -1,6 +1,7 @@
 from typing import Any, List, Tuple
 
 import click
+import nbformat
 from pygments import lex
 from pygments.lexers import get_lexer_by_name
 from pygments.token import Token
@@ -10,41 +11,6 @@ from presentpy.namespaces import Namespaces
 from presentpy.writer.presentation import Presentation
 from presentpy.writer.slides import dopptx
 from presentpy.writer.theme import Theme
-
-
-def get_parsed_lines(source: str, language: str = "python") -> List[List[Tuple[Any, str]]]:
-    lines = []
-    line = []
-    lexer = get_lexer_by_name(language)
-    for token, value in lex(source, lexer):
-        if token is Token.Text.Whitespace and value == "\n":
-            lines.append(line)
-            line = []
-        else:
-            line.append((token, value))
-
-    lines.append(line)
-
-    return lines
-
-
-code = """
-from typing import Iterator
-
-# This is an example
-class Math:
-    @staticmethod
-    def fib(n: int) -> Iterator[int]:
-        \"\"\"Fibonacci series up to n.\"\"\"
-        a, b = 0, 1
-        while a < n:
-            yield a
-            a, b = b, a + b
-
-result = sum(Math.fib(42))
-print(f"The answer is {result}")
-#% title="Find the H.C.F of two numbers" highlights=1,2-3,4-5,9
-"""
 
 
 @click.group()
@@ -69,19 +35,21 @@ odf_namespaces = {
 
 
 @cli.command("nb")
-# @click.argument("notebook", type=click.Path(exists=True))
+@click.argument("notebook", type=click.Path(exists=True))
 @click.option("--theme", default="default")
-def process(theme):
+def process(notebook, theme):
     namespaces = Namespaces(odf_namespaces)
     theme = Theme(theme, namespaces)
     presentation = Presentation(theme, namespaces)
 
-    # slide = presentation.new_slide("slide1")
+    with open(notebook) as f:
+        nb = nbformat.read(f, as_version=4)
 
-    slode = CodeSlideSource.from_source_code(code)
-    # slide.add_source_code(slode)
-
-    presentation.add_source_code(slode)
+    for cell in nb.cells:
+        if cell.cell_type == "code":
+            code = cell.source
+            slode = CodeSlideSource.from_source_code(code)
+            presentation.add_source_code(slode)
 
     presentation.write("result")
 
