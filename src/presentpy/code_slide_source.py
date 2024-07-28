@@ -35,6 +35,7 @@ class CodeSlideSource:
     @classmethod
     def from_code_cell(cls, cell: NotebookNode):
         source_lines = cell.source.strip().split("\n")
+        source_code = cell.source
 
         config = {}
         last_line = source_lines[-1]
@@ -70,6 +71,6 @@ class CodeSlideSource:
 
         return cls(
             code=cell.source,
-            lines=get_parsed_lines(cell.source),
+            lines=get_parsed_lines(source_code),
             **dataclass_attributes,
         )

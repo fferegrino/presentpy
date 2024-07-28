@@ -75,8 +75,6 @@ class Presentation:
                     self.namespaces,
                     {
                         "text:style-name": CODE_PARAGRAPH_STYLE_NAME,
-                        "text:class-names": "",
-                        "text:cond-style-name": "",
                     },
                 )
                 span = Tag(
@@ -87,6 +85,18 @@ class Presentation:
                 span.text = line
                 output_p.append(span)
                 new_slide.output_text_box.append(output_p)
+
+            output_p = Tag(
+                "text:p",
+                self.namespaces,
+            )
+            span = Tag(
+                "text:span",
+                self.namespaces,
+            )
+            span.text = code.title
+            output_p.append(span)
+            new_slide.title_text_box.append(output_p)
 
     def write(self, path: str, prettify: bool = False):
         path = Path(path)

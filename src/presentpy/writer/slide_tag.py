@@ -1,6 +1,3 @@
-from typing import Any, List, Tuple
-
-from presentpy.code_slide_source import CodeSlideSource
 from presentpy.constants import *
 from presentpy.namespaces import Namespaces
 from presentpy.writer.tag import Tag
@@ -79,7 +76,7 @@ class TitleContentAndOutputSlide(SlideTag):
         w = self.theme.width - (2 * x)
         title_h = 1
 
-        self.title_text_box = super().add_text_box("masterTitle", x, title_y, w, title_h)
+        self.title_text_box = super().add_text_box(MASTER_TITLE_STYLE_NAME, x, title_y, w, title_h)
 
         content_y = title_y + title_h + 0.2
         content_h = self.theme.height - content_y - 0.4
