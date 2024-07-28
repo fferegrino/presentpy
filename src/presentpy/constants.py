@@ -1,0 +1,4 @@
+DRAWING_PAGE_STYLE_NAME = "defaultSlide"
+CODE_PARAGRAPH_STYLE_NAME = "codeParagraph"
+CODE_HIGHLIGHT_PARAGRAPH_STYLE_NAME = "highlightedCodeParagraph"
+CODE_FRAME_STYLE_NAME = "codeFrame"

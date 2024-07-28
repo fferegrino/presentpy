@@ -1,6 +1,7 @@
 from typing import Any, List, Tuple
 
 from presentpy.code_slide_source import CodeSlideSource
+from presentpy.constants import *
 from presentpy.namespaces import Namespaces
 from presentpy.writer.tag import Tag
 from presentpy.writer.theme import Theme
@@ -11,7 +12,7 @@ class SlideTag(Tag):
         super().__init__(
             "draw:page",
             namespaces,
-            {"draw:name": name, "draw:style-name": Theme.DRAWING_PAGE_STYLE_NAME, "draw:id": name},
+            {"draw:name": name, "draw:style-name": DRAWING_PAGE_STYLE_NAME, "draw:id": name},
         )
         self.name = name
         self.theme = theme
@@ -55,12 +56,12 @@ class TitleSlide(SlideTag):
         w = self.theme.width - (2 * x)
         title_h = 1
 
-        self.title_text_box = super().add_text_box("", x, title_y, w, title_h)
+        self.title_text_box = super().add_text_box("masterTitle", x, title_y, w, title_h)
 
         content_y = title_y + title_h + 0.2
         content_h = self.theme.height - content_y - 0.4
 
-        self.content_text_box = super().add_text_box(Theme.CODE_FRAME_STYLE_NAME, x, content_y, w, content_h)
+        self.content_text_box = super().add_text_box(CODE_FRAME_STYLE_NAME, x, content_y, w, content_h)
 
 
 class TitleContentAndOutputSlide(SlideTag):
@@ -78,13 +79,11 @@ class TitleContentAndOutputSlide(SlideTag):
         w = self.theme.width - (2 * x)
         title_h = 1
 
-        self.title_text_box = super().add_text_box("", x, title_y, w, title_h)
+        self.title_text_box = super().add_text_box("masterTitle", x, title_y, w, title_h)
 
         content_y = title_y + title_h + 0.2
         content_h = self.theme.height - content_y - 0.4
         content_h = content_h / 2 - 0.2
 
-        self.content_text_box = super().add_text_box(Theme.CODE_FRAME_STYLE_NAME, x, content_y, w, content_h)
-        self.output_text_box = super().add_text_box(
-            Theme.CODE_FRAME_STYLE_NAME, x, content_y + content_h + 0.2, w, content_h
-        )
+        self.content_text_box = super().add_text_box(CODE_FRAME_STYLE_NAME, x, content_y, w, content_h)
+        self.output_text_box = super().add_text_box(CODE_FRAME_STYLE_NAME, x, content_y + content_h + 0.2, w, content_h)

@@ -7,6 +7,7 @@ from typing import List
 from lxml import etree
 
 from presentpy.code_slide_source import CodeSlideSource
+from presentpy.constants import *
 from presentpy.namespaces import Namespaces
 from presentpy.templates import Content, Styles
 from presentpy.writer.slide_tag import SlideTag, TitleContentAndOutputSlide, TitleSlide
@@ -39,9 +40,9 @@ class Presentation:
                     self.namespaces,
                     {
                         "text:style-name": (
-                            Theme.CODE_PARAGRAPH_STYLE_NAME
+                            CODE_PARAGRAPH_STYLE_NAME
                             if line_no not in highlight
-                            else Theme.CODE_HIGHLIGHT_PARAGRAPH_STYLE_NAME
+                            else CODE_HIGHLIGHT_PARAGRAPH_STYLE_NAME
                         ),
                         "text:class-names": "",
                         "text:cond-style-name": "",
@@ -73,7 +74,7 @@ class Presentation:
                     "text:p",
                     self.namespaces,
                     {
-                        "text:style-name": Theme.CODE_PARAGRAPH_STYLE_NAME,
+                        "text:style-name": CODE_PARAGRAPH_STYLE_NAME,
                         "text:class-names": "",
                         "text:cond-style-name": "",
                     },
@@ -86,7 +87,6 @@ class Presentation:
                 span.text = line
                 output_p.append(span)
                 new_slide.output_text_box.append(output_p)
-                # new_slide.output_text_box.text = code.output
 
     def write(self, path: str, prettify: bool = False):
         path = Path(path)

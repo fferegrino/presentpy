@@ -1,4 +1,4 @@
-import xml.dom
+import xml.dom.minidom
 from pathlib import Path
 
 from lxml import etree

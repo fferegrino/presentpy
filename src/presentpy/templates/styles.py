@@ -1,5 +1,6 @@
 from pathlib import Path
 
+from presentpy.constants import *
 from presentpy.namespaces import Namespaces
 from presentpy.templates.xml_file import XMLFile
 from presentpy.writer.theme import Theme
@@ -13,7 +14,7 @@ class Styles(XMLFile):
 
         page_layout_properties = self.xpath(
             "office:document-styles",
-            "office:automatic-styles",
+            "office:styles",
             "style:page-layout[@style:name='pageLayout1']",
             "style:page-layout-properties",
         )
@@ -22,7 +23,7 @@ class Styles(XMLFile):
 
         drawing_page_properties = self.xpath(
             "office:document-styles",
-            "office:automatic-styles",
+            "office:styles",
             "style:style[@style:name='masterStyle']",
             "style:drawing-page-properties",
         )
@@ -30,7 +31,7 @@ class Styles(XMLFile):
 
         master_title_style = self.xpath(
             "office:document-styles",
-            "office:automatic-styles",
+            "office:styles",
             "style:style[@style:name='masterTitle']",
         )
         text_properties = master_title_style.xpath("style:text-properties", namespaces=namespaces.data)[0]
@@ -41,7 +42,7 @@ class Styles(XMLFile):
 
         master_content_style = self.xpath(
             "office:document-styles",
-            "office:automatic-styles",
+            "office:styles",
             "style:style[@style:name='masterContent']",
         )
         text_properties = master_content_style.xpath("style:text-properties", namespaces=namespaces.data)[0]
@@ -49,3 +50,20 @@ class Styles(XMLFile):
         text_properties.set(namespaces("fo:font-size"), self.theme.font_size(18))
         text_properties.set(namespaces("style:font-size-asian"), self.theme.font_size(18))
         text_properties.set(namespaces("style:font-size-complex"), self.theme.font_size(18))
+
+        default_slide_properties = self.xpath(
+            "office:document-styles",
+            "office:styles",
+            f"style:style[@style:name='{DRAWING_PAGE_STYLE_NAME}']",
+            "style:drawing-page-properties",
+        )
+        default_slide_properties.set(namespaces("draw:fill-color"), self.theme.background_color)
+
+        highlighted_code_paragraph_style = self.xpath(
+            "office:document-styles",
+            "office:styles",
+            f"style:style[@style:name='{CODE_HIGHLIGHT_PARAGRAPH_STYLE_NAME}']",
+            "style:text-properties",
+        )
+        highlighted_code_paragraph_style.set(namespaces("fo:background-color"), self.theme.highlight_color)
+        highlighted_code_paragraph_style.set(namespaces("fo:font-weight"), "bold")

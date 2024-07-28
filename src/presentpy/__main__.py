@@ -2,14 +2,10 @@ from typing import Any, List, Tuple
 
 import click
 import nbformat
-from pygments import lex
-from pygments.lexers import get_lexer_by_name
-from pygments.token import Token
 
 from presentpy.code_slide_source import CodeSlideSource
 from presentpy.namespaces import Namespaces
 from presentpy.writer.presentation import Presentation
-from presentpy.writer.slides import dopptx
 from presentpy.writer.theme import Theme
 
 
