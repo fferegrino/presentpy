@@ -22,7 +22,16 @@ Otherwise, you can install it using `pip` or your favorite package manager – t
 To turn a notebook into slides, simply run:
 
 ```bash
-presentpy [OPTIONS] nb NOTEBOOK_PATH
+Usage: presentpy [OPTIONS] NOTEBOOK
+
+  presentpy: A CLI tool to convert Jupyter Notebooks to ODP presentations.
+
+Options:
+  --output PATH  Directory or file path where the output ODP file will be
+                 saved. Defaults to the current directory.
+  --theme TEXT   Pygments style to be applied to the presentation. Defaults to
+                 'default'. See https://pygments.org/docs/styles/ for
+                 available styles.
 ```
 
 <!-- 

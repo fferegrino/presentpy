@@ -8,7 +8,7 @@ readme = "readme.md"
 include = ["src/presentpy/**/*"]
 
 [tool.poetry.scripts]
-presentpy = "presentpy.__main__:cli"
+presentpy = "presentpy.__main__:process"
 
 [tool.poetry.dependencies]
 click = "^8.1.7"

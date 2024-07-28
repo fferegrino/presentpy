@@ -46,7 +46,7 @@ jobs:
 
   PublishDocs:
     runs-on: ubuntu-latest
-    # if: startsWith(github.ref, 'refs/tags/')
+    if: startsWith(github.ref, 'refs/tags/')
     needs: Release
     steps:
 

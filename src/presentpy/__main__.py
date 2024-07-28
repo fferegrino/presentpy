@@ -9,12 +9,6 @@ from presentpy.namespaces import Namespaces
 from presentpy.writer.presentation import Presentation
 from presentpy.writer.theme import Theme
 
-
-@click.group()
-def cli():
-    pass
-
-
 odf_namespaces = {
     "dom": "http://www.w3.org/2001/xml-events",
     "draw": "urn:oasis:names:tc:opendocument:xmlns:drawing:1.0",
@@ -31,15 +25,26 @@ odf_namespaces = {
 }
 
 
-@cli.command("nb")
+@click.command()
 @click.argument("notebook", type=click.Path(exists=True))
-@click.option("--output", default=".")
-@click.option("--theme", default="default")
+@click.option(
+    "--output",
+    default=".",
+    help="Directory or file path where the output ODP file will be saved. Defaults to the current directory.",
+)
+@click.option(
+    "--theme",
+    default="default",
+    help="Pygments style to be applied to the presentation. Defaults to 'default'. See https://pygments.org/docs/styles/ for available styles.",
+)
 def process(notebook, output, theme):
+    """
+    A CLI tool to convert Jupyter Notebooks to slides.
+    """
     namespaces = Namespaces(odf_namespaces)
     theme = Theme(theme, namespaces)
     presentation = Presentation(theme, namespaces)
-    output = Path(output) / Path(notebook).stem if Path(output).is_dir() else Path(output)
+    output = Path(output) / f"{Path(notebook).stem}.odp" if Path(output).is_dir() else Path(output)
 
     with open(notebook) as f:
         nb = nbformat.read(f, as_version=4)
