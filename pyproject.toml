@@ -21,6 +21,7 @@ python = "^3.10"
 black = "^24.4.2"
 bump-my-version = "^0.24.3"
 isort = "^5.13.2"
+mkdocs-material = "^9.5.30"
 pytest = "^8.3.1"
 ruff = "^0.5.4"
 
