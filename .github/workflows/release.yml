@@ -1,0 +1,75 @@
+name: Release
+
+env:
+  POETRY_VERSION: "1.5.1"
+  PIP_VERSION: "23.0.0"
+
+on:
+  push:
+    tags:
+      - v*
+    branches:
+      - main
+
+jobs:
+
+  Release:
+    name: Release
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+    - name: Set up Python
+      uses: actions/setup-python@v2
+      with:
+        python-version: "3.10"
+
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip==${{ env.PIP_VERSION }}
+        pip install poetry==${{ env.POETRY_VERSION }}
+        poetry config virtualenvs.create false --local
+        poetry install
+
+    - name: Check formatting
+      run: make lint
+
+    - name: Run tests
+      run: pytest tests
+
+    - name: Release
+      if: startsWith(github.ref, 'refs/tags/')
+      env:
+        PYPI_PASSWORD: ${{ secrets.PYPI_PASSWORD }}
+      run: |
+        make build
+        poetry publish -u __token__ -p ${PYPI_PASSWORD}
+
+  PublishDocs:
+    runs-on: ubuntu-latest
+    # if: startsWith(github.ref, 'refs/tags/')
+    needs: Release
+    steps:
+
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Setup Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: 3.10
+
+      - name: Setup Poetry
+        run: |
+          python -m pip install --upgrade pip==${{ env.PIP_VERSION }}
+          pip install poetry==${{ env.POETRY_VERSION }}
+          poetry config virtualenvs.create false
+          poetry install
+
+      - name: Setup git
+        run: |
+          git config user.name github-actions
+          git config user.email github-actions@github.com
+
+      - name: Release docs
+        run: |
+          mkdocs gh-deploy --force
