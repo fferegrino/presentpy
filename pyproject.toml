@@ -19,19 +19,39 @@ python = "^3.10"
 
 [tool.poetry.group.dev.dependencies]
 black = "^24.4.2"
+bump-my-version = "^0.24.3"
 isort = "^5.13.2"
 pytest = "^8.3.1"
 ruff = "^0.5.4"
-#black = "^23.3.0"
-#bump2version = "^1.0.1"
-#isort = "^5.12.0"
-#mkdocs-material = "^9.1.18"
-#pytest = "^7.3.2"
-#tomli-w = "^1.0.0"
 
 [tool.poetry.group.juptyter.dependencies]
 jupyter = "^1.0.0"
 jupyterlab = "^4.0.2"
+
+[tool.bumpversion]
+current_version = "0.9.0"
+parse = "(?P<major>\\d+)\\.(?P<minor>\\d+)\\.(?P<patch>\\d+)"
+serialize = ["{major}.{minor}.{patch}"]
+search = "{current_version}"
+replace = "{new_version}"
+regex = false
+ignore_missing_version = false
+ignore_missing_files = false
+tag = true
+sign_tags = false
+tag_name = "v{new_version}"
+tag_message = "Bump version: {current_version} → {new_version}"
+allow_dirty = false
+commit = true
+message = "Bump version: {current_version} → {new_version}"
+
+[[tool.bumpversion.files]]
+filename = "src/presentpy/__init__.py"
+
+[[tool.bumpversion.files]]
+filename = "pyproject.toml"
+search = 'version = "{current_version}"'
+replace = 'version = "{new_version}"'
 
 [tool.ruff]
 select = ["E", "F", "I","C90", "N"]
