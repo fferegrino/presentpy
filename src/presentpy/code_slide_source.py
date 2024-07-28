@@ -2,6 +2,7 @@ import shlex
 from dataclasses import dataclass, field
 from typing import Any, List, Optional, Tuple
 
+from nbformat import NotebookNode
 from pygments import lex
 from pygments.lexers import get_lexer_by_name
 from pygments.token import Token
@@ -28,11 +29,12 @@ class CodeSlideSource:
     code: str
     lines: List[List[Tuple[Any, str]]]
     highlights: List[List[int]] = field(default_factory=list)
+    outputs: Optional[List[str]] = None
     title: Optional[str] = None
 
     @classmethod
-    def from_source_code(cls, source_code: str):
-        source_lines = source_code.strip().split("\n")
+    def from_code_cell(cls, cell: NotebookNode):
+        source_lines = cell.source.strip().split("\n")
 
         config = {}
         last_line = source_lines[-1]
@@ -43,7 +45,7 @@ class CodeSlideSource:
 
             source_code = "\n".join(source_lines[:-1])
 
-        dataclass_atrributes = {"title": config.get("title")}
+        dataclass_attributes = {"title": config.get("title")}
 
         highlight_ints = [[-1]]
         if highlights := config.get("highlights"):
@@ -55,10 +57,19 @@ class CodeSlideSource:
                 else:
                     highlight_ints.append([int(start)])
 
-        dataclass_atrributes["highlights"] = highlight_ints
+        dataclass_attributes["highlights"] = highlight_ints
+        dataclass_attributes["outputs"] = []
+
+        stream = [output for output in cell.outputs if output.output_type == "stream"]
+        execute_result = [output for output in cell.outputs if output.output_type == "execute_result"]
+
+        if stream:
+            dataclass_attributes["outputs"].extend(stream[0].text.strip().split("\n"))
+        if execute_result:
+            dataclass_attributes["outputs"].extend(execute_result[0].data["text/plain"].strip().split("\n"))
 
         return cls(
-            code=source_code,
-            lines=get_parsed_lines(source_code),
-            **dataclass_atrributes,
+            code=cell.source,
+            lines=get_parsed_lines(cell.source),
+            **dataclass_attributes,
         )

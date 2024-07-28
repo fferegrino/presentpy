@@ -9,7 +9,7 @@ from lxml import etree
 from presentpy.code_slide_source import CodeSlideSource
 from presentpy.namespaces import Namespaces
 from presentpy.templates import Content, Styles
-from presentpy.writer.slide_tag import SlideTag, TitleSlide
+from presentpy.writer.slide_tag import SlideTag, TitleContentAndOutputSlide, TitleSlide
 from presentpy.writer.tag import Tag
 from presentpy.writer.theme import Theme
 
@@ -25,7 +25,7 @@ class Presentation:
     def new_slide(self, name=None):
         if name is None:
             name = f"slide{self.current_slide_count}"
-        slide_tag = TitleSlide(name, self.namespaces, self.theme)
+        slide_tag = TitleContentAndOutputSlide(name, self.namespaces, self.theme)
         self.slides.append(slide_tag)
         self.current_slide_count += 1
         return slide_tag
@@ -67,6 +67,26 @@ class Presentation:
                         span.text = value
                     p.append(span)
                 new_slide.content_text_box.append(p)
+
+            for line_no, line in enumerate(code.outputs, 1):
+                output_p = Tag(
+                    "text:p",
+                    self.namespaces,
+                    {
+                        "text:style-name": Theme.CODE_PARAGRAPH_STYLE_NAME,
+                        "text:class-names": "",
+                        "text:cond-style-name": "",
+                    },
+                )
+                span = Tag(
+                    "text:span",
+                    self.namespaces,
+                    {"text:style-name": f"span__{self.theme.pygments_style}__token", "text:class-names": ""},
+                )
+                span.text = line
+                output_p.append(span)
+                new_slide.output_text_box.append(output_p)
+                # new_slide.output_text_box.text = code.output
 
     def write(self, path: str, prettify: bool = False):
         path = Path(path)

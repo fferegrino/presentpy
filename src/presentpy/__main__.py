@@ -47,8 +47,7 @@ def process(notebook, theme):
 
     for cell in nb.cells:
         if cell.cell_type == "code":
-            code = cell.source
-            slode = CodeSlideSource.from_source_code(code)
+            slode = CodeSlideSource.from_code_cell(cell)
             presentation.add_source_code(slode)
 
     presentation.write("result")
