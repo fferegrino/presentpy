@@ -1,3 +1,6 @@
+*.bck
+.idea/
 .venv/
 __pycache__/
 *.odp
+.DS_Store

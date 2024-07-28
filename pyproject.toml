@@ -1,0 +1,49 @@
+[tool.poetry]
+name = "presentpy"
+version = "0.9.0"
+description = "Create slides from Jupyter Notebooks"
+authors = ["Antonio Feregrino <antonio.feregrino@gmail.com>"]
+license = "MIT"
+readme = "readme.md"
+include = ["src/presentpy/**/*"]
+
+[tool.poetry.scripts]
+presentpy = "presentpy.__main__:cli"
+
+[tool.poetry.dependencies]
+python = "^3.10"
+pygments = "^2.18.0"
+click = "^8.1.7"
+lxml = "^5.2.2"
+
+[tool.poetry.group.dev.dependencies]
+black = "^24.4.2"
+isort = "^5.13.2"
+pytest = "^8.3.1"
+ruff = "^0.5.4"
+#black = "^23.3.0"
+#bump2version = "^1.0.1"
+#isort = "^5.12.0"
+#mkdocs-material = "^9.1.18"
+#pytest = "^7.3.2"
+#tomli-w = "^1.0.0"
+
+[tool.poetry.group.juptyter.dependencies]
+jupyter = "^1.0.0"
+jupyterlab = "^4.0.2"
+
+[tool.ruff]
+select = ["E", "F", "I","C90", "N"]
+ignore = []
+line-length = 120
+
+[tool.black]
+line-length = 120
+
+[tool.isort]
+profile = "black"
+known_first_party = ["presentpy"]
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
