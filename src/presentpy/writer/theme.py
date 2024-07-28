@@ -34,6 +34,9 @@ class Theme:
         paragraph_style = self.create_paragraph_style()
         self.styles.append(paragraph_style)
 
+        paragraph_highlight_style = self.create_paragraph_style(highlight=True)
+        self.styles.append(paragraph_highlight_style)
+
         graphic_style = self.create_graphic_frame_style()
         self.styles.append(graphic_style)
 
@@ -98,6 +101,10 @@ class Theme:
         return "#ffffff"
 
     @property
+    def highlight_color(self):
+        return convert_color(self.style.highlight_color)
+
+    @property
     def content_color(self):
         selected_token_style = self._find_style_for_token(Comment, String, Literal)
         style_parts = set(selected_token_style.split())
@@ -146,13 +153,6 @@ class Theme:
         return drawing_page_style
 
     def create_graphic_frame_style(self):
-        # 		<style:style style:family="graphic" style:name="a20">
-        # 			<style:graphic-properties
-        # 			fo:wrap-option="wrap"
-        # 			fo:padding-top="0.05in"
-        # 			fo:padding-bottom="0.05in" fo:padding-left="0.1in" fo:padding-right="0.1in" draw:textarea-vertical-align="top" draw:textarea-horizontal-align="left" draw:fill="none" draw:stroke="none" draw:auto-grow-width="false" draw:auto-grow-height="true"/>
-        # 			<style:paragraph-properties style:font-independent-line-spacing="true" style:writing-mode="lr-tb"/>
-        # 		</style:style>
         frame_style = Tag(
             "style:style",
             self.namespaces,
@@ -171,13 +171,15 @@ class Theme:
         frame_style.append(paragraph_properties)
         return frame_style
 
-    def create_paragraph_style(self):
+    def create_paragraph_style(self, highlight=False):
         paragraph_style = Tag(
             "style:style",
             self.namespaces,
             {
                 "style:family": "paragraph",
-                "style:name": Theme.CODE_PARAGRAPH_STYLE_NAME,
+                "style:name": (
+                    Theme.CODE_PARAGRAPH_STYLE_NAME if not highlight else Theme.CODE_HIGHLIGHT_PARAGRAPH_STYLE_NAME
+                ),
             },
         )
         paragraph_properties = Tag(
@@ -200,38 +202,40 @@ class Theme:
         tab_stops = Tag("style:tab-stops", self.namespaces)
         paragraph_properties.append(tab_stops)
 
-        text_properties = Tag(
-            "style:text-properties",
-            self.namespaces,
-            {
-                "fo:font-variant": "normal",
-                "fo:text-transform": "none",
-                "fo:color": "#000000",
-                "style:text-line-through-type": "none",
-                "style:text-line-through-style": "none",
-                "style:text-line-through-width": "auto",
-                "style:text-line-through-color": "font-color",
-                "style:text-position": "0% 100%",
-                "fo:font-size": "0.25in",
-                "style:font-size-asian": "0.25in",
-                "style:font-size-complex": "0.25in",
-                "fo:letter-spacing": "0in",
-                "fo:font-style": "normal",
-                "style:font-style-asian": "normal",
-                "style:font-style-complex": "normal",
-                "style:text-underline-type": "none",
-                "style:text-underline-style": "none",
-                "style:text-underline-width": "auto",
-                "style:text-underline-color": "font-color",
-                "fo:font-weight": "normal",
-                "style:font-weight-asian": "normal",
-                "style:font-weight-complex": "normal",
-                "style:text-underline-mode": "continuous",
-                "style:letter-kerning": "false",
-                "fo:font-family": "Courier New",
-                "style:font-family-complex": "Courier New",
-            },
-        )
+        text_properties_attributes = {
+            "fo:font-variant": "normal",
+            "fo:text-transform": "none",
+            "fo:color": "#000000",
+            "style:text-line-through-type": "none",
+            "style:text-line-through-style": "none",
+            "style:text-line-through-width": "auto",
+            "style:text-line-through-color": "font-color",
+            "style:text-position": "0% 100%",
+            "fo:font-size": "0.25in",
+            "style:font-size-asian": "0.25in",
+            "style:font-size-complex": "0.25in",
+            "fo:letter-spacing": "0in",
+            "fo:font-style": "normal",
+            "style:font-style-asian": "normal",
+            "style:font-style-complex": "normal",
+            "style:text-underline-type": "none",
+            "style:text-underline-style": "none",
+            "style:text-underline-width": "auto",
+            "style:text-underline-color": "font-color",
+            "fo:font-weight": "normal",
+            "style:font-weight-asian": "normal",
+            "style:font-weight-complex": "normal",
+            "style:text-underline-mode": "continuous",
+            "style:letter-kerning": "false",
+            "fo:font-family": "Courier New",
+            "style:font-family-complex": "Courier New",
+        }
+
+        if highlight:
+            text_properties_attributes["fo:background-color"] = self.highlight_color
+            text_properties_attributes["fo:font-weight"] = "bold"
+
+        text_properties = Tag("style:text-properties", self.namespaces, text_properties_attributes)
         paragraph_style.append(paragraph_properties)
         paragraph_style.append(text_properties)
         return paragraph_style
