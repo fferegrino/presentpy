@@ -25,7 +25,6 @@ def get_parsed_lines(source: str, language: str = "python") -> List[List[Tuple[A
     return lines
 
 
-
 def parse_highlights(highlights: str) -> List[List[int]]:
     highlight_ints = []
     lines_to_highlights = highlights.split(",")

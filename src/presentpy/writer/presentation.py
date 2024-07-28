@@ -98,8 +98,8 @@ class Presentation:
             output_p.append(span)
             new_slide.title_text_box.append(output_p)
 
-    def write(self, path: str, prettify: bool = False):
-        path = Path(path)
+    def write(self, path: Path, prettify: bool = False):
+
         source = importlib.resources.files("presentpy") / "templates/odp/"
 
         exploded_presentation_path = path.parent / f"{path.stem}_odp"
@@ -121,7 +121,7 @@ class Presentation:
         content_xml.write(prettify=prettify)
         styles_xml.write(prettify=True)
 
-        pptx_file = f"{path}.odp"
+        pptx_file = path.parent / f"{path.stem}.odp"
 
         with zipfile.ZipFile(pptx_file, "w") as zip_ref:
             for file in exploded_presentation_path.glob("**/*"):

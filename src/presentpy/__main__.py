@@ -1,3 +1,4 @@
+from pathlib import Path
 from typing import Any, List, Tuple
 
 import click
@@ -32,11 +33,13 @@ odf_namespaces = {
 
 @cli.command("nb")
 @click.argument("notebook", type=click.Path(exists=True))
+@click.option("--output", default=".")
 @click.option("--theme", default="default")
-def process(notebook, theme):
+def process(notebook, output, theme):
     namespaces = Namespaces(odf_namespaces)
     theme = Theme(theme, namespaces)
     presentation = Presentation(theme, namespaces)
+    output = Path(output) / Path(notebook).stem if Path(output).is_dir() else Path(output)
 
     with open(notebook) as f:
         nb = nbformat.read(f, as_version=4)
@@ -46,10 +49,4 @@ def process(notebook, theme):
             slode = CodeSlideSource.from_code_cell(cell)
             presentation.add_source_code(slode)
 
-    presentation.write("result")
-
-    import platform
-    import subprocess
-
-    if platform.system() == "Darwin":  # macOS
-        subprocess.call(("open", "result.odp"))
+    presentation.write(output)

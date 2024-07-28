@@ -1,5 +1,7 @@
-from presentpy.writer.theme import convert_color
 import pytest
+
+from presentpy.writer.theme import convert_color
+
 
 @pytest.mark.parametrize(
     "color, expected_output",
