@@ -19,9 +19,23 @@ def get_parsed_lines(source: str, language: str = "python") -> List[List[Tuple[A
         else:
             line.append((token, value))
 
-    lines.append(line)
+    if line:
+        lines.append(line)
 
     return lines
+
+
+
+def parse_highlights(highlights: str) -> List[List[int]]:
+    highlight_ints = []
+    lines_to_highlights = highlights.split(",")
+    for highlighted_lines in lines_to_highlights:
+        start, _, end = highlighted_lines.partition("-")
+        if end:
+            highlight_ints.append(list(range(int(start), int(end) + 1)))
+        else:
+            highlight_ints.append([int(start)])
+    return highlight_ints
 
 
 @dataclass
@@ -48,17 +62,10 @@ class CodeSlideSource:
 
         dataclass_attributes = {"title": config.get("title")}
 
-        highlight_ints = [[-1]]
+        dataclass_attributes["highlights"] = [[-1]]
         if highlights := config.get("highlights"):
-            lines_to_highlights = highlights.split(",")
-            for highlighted_lines in lines_to_highlights:
-                start, _, end = highlighted_lines.partition("-")
-                if end:
-                    highlight_ints.append(list(range(int(start), int(end) + 1)))
-                else:
-                    highlight_ints.append([int(start)])
+            dataclass_attributes["highlights"].extend(parse_highlights(highlights))
 
-        dataclass_attributes["highlights"] = highlight_ints
         dataclass_attributes["outputs"] = []
 
         stream = [output for output in cell.outputs if output.output_type == "stream"]
