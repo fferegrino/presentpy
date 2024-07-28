@@ -37,6 +37,31 @@ def parse_highlights(highlights: str) -> List[List[int]]:
     return highlight_ints
 
 
+def parse_magic_config(config_line):
+    # fmt: off
+    config = {
+        key: value 
+        for key, _, value 
+        in [
+            conf.partition("=") 
+            for conf 
+            in shlex.split(config_line[2:].strip())
+        ]
+    }
+    # fmt: on
+    return config
+
+
+def extract_config_from_source_code(source_code):
+    source_lines = source_code.strip().split("\n")
+    last_line = source_lines[-1]
+    config = {}
+    if last_line.startswith("#%") or last_line.startswith("# %"):
+        config = parse_magic_config(last_line)
+        source_code = "\n".join(source_lines[:-1])
+    return source_code, config
+
+
 @dataclass
 class CodeSlideSource:
     code: str
@@ -46,18 +71,26 @@ class CodeSlideSource:
     title: Optional[str] = None
 
     @classmethod
+    def from_source_code(cls, source_code: str):
+        source_code, config = extract_config_from_source_code(source_code)
+
+        dataclass_attributes = {"title": config.get("title")}
+
+        dataclass_attributes["highlights"] = [[-1]]
+        if highlights := config.get("highlights"):
+            dataclass_attributes["highlights"].extend(parse_highlights(highlights))
+
+        dataclass_attributes["outputs"] = []
+
+        return cls(
+            code=source_code,
+            lines=get_parsed_lines(source_code),
+            **dataclass_attributes,
+        )
+
+    @classmethod
     def from_code_cell(cls, cell: NotebookNode):
-        source_lines = cell.source.strip().split("\n")
-        source_code = cell.source
-
-        config = {}
-        last_line = source_lines[-1]
-        if last_line.startswith("#%"):
-            config = {
-                key: value for key, _, value in [conf.partition("=") for conf in shlex.split(last_line[2:].strip())]
-            }
-
-            source_code = "\n".join(source_lines[:-1])
+        source_code, config = extract_config_from_source_code(cell.source)
 
         dataclass_attributes = {"title": config.get("title")}
 

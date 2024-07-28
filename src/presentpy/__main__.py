@@ -37,21 +37,33 @@ odf_namespaces = {
     default="default",
     help="Pygments style to be applied to the presentation. Defaults to 'default'. See https://pygments.org/docs/styles/ for available styles.",
 )
-def process(notebook, output, theme):
+@click.option(
+    "--prettify",
+    is_flag=True,
+    default=False,
+)
+def process(notebook, output, theme, prettify):
     """
     A CLI tool to convert Jupyter Notebooks to slides.
     """
     namespaces = Namespaces(odf_namespaces)
     theme = Theme(theme, namespaces)
     presentation = Presentation(theme, namespaces)
-    output = Path(output) / f"{Path(notebook).stem}.odp" if Path(output).is_dir() else Path(output)
+    notebook = Path(notebook)
+    output = Path(output) / f"{notebook.stem}.odp" if Path(output).is_dir() else Path(output)
 
-    with open(notebook) as f:
-        nb = nbformat.read(f, as_version=4)
+    if notebook.suffix == ".ipynb":
+        with open(notebook) as f:
+            nb = nbformat.read(f, as_version=4)
 
-    for cell in nb.cells:
-        if cell.cell_type == "code":
-            slode = CodeSlideSource.from_code_cell(cell)
+        for cell in nb.cells:
+            if cell.cell_type == "code":
+                slode = CodeSlideSource.from_code_cell(cell)
+                presentation.add_source_code(slode)
+    elif notebook.suffix == ".py":
+        with open(notebook) as f:
+            source = f.read()
+            slode = CodeSlideSource.from_source_code(source)
             presentation.add_source_code(slode)
 
-    presentation.write(output)
+    presentation.write(output, prettify=prettify)

@@ -6,6 +6,7 @@ from presentpy.code_slide_source import (
     CodeSlideSource,
     get_parsed_lines,
     parse_highlights,
+    parse_magic_config,
 )
 
 
@@ -81,3 +82,27 @@ def test_full_parse(get_cell):
 def test_parse_highlights_single_range(source, expected_output):
     result = parse_highlights(source)
     assert result == expected_output
+
+
+@pytest.mark.parametrize(
+    ["config", "expected_config"],
+    [
+        # fmt: off
+    (
+        "#% title=\"Hello, World!\"",
+        {"title": "Hello, World!"}
+    ),
+    (
+        "#% highlights=1,2-3,4-5,9",
+        {"highlights": "1,2-3,4-5,9"}
+    ),
+    (
+        "#% title=\"Hello, World!\" highlights=1,2-3,4-5,9",
+        {"title": "Hello, World!", "highlights": "1,2-3,4-5,9"}
+    )
+        # fmt: on
+    ],
+)
+def test_parse_magic_config(config, expected_config):
+    result = parse_magic_config(config)
+    assert result == expected_config
