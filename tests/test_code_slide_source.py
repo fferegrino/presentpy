@@ -12,7 +12,7 @@ from presentpy.code_slide_source import (
 
 @pytest.fixture
 def test_notebook(pytestconfig):
-    file = pytestconfig.rootpath / "tests" / "notebooks" / "test.ipynb"
+    file = pytestconfig.rootpath / "tests" / "files" / "test.ipynb"
     with open(file) as f:
         notebook = nbformat.read(f, as_version=4)
     return notebook

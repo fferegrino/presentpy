@@ -1,0 +1,147 @@
+<?xml version="1.0" ?>
+<office:document-styles xmlns:dom="http://www.w3.org/2001/xml-events" xmlns:draw="urn:oasis:names:tc:opendocument:xmlns:drawing:1.0" xmlns:fo="urn:oasis:names:tc:opendocument:xmlns:xsl-fo-compatible:1.0" xmlns:presentation="urn:oasis:names:tc:opendocument:xmlns:presentation:1.0" xmlns:smil="urn:oasis:names:tc:opendocument:xmlns:smil-compatible:1.0" xmlns:style="urn:oasis:names:tc:opendocument:xmlns:style:1.0" xmlns:svg="urn:oasis:names:tc:opendocument:xmlns:svg-compatible:1.0" xmlns:table="urn:oasis:names:tc:opendocument:xmlns:table:1.0" xmlns:text="urn:oasis:names:tc:opendocument:xmlns:text:1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:office="urn:oasis:names:tc:opendocument:xmlns:office:1.0" office:version="1.4">
+	<office:styles>
+		<style:page-layout style:name="pageLayout1">
+			<style:page-layout-properties style:print-orientation="landscape" style:register-truth-ref-style-name="" fo:page-width="13.33in" fo:page-height="7.50in"/>
+		</style:page-layout>
+		<style:style style:family="drawing-page" style:name="masterStyle">
+			<style:drawing-page-properties draw:fill="solid" draw:opacity="100%" presentation:visibility="visible" draw:background-size="border" presentation:background-objects-visible="false" presentation:display-header="false" presentation:display-footer="false" presentation:display-page-number="false" presentation:display-date-time="false" draw:fill-color="#f8f8f8"/>
+		</style:style>
+		<style:style style:family="paragraph" style:name="masterTitle">
+			<style:paragraph-properties fo:line-height="90%" fo:text-align="left" style:tab-stop-distance="1in" fo:margin-left="0in" fo:margin-right="0in" fo:text-indent="0in" fo:margin-top="0in" fo:margin-bottom="0in" style:punctuation-wrap="hanging" style:vertical-align="auto" style:writing-mode="lr-tb">
+				<style:tab-stops/>
+			</style:paragraph-properties>
+			<style:text-properties fo:font-variant="normal" fo:text-transform="none" style:text-line-through-type="none" style:text-line-through-style="none" style:text-line-through-width="auto" style:text-line-through-color="font-color" style:text-position="0% 100%" fo:letter-spacing="0in" fo:font-style="normal" style:font-style-asian="normal" style:font-style-complex="normal" style:text-underline-type="none" style:text-underline-style="none" style:text-underline-width="auto" style:text-underline-color="font-color" fo:font-weight="normal" style:font-weight-asian="normal" style:font-weight-complex="normal" style:text-underline-mode="continuous" style:letter-kerning="false" fo:color="#BA2121" fo:font-size="0.67in" style:font-size-asian="0.67in" style:font-size-complex="0.67in"/>
+		</style:style>
+		<style:style style:family="paragraph" style:name="masterContent">
+			<style:paragraph-properties fo:line-height="90%" fo:text-align="left" style:tab-stop-distance="1in" fo:margin-left="0in" fo:margin-right="0in" fo:text-indent="0in" fo:margin-top="0in" fo:margin-bottom="0in" style:punctuation-wrap="hanging" style:vertical-align="auto" style:writing-mode="lr-tb">
+				<style:tab-stops/>
+			</style:paragraph-properties>
+			<style:text-properties fo:font-variant="normal" fo:text-transform="none" style:text-line-through-type="none" style:text-line-through-style="none" style:text-line-through-width="auto" style:text-line-through-color="font-color" style:text-position="0% 100%" fo:font-size="0.25in" style:font-size-asian="0.25in" style:font-size-complex="0.25in" fo:letter-spacing="0in" fo:font-style="normal" style:font-style-asian="normal" style:font-style-complex="normal" style:text-underline-type="none" style:text-underline-style="none" style:text-underline-width="auto" style:text-underline-color="font-color" fo:font-weight="normal" style:font-weight-asian="normal" style:font-weight-complex="normal" style:text-underline-mode="continuous" style:letter-kerning="false" fo:color="#3D7B7B"/>
+		</style:style>
+		<style:style style:family="drawing-page" style:name="defaultSlide">
+			<style:drawing-page-properties draw:fill="solid" draw:opacity="100%" presentation:visibility="visible" draw:background-size="border" presentation:background-objects-visible="true" presentation:background-visible="false" presentation:display-header="false" presentation:display-footer="false" presentation:display-page-number="false" presentation:display-date-time="false" draw:fill-color="#f8f8f8"/>
+		</style:style>
+		<style:style style:family="paragraph" style:name="codeParagraph">
+			<style:paragraph-properties fo:line-height="100%" fo:text-align="left" style:tab-stop-distance="1in" fo:margin-left="0in" fo:margin-right="0in" fo:text-indent="0in" fo:margin-top="0in" fo:margin-bottom="0in" style:punctuation-wrap="hanging" style:vertical-align="auto" style:writing-mode="lr-tb">
+				<style:tab-stops/>
+			</style:paragraph-properties>
+			<style:text-properties fo:font-variant="normal" fo:text-transform="none" fo:color="#000000" style:text-line-through-type="none" style:text-line-through-style="none" style:text-line-through-width="auto" style:text-line-through-color="font-color" style:text-position="0% 100%" fo:font-size="0.25in" style:font-size-asian="0.25in" style:font-size-complex="0.25in" fo:letter-spacing="0in" fo:font-style="normal" style:font-style-asian="normal" style:font-style-complex="normal" style:text-underline-type="none" style:text-underline-style="none" style:text-underline-width="auto" style:text-underline-color="font-color" fo:font-weight="normal" style:font-weight-asian="normal" style:font-weight-complex="normal" style:text-underline-mode="continuous" style:letter-kerning="false" fo:font-family="Courier New" style:font-family-complex="Courier New"/>
+		</style:style>
+		<style:style style:family="paragraph" style:name="highlightedCodeParagraph">
+			<style:paragraph-properties fo:line-height="100%" fo:text-align="left" style:tab-stop-distance="1in" fo:margin-left="0in" fo:margin-right="0in" fo:text-indent="0in" fo:margin-top="0in" fo:margin-bottom="0in" style:punctuation-wrap="hanging" style:vertical-align="auto" style:writing-mode="lr-tb">
+				<style:tab-stops/>
+			</style:paragraph-properties>
+			<style:text-properties fo:font-variant="normal" fo:text-transform="none" fo:color="#000000" style:text-line-through-type="none" style:text-line-through-style="none" style:text-line-through-width="auto" style:text-line-through-color="font-color" style:text-position="0% 100%" fo:font-size="0.25in" style:font-size-asian="0.25in" style:font-size-complex="0.25in" fo:letter-spacing="0in" fo:font-style="normal" style:font-style-asian="normal" style:font-style-complex="normal" style:text-underline-type="none" style:text-underline-style="none" style:text-underline-width="auto" style:text-underline-color="font-color" fo:font-weight="bold" style:font-weight-asian="normal" style:font-weight-complex="normal" style:text-underline-mode="continuous" style:letter-kerning="false" fo:font-family="Courier New" style:font-family-complex="Courier New" fo:background-color="#ffffcc"/>
+		</style:style>
+		<style:style style:family="graphic" style:name="codeFrame">
+			<style:paragraph-properties style:font-independent-line-spacing="true" style:writing-mode="lr-tb"/>
+		</style:style>
+		<style:presentation-page-layout style:name="Master1-PPL1" style:display-name="Title and Content">
+			<presentation:placeholder presentation:object="title" svg:x="0.91667in" svg:y="0.39931in" svg:width="11.49653in" svg:height="1.44965in"/>
+			<presentation:placeholder presentation:object="object" svg:x="0.91667in" svg:y="1.99653in" svg:width="11.49653in" svg:height="4.75868in"/>
+		</style:presentation-page-layout>
+	</office:styles>
+	<office:master-styles>
+		<draw:layer-set>
+			<draw:layer draw:name="Master1-bg" draw:protected="true"/>
+		</draw:layer-set>
+		<!-- Blank master page -->
+		<style:master-page style:name="Master1-Master" style:page-layout-name="pageLayout1" draw:style-name="masterStyle"/>
+		<style:master-page style:name="Master1-Layout1-obj-Title-and-Content" style:page-layout-name="pageLayout1" draw:style-name="masterStyle">
+			<draw:frame draw:id="title" presentation:style-name="masterTitle" draw:name="Title 1" svg:x="0.91667in" svg:y="0.39931in" svg:width="11.49653in" svg:height="1.44965in" presentation:class="title" presentation:placeholder="false">
+				<draw:text-box>
+					<text:p text:style-name="a4" text:class-names="" text:cond-style-name="">
+						<text:span text:style-name="a2" text:class-names="">Click to edit Master title style</text:span>
+					</text:p>
+				</draw:text-box>
+				<svg:title/>
+				<svg:desc/>
+			</draw:frame>
+			<draw:frame draw:id="content" presentation:style-name="masterContent" draw:name="Content Placeholder 2" svg:x="0.91667in" svg:y="1.99653in" svg:width="11.49653in" svg:height="4.75868in" presentation:class="object" presentation:placeholder="false">
+				<draw:text-box>
+					<text:list text:style-name="a8">
+						<text:list-item>
+							<text:p text:style-name="a7" text:class-names="" text:cond-style-name="">
+								<text:span text:style-name="a6" text:class-names="">Click to edit Master text styles</text:span>
+							</text:p>
+						</text:list-item>
+					</text:list>
+					<!--
+					<text:list text:style-name="a11">
+						<text:list-item>
+							<text:list text:style-name="a11">
+								<text:list-item>
+									<text:p text:style-name="a10" text:class-names="" text:cond-style-name="">
+										<text:span text:style-name="a9" text:class-names="">Second level</text:span>
+									</text:p>
+								</text:list-item>
+							</text:list>
+						</text:list-item>
+					</text:list>
+					<text:list text:style-name="a14">
+						<text:list-item>
+							<text:list text:style-name="a14">
+								<text:list-item>
+									<text:list text:style-name="a14">
+										<text:list-item>
+											<text:p text:style-name="a13" text:class-names="" text:cond-style-name="">
+												<text:span text:style-name="a12" text:class-names="">Third level</text:span>
+											</text:p>
+										</text:list-item>
+									</text:list>
+								</text:list-item>
+							</text:list>
+						</text:list-item>
+					</text:list>
+					<text:list text:style-name="a17">
+						<text:list-item>
+							<text:list text:style-name="a17">
+								<text:list-item>
+									<text:list text:style-name="a17">
+										<text:list-item>
+											<text:list text:style-name="a17">
+												<text:list-item>
+													<text:p text:style-name="a16" text:class-names="" text:cond-style-name="">
+														<text:span text:style-name="a15" text:class-names="">Fourth level</text:span>
+													</text:p>
+												</text:list-item>
+											</text:list>
+										</text:list-item>
+									</text:list>
+								</text:list-item>
+							</text:list>
+						</text:list-item>
+					</text:list>
+					<text:list text:style-name="a21">
+						<text:list-item>
+							<text:list text:style-name="a21">
+								<text:list-item>
+									<text:list text:style-name="a21">
+										<text:list-item>
+											<text:list text:style-name="a21">
+												<text:list-item>
+													<text:list text:style-name="a21">
+														<text:list-item>
+															<text:p text:style-name="a20" text:class-names="" text:cond-style-name="">
+																<text:span text:style-name="a18" text:class-names="">Fifth level</text:span>
+																<text:span text:style-name="a19" text:class-names=""/>
+															</text:p>
+														</text:list-item>
+													</text:list>
+												</text:list-item>
+											</text:list>
+										</text:list-item>
+									</text:list>
+								</text:list-item>
+							</text:list>
+						</text:list-item>
+					</text:list>
+					-->
+				</draw:text-box>
+				<svg:title/>
+				<svg:desc/>
+			</draw:frame>
+		</style:master-page>
+	</office:master-styles>
+</office:document-styles>

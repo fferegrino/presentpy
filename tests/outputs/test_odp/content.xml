@@ -1,0 +1,1344 @@
+<?xml version="1.0" ?>
+<office:document-content xmlns:dom="http://www.w3.org/2001/xml-events" xmlns:draw="urn:oasis:names:tc:opendocument:xmlns:drawing:1.0" xmlns:fo="urn:oasis:names:tc:opendocument:xmlns:xsl-fo-compatible:1.0" xmlns:presentation="urn:oasis:names:tc:opendocument:xmlns:presentation:1.0" xmlns:script="urn:oasis:names:tc:opendocument:xmlns:script:1.0" xmlns:smil="urn:oasis:names:tc:opendocument:xmlns:smil-compatible:1.0" xmlns:style="urn:oasis:names:tc:opendocument:xmlns:style:1.0" xmlns:svg="urn:oasis:names:tc:opendocument:xmlns:svg-compatible:1.0" xmlns:table="urn:oasis:names:tc:opendocument:xmlns:table:1.0" xmlns:text="urn:oasis:names:tc:opendocument:xmlns:text:1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:office="urn:oasis:names:tc:opendocument:xmlns:office:1.0" office:version="1.4">
+	<office:automatic-styles>
+		<style:style style:family="text" style:name="span__default__token_text_whitespace">
+			<style:text-properties fo:color="#bbbbbb"/>
+		</style:style>
+		<style:style style:family="text" style:name="span__default__token_comment">
+			<style:text-properties fo:color="#3D7B7B" fo:font-style="italic"/>
+		</style:style>
+		<style:style style:family="text" style:name="span__default__token_comment_preproc">
+			<style:text-properties fo:color="#9C6500"/>
+		</style:style>
+		<style:style style:family="text" style:name="span__default__token_keyword">
+			<style:text-properties fo:color="#008000" fo:font-weight="bold"/>
+		</style:style>
+		<style:style style:family="text" style:name="span__default__token_keyword_pseudo">
+			<style:text-properties/>
+		</style:style>
+		<style:style style:family="text" style:name="span__default__token_keyword_type">
+			<style:text-properties fo:color="#B00040"/>
+		</style:style>
+		<style:style style:family="text" style:name="span__default__token_operator">
+			<style:text-properties fo:color="#666666"/>
+		</style:style>
+		<style:style style:family="text" style:name="span__default__token_operator_word">
+			<style:text-properties fo:color="#AA22FF" fo:font-weight="bold"/>
+		</style:style>
+		<style:style style:family="text" style:name="span__default__token_name_builtin">
+			<style:text-properties fo:color="#008000"/>
+		</style:style>
+		<style:style style:family="text" style:name="span__default__token_name_function">
+			<style:text-properties fo:color="#0000FF"/>
+		</style:style>
+		<style:style style:family="text" style:name="span__default__token_name_class">
+			<style:text-properties fo:color="#0000FF" fo:font-weight="bold"/>
+		</style:style>
+		<style:style style:family="text" style:name="span__default__token_name_namespace">
+			<style:text-properties fo:color="#0000FF" fo:font-weight="bold"/>
+		</style:style>
+		<style:style style:family="text" style:name="span__default__token_name_exception">
+			<style:text-properties fo:color="#CB3F38" fo:font-weight="bold"/>
+		</style:style>
+		<style:style style:family="text" style:name="span__default__token_name_variable">
+			<style:text-properties fo:color="#19177C"/>
+		</style:style>
+		<style:style style:family="text" style:name="span__default__token_name_constant">
+			<style:text-properties fo:color="#880000"/>
+		</style:style>
+		<style:style style:family="text" style:name="span__default__token_name_label">
+			<style:text-properties fo:color="#767600"/>
+		</style:style>
+		<style:style style:family="text" style:name="span__default__token_name_entity">
+			<style:text-properties fo:color="#717171" fo:font-weight="bold"/>
+		</style:style>
+		<style:style style:family="text" style:name="span__default__token_name_attribute">
+			<style:text-properties fo:color="#687822"/>
+		</style:style>
+		<style:style style:family="text" style:name="span__default__token_name_tag">
+			<style:text-properties fo:color="#008000" fo:font-weight="bold"/>
+		</style:style>
+		<style:style style:family="text" style:name="span__default__token_name_decorator">
+			<style:text-properties fo:color="#AA22FF"/>
+		</style:style>
+		<style:style style:family="text" style:name="span__default__token_literal_string">
+			<style:text-properties fo:color="#BA2121"/>
+		</style:style>
+		<style:style style:family="text" style:name="span__default__token_literal_string_doc">
+			<style:text-properties fo:font-style="italic"/>
+		</style:style>
+		<style:style style:family="text" style:name="span__default__token_literal_string_interpol">
+			<style:text-properties fo:color="#A45A77" fo:font-weight="bold"/>
+		</style:style>
+		<style:style style:family="text" style:name="span__default__token_literal_string_escape">
+			<style:text-properties fo:color="#AA5D1F" fo:font-weight="bold"/>
+		</style:style>
+		<style:style style:family="text" style:name="span__default__token_literal_string_regex">
+			<style:text-properties fo:color="#A45A77"/>
+		</style:style>
+		<style:style style:family="text" style:name="span__default__token_literal_string_symbol">
+			<style:text-properties fo:color="#19177C"/>
+		</style:style>
+		<style:style style:family="text" style:name="span__default__token_literal_string_other">
+			<style:text-properties fo:color="#008000"/>
+		</style:style>
+		<style:style style:family="text" style:name="span__default__token_literal_number">
+			<style:text-properties fo:color="#666666"/>
+		</style:style>
+		<style:style style:family="text" style:name="span__default__token_generic_heading">
+			<style:text-properties fo:color="#000080" fo:font-weight="bold"/>
+		</style:style>
+		<style:style style:family="text" style:name="span__default__token_generic_subheading">
+			<style:text-properties fo:color="#800080" fo:font-weight="bold"/>
+		</style:style>
+		<style:style style:family="text" style:name="span__default__token_generic_deleted">
+			<style:text-properties fo:color="#A00000"/>
+		</style:style>
+		<style:style style:family="text" style:name="span__default__token_generic_inserted">
+			<style:text-properties fo:color="#008400"/>
+		</style:style>
+		<style:style style:family="text" style:name="span__default__token_generic_error">
+			<style:text-properties fo:color="#E40000"/>
+		</style:style>
+		<style:style style:family="text" style:name="span__default__token_generic_emph">
+			<style:text-properties fo:font-style="italic"/>
+		</style:style>
+		<style:style style:family="text" style:name="span__default__token_generic_strong">
+			<style:text-properties fo:font-weight="bold"/>
+		</style:style>
+		<style:style style:family="text" style:name="span__default__token_generic_emphstrong">
+			<style:text-properties fo:font-weight="bold" fo:font-style="italic"/>
+		</style:style>
+		<style:style style:family="text" style:name="span__default__token_generic_prompt">
+			<style:text-properties fo:color="#000080" fo:font-weight="bold"/>
+		</style:style>
+		<style:style style:family="text" style:name="span__default__token_generic_output">
+			<style:text-properties fo:color="#717171"/>
+		</style:style>
+		<style:style style:family="text" style:name="span__default__token_generic_traceback">
+			<style:text-properties fo:color="#0044DD"/>
+		</style:style>
+		<style:style style:family="text" style:name="span__default__token_error">
+			<style:text-properties/>
+		</style:style>
+	</office:automatic-styles>
+	<office:body>
+		<office:presentation>
+			<draw:page draw:name="slide0" draw:style-name="defaultSlide" draw:id="slide0">
+				<draw:frame draw:style-name="masterTitle" svg:x="0.9in" svg:y="0.4in" svg:width="11.53in" svg:height="1.00in">
+					<draw:text-box>
+						<text:p>
+							<text:span>Find the H.C.F of two numbers</text:span>
+						</text:p>
+					</draw:text-box>
+				</draw:frame>
+				<draw:frame draw:style-name="codeFrame" svg:x="0.9in" svg:y="1.6in" svg:width="11.53in" svg:height="2.55in">
+					<draw:text-box>
+						<text:p text:style-name="codeParagraph" text:class-names="" text:cond-style-name="">
+							<text:span text:style-name="span__default__token_keyword" text:class-names="">def</text:span>
+							<text:span text:style-name="span__default__token" text:class-names="">
+								<text:s text:c="1"/>
+							</text:span>
+							<text:span text:style-name="span__default__token_name_function" text:class-names="">compute_hcf</text:span>
+							<text:span text:style-name="span__default__token" text:class-names="">(</text:span>
+							<text:span text:style-name="span__default__token" text:class-names="">x</text:span>
+							<text:span text:style-name="span__default__token" text:class-names="">,</text:span>
+							<text:span text:style-name="span__default__token" text:class-names="">
+								<text:s text:c="1"/>
+							</text:span>
+							<text:span text:style-name="span__default__token" text:class-names="">y</text:span>
+							<text:span text:style-name="span__default__token" text:class-names="">)</text:span>
+							<text:span text:style-name="span__default__token" text:class-names="">:</text:span>
+						</text:p>
+						<text:p text:style-name="codeParagraph" text:class-names="" text:cond-style-name="">
+							<text:span text:style-name="span__default__token" text:class-names="">
+								<text:s text:c="4"/>
+							</text:span>
+							<text:span text:style-name="span__default__token_keyword" text:class-names="">if</text:span>
+							<text:span text:style-name="span__default__token" text:class-names="">
+								<text:s text:c="1"/>
+							</text:span>
+							<text:span text:style-name="span__default__token" text:class-names="">x</text:span>
+							<text:span text:style-name="span__default__token" text:class-names="">
+								<text:s text:c="1"/>
+							</text:span>
+							<text:span text:style-name="span__default__token_operator" text:class-names="">&gt;</text:span>
+							<text:span text:style-name="span__default__token" text:class-names="">
+								<text:s text:c="1"/>
+							</text:span>
+							<text:span text:style-name="span__default__token" text:class-names="">y</text:span>
+							<text:span text:style-name="span__default__token" text:class-names="">:</text:span>
+						</text:p>
+						<text:p text:style-name="codeParagraph" text:class-names="" text:cond-style-name="">
+							<text:span text:style-name="span__default__token" text:class-names="">
+								<text:s text:c="8"/>
+							</text:span>
+							<text:span text:style-name="span__default__token" text:class-names="">smaller</text:span>
+							<text:span text:style-name="span__default__token" text:class-names="">
+								<text:s text:c="1"/>
+							</text:span>
+							<text:span text:style-name="span__default__token_operator" text:class-names="">=</text:span>
+							<text:span text:style-name="span__default__token" text:class-names="">
+								<text:s text:c="1"/>
+							</text:span>
+							<text:span text:style-name="span__default__token" text:class-names="">y</text:span>
+						</text:p>
+						<text:p text:style-name="codeParagraph" text:class-names="" text:cond-style-name="">
+							<text:span text:style-name="span__default__token" text:class-names="">
+								<text:s text:c="4"/>
+							</text:span>
+							<text:span text:style-name="span__default__token_keyword" text:class-names="">else</text:span>
+							<text:span text:style-name="span__default__token" text:class-names="">:</text:span>
+						</text:p>
+						<text:p text:style-name="codeParagraph" text:class-names="" text:cond-style-name="">
+							<text:span text:style-name="span__default__token" text:class-names="">
+								<text:s text:c="8"/>
+							</text:span>
+							<text:span text:style-name="span__default__token" text:class-names="">smaller</text:span>
+							<text:span text:style-name="span__default__token" text:class-names="">
+								<text:s text:c="1"/>
+							</text:span>
+							<text:span text:style-name="span__default__token_operator" text:class-names="">=</text:span>
+							<text:span text:style-name="span__default__token" text:class-names="">
+								<text:s text:c="1"/>
+							</text:span>
+							<text:span text:style-name="span__default__token" text:class-names="">x</text:span>
+						</text:p>
+						<text:p text:style-name="codeParagraph" text:class-names="" text:cond-style-name="">
+							<text:span text:style-name="span__default__token" text:class-names="">
+								<text:s text:c="4"/>
+							</text:span>
+							<text:span text:style-name="span__default__token_keyword" text:class-names="">for</text:span>
+							<text:span text:style-name="span__default__token" text:class-names="">
+								<text:s text:c="1"/>
+							</text:span>
+							<text:span text:style-name="span__default__token" text:class-names="">i</text:span>
+							<text:span text:style-name="span__default__token" text:class-names="">
+								<text:s text:c="1"/>
+							</text:span>
+							<text:span text:style-name="span__default__token_operator_word" text:class-names="">in</text:span>
+							<text:span text:style-name="span__default__token" text:class-names="">
+								<text:s text:c="1"/>
+							</text:span>
+							<text:span text:style-name="span__default__token_name_builtin" text:class-names="">range</text:span>
+							<text:span text:style-name="span__default__token" text:class-names="">(</text:span>
+							<text:span text:style-name="span__default__token_literal_number" text:class-names="">1</text:span>
+							<text:span text:style-name="span__default__token" text:class-names="">,</text:span>
+							<text:span text:style-name="span__default__token" text:class-names="">
+								<text:s text:c="1"/>
+							</text:span>
+							<text:span text:style-name="span__default__token" text:class-names="">smaller</text:span>
+							<text:span text:style-name="span__default__token" text:class-names="">
+								<text:s text:c="1"/>
+							</text:span>
+							<text:span text:style-name="span__default__token_operator" text:class-names="">+</text:span>
+							<text:span text:style-name="span__default__token" text:class-names="">
+								<text:s text:c="1"/>
+							</text:span>
+							<text:span text:style-name="span__default__token_literal_number" text:class-names="">1</text:span>
+							<text:span text:style-name="span__default__token" text:class-names="">)</text:span>
+							<text:span text:style-name="span__default__token" text:class-names="">:</text:span>
+						</text:p>
+						<text:p text:style-name="codeParagraph" text:class-names="" text:cond-style-name="">
+							<text:span text:style-name="span__default__token" text:class-names="">
+								<text:s text:c="8"/>
+							</text:span>
+							<text:span text:style-name="span__default__token_keyword" text:class-names="">if</text:span>
+							<text:span text:style-name="span__default__token" text:class-names="">
+								<text:s text:c="1"/>
+							</text:span>
+							<text:span text:style-name="span__default__token" text:class-names="">(</text:span>
+							<text:span text:style-name="span__default__token" text:class-names="">x</text:span>
+							<text:span text:style-name="span__default__token" text:class-names="">
+								<text:s text:c="1"/>
+							</text:span>
+							<text:span text:style-name="span__default__token_operator" text:class-names="">%</text:span>
+							<text:span text:style-name="span__default__token" text:class-names="">
+								<text:s text:c="1"/>
+							</text:span>
+							<text:span text:style-name="span__default__token" text:class-names="">i</text:span>
+							<text:span text:style-name="span__default__token" text:class-names="">
+								<text:s text:c="1"/>
+							</text:span>
+							<text:span text:style-name="span__default__token_operator" text:class-names="">==</text:span>
+							<text:span text:style-name="span__default__token" text:class-names="">
+								<text:s text:c="1"/>
+							</text:span>
+							<text:span text:style-name="span__default__token_literal_number" text:class-names="">0</text:span>
+							<text:span text:style-name="span__default__token" text:class-names="">)</text:span>
+							<text:span text:style-name="span__default__token" text:class-names="">
+								<text:s text:c="1"/>
+							</text:span>
+							<text:span text:style-name="span__default__token_operator_word" text:class-names="">and</text:span>
+							<text:span text:style-name="span__default__token" text:class-names="">
+								<text:s text:c="1"/>
+							</text:span>
+							<text:span text:style-name="span__default__token" text:class-names="">(</text:span>
+							<text:span text:style-name="span__default__token" text:class-names="">y</text:span>
+							<text:span text:style-name="span__default__token" text:class-names="">
+								<text:s text:c="1"/>
+							</text:span>
+							<text:span text:style-name="span__default__token_operator" text:class-names="">%</text:span>
+							<text:span text:style-name="span__default__token" text:class-names="">
+								<text:s text:c="1"/>
+							</text:span>
+							<text:span text:style-name="span__default__token" text:class-names="">i</text:span>
+							<text:span text:style-name="span__default__token" text:class-names="">
+								<text:s text:c="1"/>
+							</text:span>
+							<text:span text:style-name="span__default__token_operator" text:class-names="">==</text:span>
+							<text:span text:style-name="span__default__token" text:class-names="">
+								<text:s text:c="1"/>
+							</text:span>
+							<text:span text:style-name="span__default__token_literal_number" text:class-names="">0</text:span>
+							<text:span text:style-name="span__default__token" text:class-names="">)</text:span>
+							<text:span text:style-name="span__default__token" text:class-names="">:</text:span>
+						</text:p>
+						<text:p text:style-name="codeParagraph" text:class-names="" text:cond-style-name="">
+							<text:span text:style-name="span__default__token" text:class-names="">
+								<text:s text:c="12"/>
+							</text:span>
+							<text:span text:style-name="span__default__token" text:class-names="">hcf</text:span>
+							<text:span text:style-name="span__default__token" text:class-names="">
+								<text:s text:c="1"/>
+							</text:span>
+							<text:span text:style-name="span__default__token_operator" text:class-names="">=</text:span>
+							<text:span text:style-name="span__default__token" text:class-names="">
+								<text:s text:c="1"/>
+							</text:span>
+							<text:span text:style-name="span__default__token" text:class-names="">i</text:span>
+						</text:p>
+						<text:p text:style-name="codeParagraph" text:class-names="" text:cond-style-name="">
+							<text:span text:style-name="span__default__token" text:class-names="">
+								<text:s text:c="4"/>
+							</text:span>
+							<text:span text:style-name="span__default__token_keyword" text:class-names="">return</text:span>
+							<text:span text:style-name="span__default__token" text:class-names="">
+								<text:s text:c="1"/>
+							</text:span>
+							<text:span text:style-name="span__default__token" text:class-names="">hcf</text:span>
+						</text:p>
+						<text:p text:style-name="codeParagraph" text:class-names="" text:cond-style-name=""/>
+						<text:p text:style-name="codeParagraph" text:class-names="" text:cond-style-name=""/>
+						<text:p text:style-name="codeParagraph" text:class-names="" text:cond-style-name="">
+							<text:span text:style-name="span__default__token" text:class-names="">hcf</text:span>
+							<text:span text:style-name="span__default__token" text:class-names="">
+								<text:s text:c="1"/>
+							</text:span>
+							<text:span text:style-name="span__default__token_operator" text:class-names="">=</text:span>
+							<text:span text:style-name="span__default__token" text:class-names="">
+								<text:s text:c="1"/>
+							</text:span>
+							<text:span text:style-name="span__default__token" text:class-names="">compute_hcf</text:span>
+							<text:span text:style-name="span__default__token" text:class-names="">(</text:span>
+							<text:span text:style-name="span__default__token_literal_number" text:class-names="">300</text:span>
+							<text:span text:style-name="span__default__token" text:class-names="">,</text:span>
+							<text:span text:style-name="span__default__token" text:class-names="">
+								<text:s text:c="1"/>
+							</text:span>
+							<text:span text:style-name="span__default__token_literal_number" text:class-names="">400</text:span>
+							<text:span text:style-name="span__default__token" text:class-names="">)</text:span>
+						</text:p>
+						<text:p text:style-name="codeParagraph" text:class-names="" text:cond-style-name="">
+							<text:span text:style-name="span__default__token_name_builtin" text:class-names="">print</text:span>
+							<text:span text:style-name="span__default__token" text:class-names="">(</text:span>
+							<text:span text:style-name="span__default__token_literal_string" text:class-names="">f</text:span>
+							<text:span text:style-name="span__default__token_literal_string" text:class-names="">&quot;</text:span>
+							<text:span text:style-name="span__default__token_literal_string" text:class-names="">The H.C.F. is </text:span>
+							<text:span text:style-name="span__default__token_literal_string_interpol" text:class-names="">{</text:span>
+							<text:span text:style-name="span__default__token" text:class-names="">hcf</text:span>
+							<text:span text:style-name="span__default__token_literal_string_interpol" text:class-names="">}</text:span>
+							<text:span text:style-name="span__default__token_literal_string" text:class-names="">&quot;</text:span>
+							<text:span text:style-name="span__default__token" text:class-names="">)</text:span>
+						</text:p>
+						<text:p text:style-name="codeParagraph" text:class-names="" text:cond-style-name="">
+							<text:span text:style-name="span__default__token" text:class-names="">hcf</text:span>
+						</text:p>
+					</draw:text-box>
+				</draw:frame>
+				<draw:frame draw:style-name="codeFrame" svg:x="0.9in" svg:y="4.3in" svg:width="11.53in" svg:height="2.55in">
+					<draw:text-box>
+						<text:p text:style-name="codeParagraph">
+							<text:span text:style-name="span__default__token" text:class-names="">The H.C.F. is 100</text:span>
+						</text:p>
+						<text:p text:style-name="codeParagraph">
+							<text:span text:style-name="span__default__token" text:class-names="">100</text:span>
+						</text:p>
+					</draw:text-box>
+				</draw:frame>
+			</draw:page>
+			<draw:page draw:name="slide1" draw:style-name="defaultSlide" draw:id="slide1">
+				<draw:frame draw:style-name="masterTitle" svg:x="0.9in" svg:y="0.4in" svg:width="11.53in" svg:height="1.00in">
+					<draw:text-box>
+						<text:p>
+							<text:span>Find the H.C.F of two numbers</text:span>
+						</text:p>
+					</draw:text-box>
+				</draw:frame>
+				<draw:frame draw:style-name="codeFrame" svg:x="0.9in" svg:y="1.6in" svg:width="11.53in" svg:height="2.55in">
+					<draw:text-box>
+						<text:p text:style-name="highlightedCodeParagraph" text:class-names="" text:cond-style-name="">
+							<text:span text:style-name="span__default__token_keyword" text:class-names="">def</text:span>
+							<text:span text:style-name="span__default__token" text:class-names="">
+								<text:s text:c="1"/>
+							</text:span>
+							<text:span text:style-name="span__default__token_name_function" text:class-names="">compute_hcf</text:span>
+							<text:span text:style-name="span__default__token" text:class-names="">(</text:span>
+							<text:span text:style-name="span__default__token" text:class-names="">x</text:span>
+							<text:span text:style-name="span__default__token" text:class-names="">,</text:span>
+							<text:span text:style-name="span__default__token" text:class-names="">
+								<text:s text:c="1"/>
+							</text:span>
+							<text:span text:style-name="span__default__token" text:class-names="">y</text:span>
+							<text:span text:style-name="span__default__token" text:class-names="">)</text:span>
+							<text:span text:style-name="span__default__token" text:class-names="">:</text:span>
+						</text:p>
+						<text:p text:style-name="codeParagraph" text:class-names="" text:cond-style-name="">
+							<text:span text:style-name="span__default__token" text:class-names="">
+								<text:s text:c="4"/>
+							</text:span>
+							<text:span text:style-name="span__default__token_keyword" text:class-names="">if</text:span>
+							<text:span text:style-name="span__default__token" text:class-names="">
+								<text:s text:c="1"/>
+							</text:span>
+							<text:span text:style-name="span__default__token" text:class-names="">x</text:span>
+							<text:span text:style-name="span__default__token" text:class-names="">
+								<text:s text:c="1"/>
+							</text:span>
+							<text:span text:style-name="span__default__token_operator" text:class-names="">&gt;</text:span>
+							<text:span text:style-name="span__default__token" text:class-names="">
+								<text:s text:c="1"/>
+							</text:span>
+							<text:span text:style-name="span__default__token" text:class-names="">y</text:span>
+							<text:span text:style-name="span__default__token" text:class-names="">:</text:span>
+						</text:p>
+						<text:p text:style-name="codeParagraph" text:class-names="" text:cond-style-name="">
+							<text:span text:style-name="span__default__token" text:class-names="">
+								<text:s text:c="8"/>
+							</text:span>
+							<text:span text:style-name="span__default__token" text:class-names="">smaller</text:span>
+							<text:span text:style-name="span__default__token" text:class-names="">
+								<text:s text:c="1"/>
+							</text:span>
+							<text:span text:style-name="span__default__token_operator" text:class-names="">=</text:span>
+							<text:span text:style-name="span__default__token" text:class-names="">
+								<text:s text:c="1"/>
+							</text:span>
+							<text:span text:style-name="span__default__token" text:class-names="">y</text:span>
+						</text:p>
+						<text:p text:style-name="codeParagraph" text:class-names="" text:cond-style-name="">
+							<text:span text:style-name="span__default__token" text:class-names="">
+								<text:s text:c="4"/>
+							</text:span>
+							<text:span text:style-name="span__default__token_keyword" text:class-names="">else</text:span>
+							<text:span text:style-name="span__default__token" text:class-names="">:</text:span>
+						</text:p>
+						<text:p text:style-name="codeParagraph" text:class-names="" text:cond-style-name="">
+							<text:span text:style-name="span__default__token" text:class-names="">
+								<text:s text:c="8"/>
+							</text:span>
+							<text:span text:style-name="span__default__token" text:class-names="">smaller</text:span>
+							<text:span text:style-name="span__default__token" text:class-names="">
+								<text:s text:c="1"/>
+							</text:span>
+							<text:span text:style-name="span__default__token_operator" text:class-names="">=</text:span>
+							<text:span text:style-name="span__default__token" text:class-names="">
+								<text:s text:c="1"/>
+							</text:span>
+							<text:span text:style-name="span__default__token" text:class-names="">x</text:span>
+						</text:p>
+						<text:p text:style-name="codeParagraph" text:class-names="" text:cond-style-name="">
+							<text:span text:style-name="span__default__token" text:class-names="">
+								<text:s text:c="4"/>
+							</text:span>
+							<text:span text:style-name="span__default__token_keyword" text:class-names="">for</text:span>
+							<text:span text:style-name="span__default__token" text:class-names="">
+								<text:s text:c="1"/>
+							</text:span>
+							<text:span text:style-name="span__default__token" text:class-names="">i</text:span>
+							<text:span text:style-name="span__default__token" text:class-names="">
+								<text:s text:c="1"/>
+							</text:span>
+							<text:span text:style-name="span__default__token_operator_word" text:class-names="">in</text:span>
+							<text:span text:style-name="span__default__token" text:class-names="">
+								<text:s text:c="1"/>
+							</text:span>
+							<text:span text:style-name="span__default__token_name_builtin" text:class-names="">range</text:span>
+							<text:span text:style-name="span__default__token" text:class-names="">(</text:span>
+							<text:span text:style-name="span__default__token_literal_number" text:class-names="">1</text:span>
+							<text:span text:style-name="span__default__token" text:class-names="">,</text:span>
+							<text:span text:style-name="span__default__token" text:class-names="">
+								<text:s text:c="1"/>
+							</text:span>
+							<text:span text:style-name="span__default__token" text:class-names="">smaller</text:span>
+							<text:span text:style-name="span__default__token" text:class-names="">
+								<text:s text:c="1"/>
+							</text:span>
+							<text:span text:style-name="span__default__token_operator" text:class-names="">+</text:span>
+							<text:span text:style-name="span__default__token" text:class-names="">
+								<text:s text:c="1"/>
+							</text:span>
+							<text:span text:style-name="span__default__token_literal_number" text:class-names="">1</text:span>
+							<text:span text:style-name="span__default__token" text:class-names="">)</text:span>
+							<text:span text:style-name="span__default__token" text:class-names="">:</text:span>
+						</text:p>
+						<text:p text:style-name="codeParagraph" text:class-names="" text:cond-style-name="">
+							<text:span text:style-name="span__default__token" text:class-names="">
+								<text:s text:c="8"/>
+							</text:span>
+							<text:span text:style-name="span__default__token_keyword" text:class-names="">if</text:span>
+							<text:span text:style-name="span__default__token" text:class-names="">
+								<text:s text:c="1"/>
+							</text:span>
+							<text:span text:style-name="span__default__token" text:class-names="">(</text:span>
+							<text:span text:style-name="span__default__token" text:class-names="">x</text:span>
+							<text:span text:style-name="span__default__token" text:class-names="">
+								<text:s text:c="1"/>
+							</text:span>
+							<text:span text:style-name="span__default__token_operator" text:class-names="">%</text:span>
+							<text:span text:style-name="span__default__token" text:class-names="">
+								<text:s text:c="1"/>
+							</text:span>
+							<text:span text:style-name="span__default__token" text:class-names="">i</text:span>
+							<text:span text:style-name="span__default__token" text:class-names="">
+								<text:s text:c="1"/>
+							</text:span>
+							<text:span text:style-name="span__default__token_operator" text:class-names="">==</text:span>
+							<text:span text:style-name="span__default__token" text:class-names="">
+								<text:s text:c="1"/>
+							</text:span>
+							<text:span text:style-name="span__default__token_literal_number" text:class-names="">0</text:span>
+							<text:span text:style-name="span__default__token" text:class-names="">)</text:span>
+							<text:span text:style-name="span__default__token" text:class-names="">
+								<text:s text:c="1"/>
+							</text:span>
+							<text:span text:style-name="span__default__token_operator_word" text:class-names="">and</text:span>
+							<text:span text:style-name="span__default__token" text:class-names="">
+								<text:s text:c="1"/>
+							</text:span>
+							<text:span text:style-name="span__default__token" text:class-names="">(</text:span>
+							<text:span text:style-name="span__default__token" text:class-names="">y</text:span>
+							<text:span text:style-name="span__default__token" text:class-names="">
+								<text:s text:c="1"/>
+							</text:span>
+							<text:span text:style-name="span__default__token_operator" text:class-names="">%</text:span>
+							<text:span text:style-name="span__default__token" text:class-names="">
+								<text:s text:c="1"/>
+							</text:span>
+							<text:span text:style-name="span__default__token" text:class-names="">i</text:span>
+							<text:span text:style-name="span__default__token" text:class-names="">
+								<text:s text:c="1"/>
+							</text:span>
+							<text:span text:style-name="span__default__token_operator" text:class-names="">==</text:span>
+							<text:span text:style-name="span__default__token" text:class-names="">
+								<text:s text:c="1"/>
+							</text:span>
+							<text:span text:style-name="span__default__token_literal_number" text:class-names="">0</text:span>
+							<text:span text:style-name="span__default__token" text:class-names="">)</text:span>
+							<text:span text:style-name="span__default__token" text:class-names="">:</text:span>
+						</text:p>
+						<text:p text:style-name="codeParagraph" text:class-names="" text:cond-style-name="">
+							<text:span text:style-name="span__default__token" text:class-names="">
+								<text:s text:c="12"/>
+							</text:span>
+							<text:span text:style-name="span__default__token" text:class-names="">hcf</text:span>
+							<text:span text:style-name="span__default__token" text:class-names="">
+								<text:s text:c="1"/>
+							</text:span>
+							<text:span text:style-name="span__default__token_operator" text:class-names="">=</text:span>
+							<text:span text:style-name="span__default__token" text:class-names="">
+								<text:s text:c="1"/>
+							</text:span>
+							<text:span text:style-name="span__default__token" text:class-names="">i</text:span>
+						</text:p>
+						<text:p text:style-name="codeParagraph" text:class-names="" text:cond-style-name="">
+							<text:span text:style-name="span__default__token" text:class-names="">
+								<text:s text:c="4"/>
+							</text:span>
+							<text:span text:style-name="span__default__token_keyword" text:class-names="">return</text:span>
+							<text:span text:style-name="span__default__token" text:class-names="">
+								<text:s text:c="1"/>
+							</text:span>
+							<text:span text:style-name="span__default__token" text:class-names="">hcf</text:span>
+						</text:p>
+						<text:p text:style-name="codeParagraph" text:class-names="" text:cond-style-name=""/>
+						<text:p text:style-name="codeParagraph" text:class-names="" text:cond-style-name=""/>
+						<text:p text:style-name="codeParagraph" text:class-names="" text:cond-style-name="">
+							<text:span text:style-name="span__default__token" text:class-names="">hcf</text:span>
+							<text:span text:style-name="span__default__token" text:class-names="">
+								<text:s text:c="1"/>
+							</text:span>
+							<text:span text:style-name="span__default__token_operator" text:class-names="">=</text:span>
+							<text:span text:style-name="span__default__token" text:class-names="">
+								<text:s text:c="1"/>
+							</text:span>
+							<text:span text:style-name="span__default__token" text:class-names="">compute_hcf</text:span>
+							<text:span text:style-name="span__default__token" text:class-names="">(</text:span>
+							<text:span text:style-name="span__default__token_literal_number" text:class-names="">300</text:span>
+							<text:span text:style-name="span__default__token" text:class-names="">,</text:span>
+							<text:span text:style-name="span__default__token" text:class-names="">
+								<text:s text:c="1"/>
+							</text:span>
+							<text:span text:style-name="span__default__token_literal_number" text:class-names="">400</text:span>
+							<text:span text:style-name="span__default__token" text:class-names="">)</text:span>
+						</text:p>
+						<text:p text:style-name="codeParagraph" text:class-names="" text:cond-style-name="">
+							<text:span text:style-name="span__default__token_name_builtin" text:class-names="">print</text:span>
+							<text:span text:style-name="span__default__token" text:class-names="">(</text:span>
+							<text:span text:style-name="span__default__token_literal_string" text:class-names="">f</text:span>
+							<text:span text:style-name="span__default__token_literal_string" text:class-names="">&quot;</text:span>
+							<text:span text:style-name="span__default__token_literal_string" text:class-names="">The H.C.F. is </text:span>
+							<text:span text:style-name="span__default__token_literal_string_interpol" text:class-names="">{</text:span>
+							<text:span text:style-name="span__default__token" text:class-names="">hcf</text:span>
+							<text:span text:style-name="span__default__token_literal_string_interpol" text:class-names="">}</text:span>
+							<text:span text:style-name="span__default__token_literal_string" text:class-names="">&quot;</text:span>
+							<text:span text:style-name="span__default__token" text:class-names="">)</text:span>
+						</text:p>
+						<text:p text:style-name="codeParagraph" text:class-names="" text:cond-style-name="">
+							<text:span text:style-name="span__default__token" text:class-names="">hcf</text:span>
+						</text:p>
+					</draw:text-box>
+				</draw:frame>
+				<draw:frame draw:style-name="codeFrame" svg:x="0.9in" svg:y="4.3in" svg:width="11.53in" svg:height="2.55in">
+					<draw:text-box>
+						<text:p text:style-name="codeParagraph">
+							<text:span text:style-name="span__default__token" text:class-names="">The H.C.F. is 100</text:span>
+						</text:p>
+						<text:p text:style-name="codeParagraph">
+							<text:span text:style-name="span__default__token" text:class-names="">100</text:span>
+						</text:p>
+					</draw:text-box>
+				</draw:frame>
+			</draw:page>
+			<draw:page draw:name="slide2" draw:style-name="defaultSlide" draw:id="slide2">
+				<draw:frame draw:style-name="masterTitle" svg:x="0.9in" svg:y="0.4in" svg:width="11.53in" svg:height="1.00in">
+					<draw:text-box>
+						<text:p>
+							<text:span>Find the H.C.F of two numbers</text:span>
+						</text:p>
+					</draw:text-box>
+				</draw:frame>
+				<draw:frame draw:style-name="codeFrame" svg:x="0.9in" svg:y="1.6in" svg:width="11.53in" svg:height="2.55in">
+					<draw:text-box>
+						<text:p text:style-name="codeParagraph" text:class-names="" text:cond-style-name="">
+							<text:span text:style-name="span__default__token_keyword" text:class-names="">def</text:span>
+							<text:span text:style-name="span__default__token" text:class-names="">
+								<text:s text:c="1"/>
+							</text:span>
+							<text:span text:style-name="span__default__token_name_function" text:class-names="">compute_hcf</text:span>
+							<text:span text:style-name="span__default__token" text:class-names="">(</text:span>
+							<text:span text:style-name="span__default__token" text:class-names="">x</text:span>
+							<text:span text:style-name="span__default__token" text:class-names="">,</text:span>
+							<text:span text:style-name="span__default__token" text:class-names="">
+								<text:s text:c="1"/>
+							</text:span>
+							<text:span text:style-name="span__default__token" text:class-names="">y</text:span>
+							<text:span text:style-name="span__default__token" text:class-names="">)</text:span>
+							<text:span text:style-name="span__default__token" text:class-names="">:</text:span>
+						</text:p>
+						<text:p text:style-name="highlightedCodeParagraph" text:class-names="" text:cond-style-name="">
+							<text:span text:style-name="span__default__token" text:class-names="">
+								<text:s text:c="4"/>
+							</text:span>
+							<text:span text:style-name="span__default__token_keyword" text:class-names="">if</text:span>
+							<text:span text:style-name="span__default__token" text:class-names="">
+								<text:s text:c="1"/>
+							</text:span>
+							<text:span text:style-name="span__default__token" text:class-names="">x</text:span>
+							<text:span text:style-name="span__default__token" text:class-names="">
+								<text:s text:c="1"/>
+							</text:span>
+							<text:span text:style-name="span__default__token_operator" text:class-names="">&gt;</text:span>
+							<text:span text:style-name="span__default__token" text:class-names="">
+								<text:s text:c="1"/>
+							</text:span>
+							<text:span text:style-name="span__default__token" text:class-names="">y</text:span>
+							<text:span text:style-name="span__default__token" text:class-names="">:</text:span>
+						</text:p>
+						<text:p text:style-name="highlightedCodeParagraph" text:class-names="" text:cond-style-name="">
+							<text:span text:style-name="span__default__token" text:class-names="">
+								<text:s text:c="8"/>
+							</text:span>
+							<text:span text:style-name="span__default__token" text:class-names="">smaller</text:span>
+							<text:span text:style-name="span__default__token" text:class-names="">
+								<text:s text:c="1"/>
+							</text:span>
+							<text:span text:style-name="span__default__token_operator" text:class-names="">=</text:span>
+							<text:span text:style-name="span__default__token" text:class-names="">
+								<text:s text:c="1"/>
+							</text:span>
+							<text:span text:style-name="span__default__token" text:class-names="">y</text:span>
+						</text:p>
+						<text:p text:style-name="codeParagraph" text:class-names="" text:cond-style-name="">
+							<text:span text:style-name="span__default__token" text:class-names="">
+								<text:s text:c="4"/>
+							</text:span>
+							<text:span text:style-name="span__default__token_keyword" text:class-names="">else</text:span>
+							<text:span text:style-name="span__default__token" text:class-names="">:</text:span>
+						</text:p>
+						<text:p text:style-name="codeParagraph" text:class-names="" text:cond-style-name="">
+							<text:span text:style-name="span__default__token" text:class-names="">
+								<text:s text:c="8"/>
+							</text:span>
+							<text:span text:style-name="span__default__token" text:class-names="">smaller</text:span>
+							<text:span text:style-name="span__default__token" text:class-names="">
+								<text:s text:c="1"/>
+							</text:span>
+							<text:span text:style-name="span__default__token_operator" text:class-names="">=</text:span>
+							<text:span text:style-name="span__default__token" text:class-names="">
+								<text:s text:c="1"/>
+							</text:span>
+							<text:span text:style-name="span__default__token" text:class-names="">x</text:span>
+						</text:p>
+						<text:p text:style-name="codeParagraph" text:class-names="" text:cond-style-name="">
+							<text:span text:style-name="span__default__token" text:class-names="">
+								<text:s text:c="4"/>
+							</text:span>
+							<text:span text:style-name="span__default__token_keyword" text:class-names="">for</text:span>
+							<text:span text:style-name="span__default__token" text:class-names="">
+								<text:s text:c="1"/>
+							</text:span>
+							<text:span text:style-name="span__default__token" text:class-names="">i</text:span>
+							<text:span text:style-name="span__default__token" text:class-names="">
+								<text:s text:c="1"/>
+							</text:span>
+							<text:span text:style-name="span__default__token_operator_word" text:class-names="">in</text:span>
+							<text:span text:style-name="span__default__token" text:class-names="">
+								<text:s text:c="1"/>
+							</text:span>
+							<text:span text:style-name="span__default__token_name_builtin" text:class-names="">range</text:span>
+							<text:span text:style-name="span__default__token" text:class-names="">(</text:span>
+							<text:span text:style-name="span__default__token_literal_number" text:class-names="">1</text:span>
+							<text:span text:style-name="span__default__token" text:class-names="">,</text:span>
+							<text:span text:style-name="span__default__token" text:class-names="">
+								<text:s text:c="1"/>
+							</text:span>
+							<text:span text:style-name="span__default__token" text:class-names="">smaller</text:span>
+							<text:span text:style-name="span__default__token" text:class-names="">
+								<text:s text:c="1"/>
+							</text:span>
+							<text:span text:style-name="span__default__token_operator" text:class-names="">+</text:span>
+							<text:span text:style-name="span__default__token" text:class-names="">
+								<text:s text:c="1"/>
+							</text:span>
+							<text:span text:style-name="span__default__token_literal_number" text:class-names="">1</text:span>
+							<text:span text:style-name="span__default__token" text:class-names="">)</text:span>
+							<text:span text:style-name="span__default__token" text:class-names="">:</text:span>
+						</text:p>
+						<text:p text:style-name="codeParagraph" text:class-names="" text:cond-style-name="">
+							<text:span text:style-name="span__default__token" text:class-names="">
+								<text:s text:c="8"/>
+							</text:span>
+							<text:span text:style-name="span__default__token_keyword" text:class-names="">if</text:span>
+							<text:span text:style-name="span__default__token" text:class-names="">
+								<text:s text:c="1"/>
+							</text:span>
+							<text:span text:style-name="span__default__token" text:class-names="">(</text:span>
+							<text:span text:style-name="span__default__token" text:class-names="">x</text:span>
+							<text:span text:style-name="span__default__token" text:class-names="">
+								<text:s text:c="1"/>
+							</text:span>
+							<text:span text:style-name="span__default__token_operator" text:class-names="">%</text:span>
+							<text:span text:style-name="span__default__token" text:class-names="">
+								<text:s text:c="1"/>
+							</text:span>
+							<text:span text:style-name="span__default__token" text:class-names="">i</text:span>
+							<text:span text:style-name="span__default__token" text:class-names="">
+								<text:s text:c="1"/>
+							</text:span>
+							<text:span text:style-name="span__default__token_operator" text:class-names="">==</text:span>
+							<text:span text:style-name="span__default__token" text:class-names="">
+								<text:s text:c="1"/>
+							</text:span>
+							<text:span text:style-name="span__default__token_literal_number" text:class-names="">0</text:span>
+							<text:span text:style-name="span__default__token" text:class-names="">)</text:span>
+							<text:span text:style-name="span__default__token" text:class-names="">
+								<text:s text:c="1"/>
+							</text:span>
+							<text:span text:style-name="span__default__token_operator_word" text:class-names="">and</text:span>
+							<text:span text:style-name="span__default__token" text:class-names="">
+								<text:s text:c="1"/>
+							</text:span>
+							<text:span text:style-name="span__default__token" text:class-names="">(</text:span>
+							<text:span text:style-name="span__default__token" text:class-names="">y</text:span>
+							<text:span text:style-name="span__default__token" text:class-names="">
+								<text:s text:c="1"/>
+							</text:span>
+							<text:span text:style-name="span__default__token_operator" text:class-names="">%</text:span>
+							<text:span text:style-name="span__default__token" text:class-names="">
+								<text:s text:c="1"/>
+							</text:span>
+							<text:span text:style-name="span__default__token" text:class-names="">i</text:span>
+							<text:span text:style-name="span__default__token" text:class-names="">
+								<text:s text:c="1"/>
+							</text:span>
+							<text:span text:style-name="span__default__token_operator" text:class-names="">==</text:span>
+							<text:span text:style-name="span__default__token" text:class-names="">
+								<text:s text:c="1"/>
+							</text:span>
+							<text:span text:style-name="span__default__token_literal_number" text:class-names="">0</text:span>
+							<text:span text:style-name="span__default__token" text:class-names="">)</text:span>
+							<text:span text:style-name="span__default__token" text:class-names="">:</text:span>
+						</text:p>
+						<text:p text:style-name="codeParagraph" text:class-names="" text:cond-style-name="">
+							<text:span text:style-name="span__default__token" text:class-names="">
+								<text:s text:c="12"/>
+							</text:span>
+							<text:span text:style-name="span__default__token" text:class-names="">hcf</text:span>
+							<text:span text:style-name="span__default__token" text:class-names="">
+								<text:s text:c="1"/>
+							</text:span>
+							<text:span text:style-name="span__default__token_operator" text:class-names="">=</text:span>
+							<text:span text:style-name="span__default__token" text:class-names="">
+								<text:s text:c="1"/>
+							</text:span>
+							<text:span text:style-name="span__default__token" text:class-names="">i</text:span>
+						</text:p>
+						<text:p text:style-name="codeParagraph" text:class-names="" text:cond-style-name="">
+							<text:span text:style-name="span__default__token" text:class-names="">
+								<text:s text:c="4"/>
+							</text:span>
+							<text:span text:style-name="span__default__token_keyword" text:class-names="">return</text:span>
+							<text:span text:style-name="span__default__token" text:class-names="">
+								<text:s text:c="1"/>
+							</text:span>
+							<text:span text:style-name="span__default__token" text:class-names="">hcf</text:span>
+						</text:p>
+						<text:p text:style-name="codeParagraph" text:class-names="" text:cond-style-name=""/>
+						<text:p text:style-name="codeParagraph" text:class-names="" text:cond-style-name=""/>
+						<text:p text:style-name="codeParagraph" text:class-names="" text:cond-style-name="">
+							<text:span text:style-name="span__default__token" text:class-names="">hcf</text:span>
+							<text:span text:style-name="span__default__token" text:class-names="">
+								<text:s text:c="1"/>
+							</text:span>
+							<text:span text:style-name="span__default__token_operator" text:class-names="">=</text:span>
+							<text:span text:style-name="span__default__token" text:class-names="">
+								<text:s text:c="1"/>
+							</text:span>
+							<text:span text:style-name="span__default__token" text:class-names="">compute_hcf</text:span>
+							<text:span text:style-name="span__default__token" text:class-names="">(</text:span>
+							<text:span text:style-name="span__default__token_literal_number" text:class-names="">300</text:span>
+							<text:span text:style-name="span__default__token" text:class-names="">,</text:span>
+							<text:span text:style-name="span__default__token" text:class-names="">
+								<text:s text:c="1"/>
+							</text:span>
+							<text:span text:style-name="span__default__token_literal_number" text:class-names="">400</text:span>
+							<text:span text:style-name="span__default__token" text:class-names="">)</text:span>
+						</text:p>
+						<text:p text:style-name="codeParagraph" text:class-names="" text:cond-style-name="">
+							<text:span text:style-name="span__default__token_name_builtin" text:class-names="">print</text:span>
+							<text:span text:style-name="span__default__token" text:class-names="">(</text:span>
+							<text:span text:style-name="span__default__token_literal_string" text:class-names="">f</text:span>
+							<text:span text:style-name="span__default__token_literal_string" text:class-names="">&quot;</text:span>
+							<text:span text:style-name="span__default__token_literal_string" text:class-names="">The H.C.F. is </text:span>
+							<text:span text:style-name="span__default__token_literal_string_interpol" text:class-names="">{</text:span>
+							<text:span text:style-name="span__default__token" text:class-names="">hcf</text:span>
+							<text:span text:style-name="span__default__token_literal_string_interpol" text:class-names="">}</text:span>
+							<text:span text:style-name="span__default__token_literal_string" text:class-names="">&quot;</text:span>
+							<text:span text:style-name="span__default__token" text:class-names="">)</text:span>
+						</text:p>
+						<text:p text:style-name="codeParagraph" text:class-names="" text:cond-style-name="">
+							<text:span text:style-name="span__default__token" text:class-names="">hcf</text:span>
+						</text:p>
+					</draw:text-box>
+				</draw:frame>
+				<draw:frame draw:style-name="codeFrame" svg:x="0.9in" svg:y="4.3in" svg:width="11.53in" svg:height="2.55in">
+					<draw:text-box>
+						<text:p text:style-name="codeParagraph">
+							<text:span text:style-name="span__default__token" text:class-names="">The H.C.F. is 100</text:span>
+						</text:p>
+						<text:p text:style-name="codeParagraph">
+							<text:span text:style-name="span__default__token" text:class-names="">100</text:span>
+						</text:p>
+					</draw:text-box>
+				</draw:frame>
+			</draw:page>
+			<draw:page draw:name="slide3" draw:style-name="defaultSlide" draw:id="slide3">
+				<draw:frame draw:style-name="masterTitle" svg:x="0.9in" svg:y="0.4in" svg:width="11.53in" svg:height="1.00in">
+					<draw:text-box>
+						<text:p>
+							<text:span>Find the H.C.F of two numbers</text:span>
+						</text:p>
+					</draw:text-box>
+				</draw:frame>
+				<draw:frame draw:style-name="codeFrame" svg:x="0.9in" svg:y="1.6in" svg:width="11.53in" svg:height="2.55in">
+					<draw:text-box>
+						<text:p text:style-name="codeParagraph" text:class-names="" text:cond-style-name="">
+							<text:span text:style-name="span__default__token_keyword" text:class-names="">def</text:span>
+							<text:span text:style-name="span__default__token" text:class-names="">
+								<text:s text:c="1"/>
+							</text:span>
+							<text:span text:style-name="span__default__token_name_function" text:class-names="">compute_hcf</text:span>
+							<text:span text:style-name="span__default__token" text:class-names="">(</text:span>
+							<text:span text:style-name="span__default__token" text:class-names="">x</text:span>
+							<text:span text:style-name="span__default__token" text:class-names="">,</text:span>
+							<text:span text:style-name="span__default__token" text:class-names="">
+								<text:s text:c="1"/>
+							</text:span>
+							<text:span text:style-name="span__default__token" text:class-names="">y</text:span>
+							<text:span text:style-name="span__default__token" text:class-names="">)</text:span>
+							<text:span text:style-name="span__default__token" text:class-names="">:</text:span>
+						</text:p>
+						<text:p text:style-name="codeParagraph" text:class-names="" text:cond-style-name="">
+							<text:span text:style-name="span__default__token" text:class-names="">
+								<text:s text:c="4"/>
+							</text:span>
+							<text:span text:style-name="span__default__token_keyword" text:class-names="">if</text:span>
+							<text:span text:style-name="span__default__token" text:class-names="">
+								<text:s text:c="1"/>
+							</text:span>
+							<text:span text:style-name="span__default__token" text:class-names="">x</text:span>
+							<text:span text:style-name="span__default__token" text:class-names="">
+								<text:s text:c="1"/>
+							</text:span>
+							<text:span text:style-name="span__default__token_operator" text:class-names="">&gt;</text:span>
+							<text:span text:style-name="span__default__token" text:class-names="">
+								<text:s text:c="1"/>
+							</text:span>
+							<text:span text:style-name="span__default__token" text:class-names="">y</text:span>
+							<text:span text:style-name="span__default__token" text:class-names="">:</text:span>
+						</text:p>
+						<text:p text:style-name="codeParagraph" text:class-names="" text:cond-style-name="">
+							<text:span text:style-name="span__default__token" text:class-names="">
+								<text:s text:c="8"/>
+							</text:span>
+							<text:span text:style-name="span__default__token" text:class-names="">smaller</text:span>
+							<text:span text:style-name="span__default__token" text:class-names="">
+								<text:s text:c="1"/>
+							</text:span>
+							<text:span text:style-name="span__default__token_operator" text:class-names="">=</text:span>
+							<text:span text:style-name="span__default__token" text:class-names="">
+								<text:s text:c="1"/>
+							</text:span>
+							<text:span text:style-name="span__default__token" text:class-names="">y</text:span>
+						</text:p>
+						<text:p text:style-name="highlightedCodeParagraph" text:class-names="" text:cond-style-name="">
+							<text:span text:style-name="span__default__token" text:class-names="">
+								<text:s text:c="4"/>
+							</text:span>
+							<text:span text:style-name="span__default__token_keyword" text:class-names="">else</text:span>
+							<text:span text:style-name="span__default__token" text:class-names="">:</text:span>
+						</text:p>
+						<text:p text:style-name="highlightedCodeParagraph" text:class-names="" text:cond-style-name="">
+							<text:span text:style-name="span__default__token" text:class-names="">
+								<text:s text:c="8"/>
+							</text:span>
+							<text:span text:style-name="span__default__token" text:class-names="">smaller</text:span>
+							<text:span text:style-name="span__default__token" text:class-names="">
+								<text:s text:c="1"/>
+							</text:span>
+							<text:span text:style-name="span__default__token_operator" text:class-names="">=</text:span>
+							<text:span text:style-name="span__default__token" text:class-names="">
+								<text:s text:c="1"/>
+							</text:span>
+							<text:span text:style-name="span__default__token" text:class-names="">x</text:span>
+						</text:p>
+						<text:p text:style-name="codeParagraph" text:class-names="" text:cond-style-name="">
+							<text:span text:style-name="span__default__token" text:class-names="">
+								<text:s text:c="4"/>
+							</text:span>
+							<text:span text:style-name="span__default__token_keyword" text:class-names="">for</text:span>
+							<text:span text:style-name="span__default__token" text:class-names="">
+								<text:s text:c="1"/>
+							</text:span>
+							<text:span text:style-name="span__default__token" text:class-names="">i</text:span>
+							<text:span text:style-name="span__default__token" text:class-names="">
+								<text:s text:c="1"/>
+							</text:span>
+							<text:span text:style-name="span__default__token_operator_word" text:class-names="">in</text:span>
+							<text:span text:style-name="span__default__token" text:class-names="">
+								<text:s text:c="1"/>
+							</text:span>
+							<text:span text:style-name="span__default__token_name_builtin" text:class-names="">range</text:span>
+							<text:span text:style-name="span__default__token" text:class-names="">(</text:span>
+							<text:span text:style-name="span__default__token_literal_number" text:class-names="">1</text:span>
+							<text:span text:style-name="span__default__token" text:class-names="">,</text:span>
+							<text:span text:style-name="span__default__token" text:class-names="">
+								<text:s text:c="1"/>
+							</text:span>
+							<text:span text:style-name="span__default__token" text:class-names="">smaller</text:span>
+							<text:span text:style-name="span__default__token" text:class-names="">
+								<text:s text:c="1"/>
+							</text:span>
+							<text:span text:style-name="span__default__token_operator" text:class-names="">+</text:span>
+							<text:span text:style-name="span__default__token" text:class-names="">
+								<text:s text:c="1"/>
+							</text:span>
+							<text:span text:style-name="span__default__token_literal_number" text:class-names="">1</text:span>
+							<text:span text:style-name="span__default__token" text:class-names="">)</text:span>
+							<text:span text:style-name="span__default__token" text:class-names="">:</text:span>
+						</text:p>
+						<text:p text:style-name="codeParagraph" text:class-names="" text:cond-style-name="">
+							<text:span text:style-name="span__default__token" text:class-names="">
+								<text:s text:c="8"/>
+							</text:span>
+							<text:span text:style-name="span__default__token_keyword" text:class-names="">if</text:span>
+							<text:span text:style-name="span__default__token" text:class-names="">
+								<text:s text:c="1"/>
+							</text:span>
+							<text:span text:style-name="span__default__token" text:class-names="">(</text:span>
+							<text:span text:style-name="span__default__token" text:class-names="">x</text:span>
+							<text:span text:style-name="span__default__token" text:class-names="">
+								<text:s text:c="1"/>
+							</text:span>
+							<text:span text:style-name="span__default__token_operator" text:class-names="">%</text:span>
+							<text:span text:style-name="span__default__token" text:class-names="">
+								<text:s text:c="1"/>
+							</text:span>
+							<text:span text:style-name="span__default__token" text:class-names="">i</text:span>
+							<text:span text:style-name="span__default__token" text:class-names="">
+								<text:s text:c="1"/>
+							</text:span>
+							<text:span text:style-name="span__default__token_operator" text:class-names="">==</text:span>
+							<text:span text:style-name="span__default__token" text:class-names="">
+								<text:s text:c="1"/>
+							</text:span>
+							<text:span text:style-name="span__default__token_literal_number" text:class-names="">0</text:span>
+							<text:span text:style-name="span__default__token" text:class-names="">)</text:span>
+							<text:span text:style-name="span__default__token" text:class-names="">
+								<text:s text:c="1"/>
+							</text:span>
+							<text:span text:style-name="span__default__token_operator_word" text:class-names="">and</text:span>
+							<text:span text:style-name="span__default__token" text:class-names="">
+								<text:s text:c="1"/>
+							</text:span>
+							<text:span text:style-name="span__default__token" text:class-names="">(</text:span>
+							<text:span text:style-name="span__default__token" text:class-names="">y</text:span>
+							<text:span text:style-name="span__default__token" text:class-names="">
+								<text:s text:c="1"/>
+							</text:span>
+							<text:span text:style-name="span__default__token_operator" text:class-names="">%</text:span>
+							<text:span text:style-name="span__default__token" text:class-names="">
+								<text:s text:c="1"/>
+							</text:span>
+							<text:span text:style-name="span__default__token" text:class-names="">i</text:span>
+							<text:span text:style-name="span__default__token" text:class-names="">
+								<text:s text:c="1"/>
+							</text:span>
+							<text:span text:style-name="span__default__token_operator" text:class-names="">==</text:span>
+							<text:span text:style-name="span__default__token" text:class-names="">
+								<text:s text:c="1"/>
+							</text:span>
+							<text:span text:style-name="span__default__token_literal_number" text:class-names="">0</text:span>
+							<text:span text:style-name="span__default__token" text:class-names="">)</text:span>
+							<text:span text:style-name="span__default__token" text:class-names="">:</text:span>
+						</text:p>
+						<text:p text:style-name="codeParagraph" text:class-names="" text:cond-style-name="">
+							<text:span text:style-name="span__default__token" text:class-names="">
+								<text:s text:c="12"/>
+							</text:span>
+							<text:span text:style-name="span__default__token" text:class-names="">hcf</text:span>
+							<text:span text:style-name="span__default__token" text:class-names="">
+								<text:s text:c="1"/>
+							</text:span>
+							<text:span text:style-name="span__default__token_operator" text:class-names="">=</text:span>
+							<text:span text:style-name="span__default__token" text:class-names="">
+								<text:s text:c="1"/>
+							</text:span>
+							<text:span text:style-name="span__default__token" text:class-names="">i</text:span>
+						</text:p>
+						<text:p text:style-name="codeParagraph" text:class-names="" text:cond-style-name="">
+							<text:span text:style-name="span__default__token" text:class-names="">
+								<text:s text:c="4"/>
+							</text:span>
+							<text:span text:style-name="span__default__token_keyword" text:class-names="">return</text:span>
+							<text:span text:style-name="span__default__token" text:class-names="">
+								<text:s text:c="1"/>
+							</text:span>
+							<text:span text:style-name="span__default__token" text:class-names="">hcf</text:span>
+						</text:p>
+						<text:p text:style-name="codeParagraph" text:class-names="" text:cond-style-name=""/>
+						<text:p text:style-name="codeParagraph" text:class-names="" text:cond-style-name=""/>
+						<text:p text:style-name="codeParagraph" text:class-names="" text:cond-style-name="">
+							<text:span text:style-name="span__default__token" text:class-names="">hcf</text:span>
+							<text:span text:style-name="span__default__token" text:class-names="">
+								<text:s text:c="1"/>
+							</text:span>
+							<text:span text:style-name="span__default__token_operator" text:class-names="">=</text:span>
+							<text:span text:style-name="span__default__token" text:class-names="">
+								<text:s text:c="1"/>
+							</text:span>
+							<text:span text:style-name="span__default__token" text:class-names="">compute_hcf</text:span>
+							<text:span text:style-name="span__default__token" text:class-names="">(</text:span>
+							<text:span text:style-name="span__default__token_literal_number" text:class-names="">300</text:span>
+							<text:span text:style-name="span__default__token" text:class-names="">,</text:span>
+							<text:span text:style-name="span__default__token" text:class-names="">
+								<text:s text:c="1"/>
+							</text:span>
+							<text:span text:style-name="span__default__token_literal_number" text:class-names="">400</text:span>
+							<text:span text:style-name="span__default__token" text:class-names="">)</text:span>
+						</text:p>
+						<text:p text:style-name="codeParagraph" text:class-names="" text:cond-style-name="">
+							<text:span text:style-name="span__default__token_name_builtin" text:class-names="">print</text:span>
+							<text:span text:style-name="span__default__token" text:class-names="">(</text:span>
+							<text:span text:style-name="span__default__token_literal_string" text:class-names="">f</text:span>
+							<text:span text:style-name="span__default__token_literal_string" text:class-names="">&quot;</text:span>
+							<text:span text:style-name="span__default__token_literal_string" text:class-names="">The H.C.F. is </text:span>
+							<text:span text:style-name="span__default__token_literal_string_interpol" text:class-names="">{</text:span>
+							<text:span text:style-name="span__default__token" text:class-names="">hcf</text:span>
+							<text:span text:style-name="span__default__token_literal_string_interpol" text:class-names="">}</text:span>
+							<text:span text:style-name="span__default__token_literal_string" text:class-names="">&quot;</text:span>
+							<text:span text:style-name="span__default__token" text:class-names="">)</text:span>
+						</text:p>
+						<text:p text:style-name="codeParagraph" text:class-names="" text:cond-style-name="">
+							<text:span text:style-name="span__default__token" text:class-names="">hcf</text:span>
+						</text:p>
+					</draw:text-box>
+				</draw:frame>
+				<draw:frame draw:style-name="codeFrame" svg:x="0.9in" svg:y="4.3in" svg:width="11.53in" svg:height="2.55in">
+					<draw:text-box>
+						<text:p text:style-name="codeParagraph">
+							<text:span text:style-name="span__default__token" text:class-names="">The H.C.F. is 100</text:span>
+						</text:p>
+						<text:p text:style-name="codeParagraph">
+							<text:span text:style-name="span__default__token" text:class-names="">100</text:span>
+						</text:p>
+					</draw:text-box>
+				</draw:frame>
+			</draw:page>
+			<draw:page draw:name="slide4" draw:style-name="defaultSlide" draw:id="slide4">
+				<draw:frame draw:style-name="masterTitle" svg:x="0.9in" svg:y="0.4in" svg:width="11.53in" svg:height="1.00in">
+					<draw:text-box>
+						<text:p>
+							<text:span>Find the H.C.F of two numbers</text:span>
+						</text:p>
+					</draw:text-box>
+				</draw:frame>
+				<draw:frame draw:style-name="codeFrame" svg:x="0.9in" svg:y="1.6in" svg:width="11.53in" svg:height="2.55in">
+					<draw:text-box>
+						<text:p text:style-name="codeParagraph" text:class-names="" text:cond-style-name="">
+							<text:span text:style-name="span__default__token_keyword" text:class-names="">def</text:span>
+							<text:span text:style-name="span__default__token" text:class-names="">
+								<text:s text:c="1"/>
+							</text:span>
+							<text:span text:style-name="span__default__token_name_function" text:class-names="">compute_hcf</text:span>
+							<text:span text:style-name="span__default__token" text:class-names="">(</text:span>
+							<text:span text:style-name="span__default__token" text:class-names="">x</text:span>
+							<text:span text:style-name="span__default__token" text:class-names="">,</text:span>
+							<text:span text:style-name="span__default__token" text:class-names="">
+								<text:s text:c="1"/>
+							</text:span>
+							<text:span text:style-name="span__default__token" text:class-names="">y</text:span>
+							<text:span text:style-name="span__default__token" text:class-names="">)</text:span>
+							<text:span text:style-name="span__default__token" text:class-names="">:</text:span>
+						</text:p>
+						<text:p text:style-name="codeParagraph" text:class-names="" text:cond-style-name="">
+							<text:span text:style-name="span__default__token" text:class-names="">
+								<text:s text:c="4"/>
+							</text:span>
+							<text:span text:style-name="span__default__token_keyword" text:class-names="">if</text:span>
+							<text:span text:style-name="span__default__token" text:class-names="">
+								<text:s text:c="1"/>
+							</text:span>
+							<text:span text:style-name="span__default__token" text:class-names="">x</text:span>
+							<text:span text:style-name="span__default__token" text:class-names="">
+								<text:s text:c="1"/>
+							</text:span>
+							<text:span text:style-name="span__default__token_operator" text:class-names="">&gt;</text:span>
+							<text:span text:style-name="span__default__token" text:class-names="">
+								<text:s text:c="1"/>
+							</text:span>
+							<text:span text:style-name="span__default__token" text:class-names="">y</text:span>
+							<text:span text:style-name="span__default__token" text:class-names="">:</text:span>
+						</text:p>
+						<text:p text:style-name="codeParagraph" text:class-names="" text:cond-style-name="">
+							<text:span text:style-name="span__default__token" text:class-names="">
+								<text:s text:c="8"/>
+							</text:span>
+							<text:span text:style-name="span__default__token" text:class-names="">smaller</text:span>
+							<text:span text:style-name="span__default__token" text:class-names="">
+								<text:s text:c="1"/>
+							</text:span>
+							<text:span text:style-name="span__default__token_operator" text:class-names="">=</text:span>
+							<text:span text:style-name="span__default__token" text:class-names="">
+								<text:s text:c="1"/>
+							</text:span>
+							<text:span text:style-name="span__default__token" text:class-names="">y</text:span>
+						</text:p>
+						<text:p text:style-name="codeParagraph" text:class-names="" text:cond-style-name="">
+							<text:span text:style-name="span__default__token" text:class-names="">
+								<text:s text:c="4"/>
+							</text:span>
+							<text:span text:style-name="span__default__token_keyword" text:class-names="">else</text:span>
+							<text:span text:style-name="span__default__token" text:class-names="">:</text:span>
+						</text:p>
+						<text:p text:style-name="codeParagraph" text:class-names="" text:cond-style-name="">
+							<text:span text:style-name="span__default__token" text:class-names="">
+								<text:s text:c="8"/>
+							</text:span>
+							<text:span text:style-name="span__default__token" text:class-names="">smaller</text:span>
+							<text:span text:style-name="span__default__token" text:class-names="">
+								<text:s text:c="1"/>
+							</text:span>
+							<text:span text:style-name="span__default__token_operator" text:class-names="">=</text:span>
+							<text:span text:style-name="span__default__token" text:class-names="">
+								<text:s text:c="1"/>
+							</text:span>
+							<text:span text:style-name="span__default__token" text:class-names="">x</text:span>
+						</text:p>
+						<text:p text:style-name="codeParagraph" text:class-names="" text:cond-style-name="">
+							<text:span text:style-name="span__default__token" text:class-names="">
+								<text:s text:c="4"/>
+							</text:span>
+							<text:span text:style-name="span__default__token_keyword" text:class-names="">for</text:span>
+							<text:span text:style-name="span__default__token" text:class-names="">
+								<text:s text:c="1"/>
+							</text:span>
+							<text:span text:style-name="span__default__token" text:class-names="">i</text:span>
+							<text:span text:style-name="span__default__token" text:class-names="">
+								<text:s text:c="1"/>
+							</text:span>
+							<text:span text:style-name="span__default__token_operator_word" text:class-names="">in</text:span>
+							<text:span text:style-name="span__default__token" text:class-names="">
+								<text:s text:c="1"/>
+							</text:span>
+							<text:span text:style-name="span__default__token_name_builtin" text:class-names="">range</text:span>
+							<text:span text:style-name="span__default__token" text:class-names="">(</text:span>
+							<text:span text:style-name="span__default__token_literal_number" text:class-names="">1</text:span>
+							<text:span text:style-name="span__default__token" text:class-names="">,</text:span>
+							<text:span text:style-name="span__default__token" text:class-names="">
+								<text:s text:c="1"/>
+							</text:span>
+							<text:span text:style-name="span__default__token" text:class-names="">smaller</text:span>
+							<text:span text:style-name="span__default__token" text:class-names="">
+								<text:s text:c="1"/>
+							</text:span>
+							<text:span text:style-name="span__default__token_operator" text:class-names="">+</text:span>
+							<text:span text:style-name="span__default__token" text:class-names="">
+								<text:s text:c="1"/>
+							</text:span>
+							<text:span text:style-name="span__default__token_literal_number" text:class-names="">1</text:span>
+							<text:span text:style-name="span__default__token" text:class-names="">)</text:span>
+							<text:span text:style-name="span__default__token" text:class-names="">:</text:span>
+						</text:p>
+						<text:p text:style-name="codeParagraph" text:class-names="" text:cond-style-name="">
+							<text:span text:style-name="span__default__token" text:class-names="">
+								<text:s text:c="8"/>
+							</text:span>
+							<text:span text:style-name="span__default__token_keyword" text:class-names="">if</text:span>
+							<text:span text:style-name="span__default__token" text:class-names="">
+								<text:s text:c="1"/>
+							</text:span>
+							<text:span text:style-name="span__default__token" text:class-names="">(</text:span>
+							<text:span text:style-name="span__default__token" text:class-names="">x</text:span>
+							<text:span text:style-name="span__default__token" text:class-names="">
+								<text:s text:c="1"/>
+							</text:span>
+							<text:span text:style-name="span__default__token_operator" text:class-names="">%</text:span>
+							<text:span text:style-name="span__default__token" text:class-names="">
+								<text:s text:c="1"/>
+							</text:span>
+							<text:span text:style-name="span__default__token" text:class-names="">i</text:span>
+							<text:span text:style-name="span__default__token" text:class-names="">
+								<text:s text:c="1"/>
+							</text:span>
+							<text:span text:style-name="span__default__token_operator" text:class-names="">==</text:span>
+							<text:span text:style-name="span__default__token" text:class-names="">
+								<text:s text:c="1"/>
+							</text:span>
+							<text:span text:style-name="span__default__token_literal_number" text:class-names="">0</text:span>
+							<text:span text:style-name="span__default__token" text:class-names="">)</text:span>
+							<text:span text:style-name="span__default__token" text:class-names="">
+								<text:s text:c="1"/>
+							</text:span>
+							<text:span text:style-name="span__default__token_operator_word" text:class-names="">and</text:span>
+							<text:span text:style-name="span__default__token" text:class-names="">
+								<text:s text:c="1"/>
+							</text:span>
+							<text:span text:style-name="span__default__token" text:class-names="">(</text:span>
+							<text:span text:style-name="span__default__token" text:class-names="">y</text:span>
+							<text:span text:style-name="span__default__token" text:class-names="">
+								<text:s text:c="1"/>
+							</text:span>
+							<text:span text:style-name="span__default__token_operator" text:class-names="">%</text:span>
+							<text:span text:style-name="span__default__token" text:class-names="">
+								<text:s text:c="1"/>
+							</text:span>
+							<text:span text:style-name="span__default__token" text:class-names="">i</text:span>
+							<text:span text:style-name="span__default__token" text:class-names="">
+								<text:s text:c="1"/>
+							</text:span>
+							<text:span text:style-name="span__default__token_operator" text:class-names="">==</text:span>
+							<text:span text:style-name="span__default__token" text:class-names="">
+								<text:s text:c="1"/>
+							</text:span>
+							<text:span text:style-name="span__default__token_literal_number" text:class-names="">0</text:span>
+							<text:span text:style-name="span__default__token" text:class-names="">)</text:span>
+							<text:span text:style-name="span__default__token" text:class-names="">:</text:span>
+						</text:p>
+						<text:p text:style-name="codeParagraph" text:class-names="" text:cond-style-name="">
+							<text:span text:style-name="span__default__token" text:class-names="">
+								<text:s text:c="12"/>
+							</text:span>
+							<text:span text:style-name="span__default__token" text:class-names="">hcf</text:span>
+							<text:span text:style-name="span__default__token" text:class-names="">
+								<text:s text:c="1"/>
+							</text:span>
+							<text:span text:style-name="span__default__token_operator" text:class-names="">=</text:span>
+							<text:span text:style-name="span__default__token" text:class-names="">
+								<text:s text:c="1"/>
+							</text:span>
+							<text:span text:style-name="span__default__token" text:class-names="">i</text:span>
+						</text:p>
+						<text:p text:style-name="highlightedCodeParagraph" text:class-names="" text:cond-style-name="">
+							<text:span text:style-name="span__default__token" text:class-names="">
+								<text:s text:c="4"/>
+							</text:span>
+							<text:span text:style-name="span__default__token_keyword" text:class-names="">return</text:span>
+							<text:span text:style-name="span__default__token" text:class-names="">
+								<text:s text:c="1"/>
+							</text:span>
+							<text:span text:style-name="span__default__token" text:class-names="">hcf</text:span>
+						</text:p>
+						<text:p text:style-name="codeParagraph" text:class-names="" text:cond-style-name=""/>
+						<text:p text:style-name="codeParagraph" text:class-names="" text:cond-style-name=""/>
+						<text:p text:style-name="codeParagraph" text:class-names="" text:cond-style-name="">
+							<text:span text:style-name="span__default__token" text:class-names="">hcf</text:span>
+							<text:span text:style-name="span__default__token" text:class-names="">
+								<text:s text:c="1"/>
+							</text:span>
+							<text:span text:style-name="span__default__token_operator" text:class-names="">=</text:span>
+							<text:span text:style-name="span__default__token" text:class-names="">
+								<text:s text:c="1"/>
+							</text:span>
+							<text:span text:style-name="span__default__token" text:class-names="">compute_hcf</text:span>
+							<text:span text:style-name="span__default__token" text:class-names="">(</text:span>
+							<text:span text:style-name="span__default__token_literal_number" text:class-names="">300</text:span>
+							<text:span text:style-name="span__default__token" text:class-names="">,</text:span>
+							<text:span text:style-name="span__default__token" text:class-names="">
+								<text:s text:c="1"/>
+							</text:span>
+							<text:span text:style-name="span__default__token_literal_number" text:class-names="">400</text:span>
+							<text:span text:style-name="span__default__token" text:class-names="">)</text:span>
+						</text:p>
+						<text:p text:style-name="codeParagraph" text:class-names="" text:cond-style-name="">
+							<text:span text:style-name="span__default__token_name_builtin" text:class-names="">print</text:span>
+							<text:span text:style-name="span__default__token" text:class-names="">(</text:span>
+							<text:span text:style-name="span__default__token_literal_string" text:class-names="">f</text:span>
+							<text:span text:style-name="span__default__token_literal_string" text:class-names="">&quot;</text:span>
+							<text:span text:style-name="span__default__token_literal_string" text:class-names="">The H.C.F. is </text:span>
+							<text:span text:style-name="span__default__token_literal_string_interpol" text:class-names="">{</text:span>
+							<text:span text:style-name="span__default__token" text:class-names="">hcf</text:span>
+							<text:span text:style-name="span__default__token_literal_string_interpol" text:class-names="">}</text:span>
+							<text:span text:style-name="span__default__token_literal_string" text:class-names="">&quot;</text:span>
+							<text:span text:style-name="span__default__token" text:class-names="">)</text:span>
+						</text:p>
+						<text:p text:style-name="codeParagraph" text:class-names="" text:cond-style-name="">
+							<text:span text:style-name="span__default__token" text:class-names="">hcf</text:span>
+						</text:p>
+					</draw:text-box>
+				</draw:frame>
+				<draw:frame draw:style-name="codeFrame" svg:x="0.9in" svg:y="4.3in" svg:width="11.53in" svg:height="2.55in">
+					<draw:text-box>
+						<text:p text:style-name="codeParagraph">
+							<text:span text:style-name="span__default__token" text:class-names="">The H.C.F. is 100</text:span>
+						</text:p>
+						<text:p text:style-name="codeParagraph">
+							<text:span text:style-name="span__default__token" text:class-names="">100</text:span>
+						</text:p>
+					</draw:text-box>
+				</draw:frame>
+			</draw:page>
+		</office:presentation>
+	</office:body>
+</office:document-content>
