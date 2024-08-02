@@ -13,4 +13,4 @@ hcf = compute_hcf(300, 400)
 print(f"The H.C.F. is {hcf}")
 hcf
 
-# % title="Find the H.C.F of two numbers" highlights=1,2-3,4-5,9
+# % title="Find the H.C.F of two numbers"
