@@ -22,7 +22,10 @@ class XMLFile:
 
         result = self.xml.xpath(xpath, namespaces=self.namespaces.data)
         if single:
-            return result[0]
+            try:
+                return result[0]
+            except IndexError as e:
+                raise IndexError(f"XPath {xpath} returned no elements") from e
         return result
 
     def write(self, output_path=None, prettify=False):
