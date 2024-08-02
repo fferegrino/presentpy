@@ -37,6 +37,15 @@ class SlideTag(Tag):
 
         return text_box
 
+class EmptySlide(SlideTag):
+    def __init__(self, name, namespaces: Namespaces, theme: Theme):
+        super().__init__(
+            name,
+            namespaces,
+            theme,
+        )
+        self.name = name
+        self.theme = theme
 
 class TitleSlide(SlideTag):
     def __init__(self, name, namespaces: Namespaces, theme: Theme):

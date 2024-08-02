@@ -10,7 +10,7 @@ from presentpy.code_slide_source import CodeSlideSource
 from presentpy.constants import *
 from presentpy.namespaces import Namespaces
 from presentpy.templates import Content, Styles
-from presentpy.writer.slide_tag import SlideTag, TitleContentAndOutputSlide, TitleSlide
+from presentpy.writer.slide_tag import SlideTag, TitleContentAndOutputSlide, TitleSlide, EmptySlide
 from presentpy.writer.tag import Tag
 from presentpy.writer.theme import Theme
 
@@ -27,6 +27,14 @@ class Presentation:
         if name is None:
             name = f"slide{self.current_slide_count}"
         slide_tag = TitleContentAndOutputSlide(name, self.namespaces, self.theme)
+        self.slides.append(slide_tag)
+        self.current_slide_count += 1
+        return slide_tag
+
+    def new_empty_slide(self, name=None):
+        if name is None:
+            name = f"slide{self.current_slide_count}"
+        slide_tag = EmptySlide(name, self.namespaces, self.theme)
         self.slides.append(slide_tag)
         self.current_slide_count += 1
         return slide_tag
