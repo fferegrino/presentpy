@@ -10,7 +10,12 @@ from presentpy.code_slide_source import CodeSlideSource
 from presentpy.constants import *
 from presentpy.namespaces import Namespaces
 from presentpy.templates import Content, Styles
-from presentpy.writer.slide_tag import SlideTag, TitleContentAndOutputSlide, TitleSlide, EmptySlide
+from presentpy.writer.slide_tag import (
+    EmptySlide,
+    SlideTag,
+    TitleContentAndOutputSlide,
+    TitleSlide,
+)
 from presentpy.writer.tag import Tag
 from presentpy.writer.theme import Theme
 
