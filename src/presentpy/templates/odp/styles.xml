@@ -34,7 +34,7 @@
 	xmlns:text="urn:oasis:names:tc:opendocument:xmlns:text:1.0"
 	xmlns:xhtml="http://www.w3.org/1999/xhtml"
 	xmlns:xlink="http://www.w3.org/1999/xlink"
-office:version="1.4">
+office:version="1.2">
 	<office:styles>
 		<style:page-layout style:name="pageLayout1">
 			<style:page-layout-properties style:print-orientation="landscape" style:register-truth-ref-style-name=""/>
