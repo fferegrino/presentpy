@@ -2,11 +2,13 @@ from pathlib import Path
 from typing import Any, List, Tuple
 
 import click
+import mistletoe
 import nbformat
 
 from presentpy.code_slide_source import CodeSlideSource
 from presentpy.namespaces import Namespaces
 from presentpy.writer.presentation import Presentation
+from presentpy.writer.slide_tag import TitleAndContentSlide
 from presentpy.writer.theme import Theme
 
 odf_namespaces = {
@@ -60,6 +62,10 @@ def process(notebook, output, theme, prettify):
             if cell.cell_type == "code":
                 slode = CodeSlideSource.from_code_cell(cell)
                 presentation.add_source_code(slode)
+            elif cell.cell_type == "markdown":
+                document = mistletoe.Document(cell.source)
+                presentation.add_content(document)
+
     elif notebook.suffix == ".py":
         with open(notebook) as f:
             source = f.read()

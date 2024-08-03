@@ -77,6 +77,29 @@ class TitleSlide(SlideTag):
         self.content_text_box = super().add_text_box(CODE_FRAME_STYLE_NAME, x, content_y, w, content_h)
 
 
+class TitleAndContentSlide(SlideTag):
+    def __init__(self, name, namespaces: Namespaces, theme: Theme):
+        super().__init__(
+            name,
+            namespaces,
+            theme,
+        )
+        self.name = name
+        self.theme = theme
+
+        x = 0.9
+        title_y = 0.4
+        w = self.theme.width - (2 * x)
+        title_h = 1
+
+        self.title_text_box = super().add_text_box("masterTitle", x, title_y, w, title_h)
+
+        content_y = title_y + title_h + 0.2
+        content_h = self.theme.height - content_y - 0.4
+
+        self.content_text_box = super().add_text_box(CODE_FRAME_STYLE_NAME, x, content_y, w, content_h)
+
+
 class TitleContentAndOutputSlide(SlideTag):
     def __init__(self, name, namespaces: Namespaces, theme: Theme):
         super().__init__(

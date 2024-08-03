@@ -4,6 +4,7 @@ import zipfile
 from pathlib import Path
 from typing import List
 
+import mistletoe
 from lxml import etree
 
 from presentpy.code_slide_source import CodeSlideSource
@@ -13,6 +14,7 @@ from presentpy.templates import Content, Styles
 from presentpy.writer.slide_tag import (
     EmptySlide,
     SlideTag,
+    TitleAndContentSlide,
     TitleContentAndOutputSlide,
     TitleSlide,
 )
@@ -28,10 +30,10 @@ class Presentation:
         self.slides: List[SlideTag] = []
         self.current_slide_count = 0
 
-    def new_slide(self, name=None):
+    def new_slide(self, name=None, slide_type: SlideTag = TitleContentAndOutputSlide):
         if name is None:
             name = f"slide{self.current_slide_count}"
-        slide_tag = TitleContentAndOutputSlide(name, self.namespaces, self.theme)
+        slide_tag = slide_type(name, self.namespaces, self.theme)
         self.slides.append(slide_tag)
         self.current_slide_count += 1
         return slide_tag
@@ -43,6 +45,29 @@ class Presentation:
         self.slides.append(slide_tag)
         self.current_slide_count += 1
         return slide_tag
+
+    def add_content(self, document: mistletoe.Document, slide_name: str = None):
+        if not document.children:
+            raise ValueError("Document has no children")
+
+        slide = self.new_slide(slide_name, slide_type=TitleAndContentSlide)
+
+        for idx, child in enumerate(document.children):
+            if idx == 0 and isinstance(child, mistletoe.block_token.Heading):
+
+                title = child.children[0].content
+
+                output_p = Tag(
+                    "text:p",
+                    self.namespaces,
+                )
+                span = Tag(
+                    "text:span",
+                    self.namespaces,
+                )
+                span.text = title
+                output_p.append(span)
+                slide.title_text_box.append(output_p)
 
     def add_source_code(self, code: CodeSlideSource, slide_name: str = None):
         for highlight in code.highlights:
