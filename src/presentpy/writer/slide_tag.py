@@ -113,7 +113,7 @@ class TitleSlide(SlideTag):
         w = self.theme.width - (2 * x)
         title_h = 1
 
-        super().add_text_box("title_text_box", "masterTitle", x, title_y, w, title_h)
+        super().add_text_box("title_text_box", MASTER_TITLE_STYLE_NAME, x, title_y, w, title_h)
 
 
 class TitleAndContentSlide(SlideTag):
@@ -147,12 +147,12 @@ class TitleAndContentSlide(SlideTag):
         w = self.theme.width - (2 * x)
         title_h = 1
 
-        super().add_text_box("title_text_box", "masterTitle", x, title_y, w, title_h)
+        super().add_text_box("title_text_box", MASTER_TITLE_STYLE_NAME, x, title_y, w, title_h)
 
         content_y = title_y + title_h + 0.2
         content_h = self.theme.height - content_y - 0.4
 
-        super().add_text_box("content_text_box", CODE_FRAME_STYLE_NAME, x, content_y, w, content_h)
+        super().add_text_box("content_text_box", MASTER_CONTENT_STYLE_NAME, x, content_y, w, content_h)
 
 
 class TitleAndCodeSlide(SlideTag):
@@ -186,7 +186,7 @@ class TitleAndCodeSlide(SlideTag):
         w = self.theme.width - (2 * x)
         title_h = 1
 
-        super().add_text_box("title_text_box", "masterTitle", x, title_y, w, title_h)
+        super().add_text_box("title_text_box", MASTER_TITLE_STYLE_NAME, x, title_y, w, title_h)
 
         content_y = title_y + title_h + 0.2
         content_h = self.theme.height - content_y - 0.4
@@ -232,4 +232,4 @@ class TitleCodeAndOutputSlide(SlideTag):
         content_h = content_h / 2 - 0.2
 
         super().add_text_box("content_text_box", CODE_FRAME_STYLE_NAME, x, content_y, w, content_h)
-        super().add_text_box("output_text_box", CODE_FRAME_STYLE_NAME, x, content_y + content_h + 0.2, w, content_h)
+        super().add_text_box("output_text_box", OUTPUT_FRAME_STYLE_NAME, x, content_y + content_h + 0.2, w, content_h)

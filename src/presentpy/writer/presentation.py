@@ -175,7 +175,6 @@ class Presentation:
                 span = Tag(
                     "text:span",
                     self.namespaces,
-                    {"text:style-name": f"span__{self.theme.pygments_style}__token", "text:class-names": ""},
                 )
                 span.text = line
                 output_p.append(span)

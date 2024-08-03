@@ -29,27 +29,28 @@ class Styles(XMLFile):
         )
         drawing_page_properties.set(namespaces("draw:fill-color"), self.theme.background_color)
 
-        master_title_style = self.xpath(
+        master_title_text_properties = self.xpath(
             "office:document-styles",
             "office:styles",
-            "style:style[@style:name='masterTitle']",
+            f"style:style[@style:name='{MASTER_TITLE_STYLE_NAME}']",
+            "style:text-properties",
         )
-        text_properties = master_title_style.xpath("style:text-properties", namespaces=namespaces.data)[0]
-        text_properties.set(namespaces("fo:color"), self.theme.title_color)
-        text_properties.set(namespaces("fo:font-size"), self.theme.font_size(48))
-        text_properties.set(namespaces("style:font-size-asian"), self.theme.font_size(48))
-        text_properties.set(namespaces("style:font-size-complex"), self.theme.font_size(48))
+        master_title_text_properties.set(namespaces("fo:color"), self.theme.title_color)
+        master_title_text_properties.set(namespaces("fo:font-size"), self.theme.font_size(48))
+        master_title_text_properties.set(namespaces("style:font-size-asian"), self.theme.font_size(48))
+        master_title_text_properties.set(namespaces("style:font-size-complex"), self.theme.font_size(48))
 
-        master_content_style = self.xpath(
+        master_content_text_properties = self.xpath(
             "office:document-styles",
             "office:styles",
-            "style:style[@style:name='masterContent']",
+            f"style:style[@style:name='{MASTER_CONTENT_STYLE_NAME}']",
+            "style:text-properties",
         )
-        text_properties = master_content_style.xpath("style:text-properties", namespaces=namespaces.data)[0]
-        text_properties.set(namespaces("fo:color"), self.theme.content_color)
-        text_properties.set(namespaces("fo:font-size"), self.theme.font_size(18))
-        text_properties.set(namespaces("style:font-size-asian"), self.theme.font_size(18))
-        text_properties.set(namespaces("style:font-size-complex"), self.theme.font_size(18))
+
+        master_content_text_properties.set(namespaces("fo:color"), self.theme.content_color)
+        master_content_text_properties.set(namespaces("fo:font-size"), self.theme.font_size(24))
+        master_content_text_properties.set(namespaces("style:font-size-asian"), self.theme.font_size(24))
+        master_content_text_properties.set(namespaces("style:font-size-complex"), self.theme.font_size(24))
 
         default_slide_properties = self.xpath(
             "office:document-styles",
@@ -67,3 +68,11 @@ class Styles(XMLFile):
         )
         highlighted_code_paragraph_style.set(namespaces("fo:background-color"), self.theme.highlight_color)
         highlighted_code_paragraph_style.set(namespaces("fo:font-weight"), "bold")
+
+        output_frame_text_properties = self.xpath(
+            "office:document-styles",
+            "office:styles",
+            f"style:style[@style:name='{OUTPUT_FRAME_STYLE_NAME}']",
+            "style:text-properties",
+        )
+        output_frame_text_properties.set(namespaces("fo:color"), self.theme.content_color)
