@@ -3,8 +3,6 @@ from presentpy.namespaces import Namespaces
 from presentpy.writer.tag import Tag
 from presentpy.writer.theme import Theme
 
-PREFIX = "Master1"
-
 
 class SlideTag(Tag):
 
@@ -23,19 +21,21 @@ class SlideTag(Tag):
         self.theme = theme
 
         self.text_boxes = {}
+        self.master_page_items = []
 
-    def add_text_box(self, identifier, container_style, x, y, w, h, text_box_style=None):
-        frame = Tag(
-            "draw:frame",
-            self.namespaces,
-            {
-                "draw:style-name": container_style,
-                "svg:x": f"{x:.2}in",
-                "svg:y": f"{y:.2}in",
-                "svg:width": f"{w:.2f}in",
-                "svg:height": f"{h:.2f}in",
-            },
-        )
+    def add_text_box(self, identifier, container_style, x, y, w, h, text_box_style=None, presentation_class=None):
+        frame_attributes = {
+            "draw:style-name": container_style,
+            "svg:x": f"{x:.2}in",
+            "svg:y": f"{y:.2}in",
+            "svg:width": f"{w:.2f}in",
+            "svg:height": f"{h:.2f}in",
+        }
+
+        if presentation_class:
+            frame_attributes["presentation:class"] = presentation_class
+
+        frame = Tag("draw:frame", self.namespaces, frame_attributes)
 
         text_box_style_def = {}
         if text_box_style:
@@ -52,7 +52,23 @@ class SlideTag(Tag):
     def __getattr__(self, item):
         if item in self.text_boxes:
             return self.text_boxes[item]
-        return super().__getattr__(item)
+        raise AttributeError(f"'{self.__class__.__name__}' object has no attribute '{item}'")
+
+    def to_master_page(self, prefix, layout, style):
+        master_page = Tag(
+            "style:master-page",
+            self.namespaces,
+            {
+                "style:name": f"{prefix}-{self.__class__.__name__}",
+                "style:page-layout-name": layout,
+                "draw:style-name": style,
+            },
+        )
+
+        for child in self.children:
+            master_page.append(child)
+
+        return master_page
 
 
 class BlankSlide(SlideTag):
@@ -113,7 +129,9 @@ class TitleSlide(SlideTag):
         w = self.theme.width - (2 * x)
         title_h = 1
 
-        super().add_text_box("title_text_box", MASTER_TITLE_STYLE_NAME, x, title_y, w, title_h)
+        super().add_text_box(
+            "title_text_box", MASTER_TITLE_STYLE_NAME, x, title_y, w, title_h, presentation_class="title"
+        )
 
 
 class TitleAndContentSlide(SlideTag):
@@ -147,12 +165,16 @@ class TitleAndContentSlide(SlideTag):
         w = self.theme.width - (2 * x)
         title_h = 1
 
-        super().add_text_box("title_text_box", MASTER_TITLE_STYLE_NAME, x, title_y, w, title_h)
+        super().add_text_box(
+            "title_text_box", MASTER_TITLE_STYLE_NAME, x, title_y, w, title_h, presentation_class="title"
+        )
 
         content_y = title_y + title_h + 0.2
         content_h = self.theme.height - content_y - 0.4
 
-        super().add_text_box("content_text_box", MASTER_CONTENT_STYLE_NAME, x, content_y, w, content_h)
+        super().add_text_box(
+            "content_text_box", MASTER_CONTENT_STYLE_NAME, x, content_y, w, content_h, presentation_class="object"
+        )
 
 
 class TitleAndCodeSlide(SlideTag):
@@ -186,12 +208,16 @@ class TitleAndCodeSlide(SlideTag):
         w = self.theme.width - (2 * x)
         title_h = 1
 
-        super().add_text_box("title_text_box", MASTER_TITLE_STYLE_NAME, x, title_y, w, title_h)
+        super().add_text_box(
+            "title_text_box", MASTER_TITLE_STYLE_NAME, x, title_y, w, title_h, presentation_class="title"
+        )
 
         content_y = title_y + title_h + 0.2
         content_h = self.theme.height - content_y - 0.4
 
-        super().add_text_box("content_text_box", CODE_FRAME_STYLE_NAME, x, content_y, w, content_h)
+        super().add_text_box(
+            "content_text_box", CODE_FRAME_STYLE_NAME, x, content_y, w, content_h, presentation_class="object"
+        )
 
 
 class TitleCodeAndOutputSlide(SlideTag):
@@ -225,11 +251,23 @@ class TitleCodeAndOutputSlide(SlideTag):
         w = self.theme.width - (2 * x)
         title_h = 1
 
-        super().add_text_box("title_text_box", MASTER_TITLE_STYLE_NAME, x, title_y, w, title_h)
+        super().add_text_box(
+            "title_text_box", MASTER_TITLE_STYLE_NAME, x, title_y, w, title_h, presentation_class="title"
+        )
 
         content_y = title_y + title_h + 0.2
         content_h = self.theme.height - content_y - 0.4
         content_h = content_h / 2 - 0.2
 
-        super().add_text_box("content_text_box", CODE_FRAME_STYLE_NAME, x, content_y, w, content_h)
-        super().add_text_box("output_text_box", OUTPUT_FRAME_STYLE_NAME, x, content_y + content_h + 0.2, w, content_h)
+        super().add_text_box(
+            "content_text_box", CODE_FRAME_STYLE_NAME, x, content_y, w, content_h, presentation_class="object"
+        )
+        super().add_text_box(
+            "output_text_box",
+            OUTPUT_FRAME_STYLE_NAME,
+            x,
+            content_y + content_h + 0.2,
+            w,
+            content_h,
+            presentation_class="object",
+        )

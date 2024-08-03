@@ -3,6 +3,13 @@ from pathlib import Path
 from presentpy.constants import *
 from presentpy.namespaces import Namespaces
 from presentpy.templates.xml_file import XMLFile
+from presentpy.writer.slide_tag import (
+    BlankSlide,
+    TitleAndCodeSlide,
+    TitleAndContentSlide,
+    TitleCodeAndOutputSlide,
+    TitleSlide,
+)
 from presentpy.writer.theme import Theme
 
 
@@ -76,3 +83,25 @@ class Styles(XMLFile):
             "style:text-properties",
         )
         output_frame_text_properties.set(namespaces("fo:color"), self.theme.content_color)
+
+        # Add Master Slide Styles
+
+        maaster_styles = self.xpath(
+            "office:document-styles",
+            "office:master-styles",
+        )
+        slides = [
+            BlankSlide("Blank", self.namespaces, self.theme),
+            TitleSlide("Title", self.namespaces, self.theme),
+            TitleAndContentSlide("TitleAndContent", self.namespaces, self.theme),
+            TitleAndCodeSlide("TitleAndCode", self.namespaces, self.theme),
+            TitleCodeAndOutputSlide("TitleCodeAndOutput", self.namespaces, self.theme),
+        ]
+
+        for idx, slide in enumerate(slides):
+            prefix = MASTER_SLIDE_PREFIX
+            if idx > 0:
+                prefix = f"{prefix}-Layout{idx}"
+            prefix = f"{prefix}-thing"
+            master_page = slide.to_master_page(prefix, DEFAULT_PAGE_LAYOUT_NAME, DEFAULT_STYLE_NAME)
+            maaster_styles.append(master_page.to_element())

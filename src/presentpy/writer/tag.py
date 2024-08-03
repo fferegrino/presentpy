@@ -14,6 +14,12 @@ class Tag:
         self.text: Optional[str] = None
         self.children: List[Tag] = []
 
+    def __setitem__(self, key, value):
+        self.attributes[key] = value
+
+    def __getitem__(self, key):
+        return self.attributes[key]
+
     def append(self, tag: "Tag"):
         self.children.append(tag)
 
