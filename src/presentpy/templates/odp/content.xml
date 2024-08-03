@@ -98,6 +98,44 @@ office:version="1.2">
 		<style:style style:family="text" style:name="span__underline">
 			<style:text-properties  style:text-underline-type="single" style:text-underline-style="solid" style:text-underline-width="auto" style:text-underline-color="font-color" />
 		</style:style>
+		<text:list-style style:name="list">
+			<text:list-level-style-bullet text:level="1" text:bullet-char="•">
+				<style:list-level-properties text:space-before="0in" text:min-label-width="0.25in"/>
+				<style:text-properties fo:font-family="Arial" style:font-family-generic="swiss" style:font-pitch="variable" fo:font-size="100%"/>
+			</text:list-level-style-bullet>
+			<text:list-level-style-bullet text:level="2" text:bullet-char="•">
+				<style:list-level-properties text:space-before="0.5in" text:min-label-width="0.25in"/>
+				<style:text-properties fo:font-family="Arial" style:font-family-generic="swiss" style:font-pitch="variable" fo:font-size="100%"/>
+			</text:list-level-style-bullet>
+			<text:list-level-style-bullet text:level="3" text:bullet-char="•">
+				<style:list-level-properties text:space-before="1in" text:min-label-width="0.25in"/>
+				<style:text-properties fo:font-family="Arial" style:font-family-generic="swiss" style:font-pitch="variable" fo:font-size="100%"/>
+			</text:list-level-style-bullet>
+			<text:list-level-style-bullet text:level="4" text:bullet-char="•">
+				<style:list-level-properties text:space-before="1.5in" text:min-label-width="0.25in"/>
+				<style:text-properties fo:font-family="Arial" style:font-family-generic="swiss" style:font-pitch="variable" fo:font-size="100%"/>
+			</text:list-level-style-bullet>
+			<text:list-level-style-bullet text:level="5" text:bullet-char="•">
+				<style:list-level-properties text:space-before="2in" text:min-label-width="0.25in"/>
+				<style:text-properties fo:font-family="Arial" style:font-family-generic="swiss" style:font-pitch="variable" fo:font-size="100%"/>
+			</text:list-level-style-bullet>
+			<text:list-level-style-bullet text:level="6" text:bullet-char="•">
+				<style:list-level-properties text:space-before="2.5in" text:min-label-width="0.25in"/>
+				<style:text-properties fo:font-family="Arial" style:font-family-generic="swiss" style:font-pitch="variable" fo:font-size="100%"/>
+			</text:list-level-style-bullet>
+			<text:list-level-style-bullet text:level="7" text:bullet-char="•">
+				<style:list-level-properties text:space-before="3in" text:min-label-width="0.25in"/>
+				<style:text-properties fo:font-family="Arial" style:font-family-generic="swiss" style:font-pitch="variable" fo:font-size="100%"/>
+			</text:list-level-style-bullet>
+			<text:list-level-style-bullet text:level="8" text:bullet-char="•">
+				<style:list-level-properties text:space-before="3.5in" text:min-label-width="0.25in"/>
+				<style:text-properties fo:font-family="Arial" style:font-family-generic="swiss" style:font-pitch="variable" fo:font-size="100%"/>
+			</text:list-level-style-bullet>
+			<text:list-level-style-bullet text:level="9" text:bullet-char="•">
+				<style:list-level-properties text:space-before="4in" text:min-label-width="0.25in"/>
+				<style:text-properties fo:font-family="Arial" style:font-family-generic="swiss" style:font-pitch="variable" fo:font-size="100%"/>
+			</text:list-level-style-bullet>
+		</text:list-style>
 	</office:automatic-styles>
 	<office:body>
 		<office:presentation />

@@ -70,25 +70,61 @@ class Presentation:
                 slide.title_text_box.append(output_p)
             else:
                 if isinstance(child, mistletoe.block_token.Paragraph):
-                    p = Tag(
+                    p = self.process_makrdown_pharagraph(child)
+                    slide.content_text_box.append(p)
+
+                elif isinstance(child, mistletoe.block_token.List):
+                    list_tag = Tag(
+                        "text:list",
+                        self.namespaces,
+                        {
+                            "text:style-name": "list",
+                        },
+                    )
+                    for list_item in child.children:
+                        list_item_tag = Tag(
+                            "text:list-item",
+                            self.namespaces,
+                        )
+
+                        if isinstance(list_item.children[0], mistletoe.block_token.Paragraph):
+                            p = self.process_makrdown_pharagraph(list_item.children[0])
+                            list_item_tag.append(p)
+                        else:
+                            print(f"Skipping {list_item.__class__.__name__}")
+                        list_tag.append(list_item_tag)
+                    slide.content_text_box.append(list_tag)
+                else:
+                    print(f"Skipping {child.__class__.__name__}")
+
+                # Add a new paragraph after the last element if it's not the end of content
+                if idx != len(document.children) - 1:
+                    output_p = Tag(
                         "text:p",
                         self.namespaces,
                     )
-                    for span in child.children:
+                    slide.content_text_box.append(output_p)
 
-                        attributes = {}
+    def process_makrdown_pharagraph(self, child):
+        p = Tag(
+            "text:p",
+            self.namespaces,
+        )
+        for span in child.children:
 
-                        if not isinstance(span, mistletoe.span_token.RawText):
-                            attributes["text:style-name"] = f"span__{span.__class__.__name__}".lower()
+            attributes = {}
 
-                        span_tag = Tag(
-                            "text:span",
-                            self.namespaces,
-                            attributes,
-                        )
-                        span_tag.text = get_raw_text(span)
-                        p.append(span_tag)
-                    slide.content_text_box.append(p)
+            if not isinstance(span, mistletoe.span_token.RawText):
+                attributes["text:style-name"] = f"span__{span.__class__.__name__}".lower()
+
+            span_tag = Tag(
+                "text:span",
+                self.namespaces,
+                attributes,
+            )
+            span_tag.text = get_raw_text(span)
+            p.append(span_tag)
+        return p
 
     def add_source_code(self, code: CodeSlideSource, slide_name: str = None):
         for highlight in code.highlights:
