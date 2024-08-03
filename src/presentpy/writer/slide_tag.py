@@ -3,8 +3,11 @@ from presentpy.namespaces import Namespaces
 from presentpy.writer.tag import Tag
 from presentpy.writer.theme import Theme
 
+PREFIX = "Master1"
+
 
 class SlideTag(Tag):
+
     def __init__(self, name, namespaces: Namespaces, theme: Theme):
         super().__init__(
             "draw:page",
@@ -19,7 +22,9 @@ class SlideTag(Tag):
         self.name = name
         self.theme = theme
 
-    def add_text_box(self, container_style, x, y, w, h, text_box_style=None):
+        self.text_boxes = {}
+
+    def add_text_box(self, identifier, container_style, x, y, w, h, text_box_style=None):
         frame = Tag(
             "draw:frame",
             self.namespaces,
@@ -40,10 +45,33 @@ class SlideTag(Tag):
         frame.append(text_box)
         self.append(frame)
 
+        self.text_boxes[identifier] = text_box
+
         return text_box
 
+    def __getattr__(self, item):
+        if item in self.text_boxes:
+            return self.text_boxes[item]
+        return super().__getattr__(item)
 
-class EmptySlide(SlideTag):
+
+class BlankSlide(SlideTag):
+    """
+    ┌────────────────────────────────────────────────┐
+    │                                                │
+    │                                                │
+    │                                                │
+    │                                                │
+    │                                                │
+    │                                                │
+    │                                                │
+    │                                                │
+    │                                                │
+    │                                                │
+    │                                                │
+    └────────────────────────────────────────────────┘
+    """
+
     def __init__(self, name, namespaces: Namespaces, theme: Theme):
         super().__init__(
             name,
@@ -55,6 +83,22 @@ class EmptySlide(SlideTag):
 
 
 class TitleSlide(SlideTag):
+    """
+    ┌────────────────────────────────────────────────┐
+    │ ┌────────────────────────────────────────────┐ │
+    │ │ Title                                      │ │
+    │ └────────────────────────────────────────────┘ │
+    │                                                │
+    │                                                │
+    │                                                │
+    │                                                │
+    │                                                │
+    │                                                │
+    │                                                │
+    │                                                │
+    └────────────────────────────────────────────────┘
+    """
+
     def __init__(self, name, namespaces: Namespaces, theme: Theme):
         super().__init__(
             name,
@@ -69,15 +113,26 @@ class TitleSlide(SlideTag):
         w = self.theme.width - (2 * x)
         title_h = 1
 
-        self.title_text_box = super().add_text_box("masterTitle", x, title_y, w, title_h)
-
-        content_y = title_y + title_h + 0.2
-        content_h = self.theme.height - content_y - 0.4
-
-        self.content_text_box = super().add_text_box(CODE_FRAME_STYLE_NAME, x, content_y, w, content_h)
+        super().add_text_box("title_text_box", "masterTitle", x, title_y, w, title_h)
 
 
 class TitleAndContentSlide(SlideTag):
+    """
+    ┌────────────────────────────────────────────────┐
+    │ ┌────────────────────────────────────────────┐ │
+    │ │ Title                                      │ │
+    │ └────────────────────────────────────────────┘ │
+    │ ┌────────────────────────────────────────────┐ │
+    │ │ Content                                    │ │
+    │ │                                            │ │
+    │ │                                            │ │
+    │ │                                            │ │
+    │ │                                            │ │
+    │ │                                            │ │
+    │ └────────────────────────────────────────────┘ │
+    └────────────────────────────────────────────────┘
+    """
+
     def __init__(self, name, namespaces: Namespaces, theme: Theme):
         super().__init__(
             name,
@@ -92,15 +147,31 @@ class TitleAndContentSlide(SlideTag):
         w = self.theme.width - (2 * x)
         title_h = 1
 
-        self.title_text_box = super().add_text_box("masterTitle", x, title_y, w, title_h)
+        super().add_text_box("title_text_box", "masterTitle", x, title_y, w, title_h)
 
         content_y = title_y + title_h + 0.2
         content_h = self.theme.height - content_y - 0.4
 
-        self.content_text_box = super().add_text_box(CODE_FRAME_STYLE_NAME, x, content_y, w, content_h)
+        super().add_text_box("content_text_box", CODE_FRAME_STYLE_NAME, x, content_y, w, content_h)
 
 
-class TitleContentAndOutputSlide(SlideTag):
+class TitleAndCodeSlide(SlideTag):
+    """
+    ┌────────────────────────────────────────────────┐
+    │ ┌────────────────────────────────────────────┐ │
+    │ │ Title                                      │ │
+    │ └────────────────────────────────────────────┘ │
+    │ ┌────────────────────────────────────────────┐ │
+    │ │ Code                                       │ │
+    │ │                                            │ │
+    │ │                                            │ │
+    │ │                                            │ │
+    │ │                                            │ │
+    │ │                                            │ │
+    │ └────────────────────────────────────────────┘ │
+    └────────────────────────────────────────────────┘
+    """
+
     def __init__(self, name, namespaces: Namespaces, theme: Theme):
         super().__init__(
             name,
@@ -115,11 +186,50 @@ class TitleContentAndOutputSlide(SlideTag):
         w = self.theme.width - (2 * x)
         title_h = 1
 
-        self.title_text_box = super().add_text_box(MASTER_TITLE_STYLE_NAME, x, title_y, w, title_h)
+        super().add_text_box("title_text_box", "masterTitle", x, title_y, w, title_h)
+
+        content_y = title_y + title_h + 0.2
+        content_h = self.theme.height - content_y - 0.4
+
+        super().add_text_box("content_text_box", CODE_FRAME_STYLE_NAME, x, content_y, w, content_h)
+
+
+class TitleCodeAndOutputSlide(SlideTag):
+    """
+    ┌────────────────────────────────────────────────┐
+    │ ┌────────────────────────────────────────────┐ │
+    │ │ Title                                      │ │
+    │ └────────────────────────────────────────────┘ │
+    │ ┌────────────────────────────────────────────┐ │
+    │ │ Content                                    │ │
+    │ │                                            │ │
+    │ └────────────────────────────────────────────┘ │
+    │ ┌────────────────────────────────────────────┐ │
+    │ │ Outputs                                    │ │
+    │ │                                            │ │
+    │ └────────────────────────────────────────────┘ │
+    └────────────────────────────────────────────────┘
+    """
+
+    def __init__(self, name, namespaces: Namespaces, theme: Theme):
+        super().__init__(
+            name,
+            namespaces,
+            theme,
+        )
+        self.name = name
+        self.theme = theme
+
+        x = 0.9
+        title_y = 0.4
+        w = self.theme.width - (2 * x)
+        title_h = 1
+
+        super().add_text_box("title_text_box", MASTER_TITLE_STYLE_NAME, x, title_y, w, title_h)
 
         content_y = title_y + title_h + 0.2
         content_h = self.theme.height - content_y - 0.4
         content_h = content_h / 2 - 0.2
 
-        self.content_text_box = super().add_text_box(CODE_FRAME_STYLE_NAME, x, content_y, w, content_h)
-        self.output_text_box = super().add_text_box(CODE_FRAME_STYLE_NAME, x, content_y + content_h + 0.2, w, content_h)
+        super().add_text_box("content_text_box", CODE_FRAME_STYLE_NAME, x, content_y, w, content_h)
+        super().add_text_box("output_text_box", CODE_FRAME_STYLE_NAME, x, content_y + content_h + 0.2, w, content_h)

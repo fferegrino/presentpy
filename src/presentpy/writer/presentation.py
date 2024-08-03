@@ -12,10 +12,10 @@ from presentpy.constants import *
 from presentpy.namespaces import Namespaces
 from presentpy.templates import Content, Styles
 from presentpy.writer.slide_tag import (
-    EmptySlide,
+    BlankSlide,
     SlideTag,
     TitleAndContentSlide,
-    TitleContentAndOutputSlide,
+    TitleCodeAndOutputSlide,
     TitleSlide,
 )
 from presentpy.writer.tag import Tag
@@ -30,7 +30,7 @@ class Presentation:
         self.slides: List[SlideTag] = []
         self.current_slide_count = 0
 
-    def new_slide(self, name=None, slide_type: SlideTag = TitleContentAndOutputSlide):
+    def new_slide(self, name=None, slide_type: SlideTag = TitleCodeAndOutputSlide):
         if name is None:
             name = f"slide{self.current_slide_count}"
         slide_tag = slide_type(name, self.namespaces, self.theme)
@@ -41,7 +41,7 @@ class Presentation:
     def new_empty_slide(self, name=None):
         if name is None:
             name = f"slide{self.current_slide_count}"
-        slide_tag = EmptySlide(name, self.namespaces, self.theme)
+        slide_tag = BlankSlide(name, self.namespaces, self.theme)
         self.slides.append(slide_tag)
         self.current_slide_count += 1
         return slide_tag
