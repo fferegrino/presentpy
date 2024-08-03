@@ -85,7 +85,20 @@ office:version="1.2">
 			<presentation:placeholder presentation:object="object" svg:x="0.91667in" svg:y="1.99653in" svg:width="11.49653in" svg:height="4.75868in"/>
 		</style:presentation-page-layout>
 	</office:styles>
-	<office:automatic-styles/>
+	<office:automatic-styles>
+		<style:style style:family="text" style:name="span__strong">
+			<style:text-properties fo:font-weight="bold"/>
+		</style:style>
+		<style:style style:family="text" style:name="span__strikethrough">
+			<style:text-properties style:text-line-through-type="single" style:text-line-through-style="solid" style:text-line-through-width="auto" style:text-line-through-color="font-color"  />
+		</style:style>
+		<style:style style:family="text" style:name="span__emphasis"> <!-- italic -->
+			<style:text-properties fo:font-style="italic" style:font-style-asian="italic" style:font-style-complex="italic" />
+		</style:style>
+		<style:style style:family="text" style:name="span__underline">
+			<style:text-properties  style:text-underline-type="single" style:text-underline-style="solid" style:text-underline-width="auto" style:text-underline-color="font-color" />
+		</style:style>
+	</office:automatic-styles>
 	<office:body>
 		<office:presentation />
 	</office:body>

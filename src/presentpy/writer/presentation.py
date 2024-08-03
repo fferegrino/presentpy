@@ -68,6 +68,27 @@ class Presentation:
                 span.text = title
                 output_p.append(span)
                 slide.title_text_box.append(output_p)
+            else:
+                if isinstance(child, mistletoe.block_token.Paragraph):
+                    p = Tag(
+                        "text:p",
+                        self.namespaces,
+                    )
+                    for span in child.children:
+
+                        attributes = {}
+
+                        if not isinstance(span, mistletoe.span_token.RawText):
+                            attributes["text:style-name"] = f"span__{span.__class__.__name__}".lower()
+
+                        span_tag = Tag(
+                            "text:span",
+                            self.namespaces,
+                            attributes,
+                        )
+                        span_tag.text = get_raw_text(span)
+                        p.append(span_tag)
+                    slide.content_text_box.append(p)
 
     def add_source_code(self, code: CodeSlideSource, slide_name: str = None):
         for highlight in code.highlights:
@@ -164,3 +185,10 @@ class Presentation:
         with zipfile.ZipFile(pptx_file, "w") as zip_ref:
             for file in exploded_presentation_path.glob("**/*"):
                 zip_ref.write(file, file.relative_to(exploded_presentation_path))
+
+
+def get_raw_text(token):
+    if isinstance(token, mistletoe.span_token.RawText):
+        return token.content
+    else:
+        return get_raw_text(token.children[0])
