@@ -106,4 +106,4 @@ class Theme:
             return self.style.styles[Token]
 
     def font_size(self, pts):
-        return f"{pts * self.font_size_ratio:.2f}in"
+        return f"{pts}pt"

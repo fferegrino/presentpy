@@ -9,7 +9,12 @@ class SlideTag(Tag):
         super().__init__(
             "draw:page",
             namespaces,
-            {"draw:name": name, "draw:style-name": DRAWING_PAGE_STYLE_NAME, "draw:id": name},
+            {
+                "draw:name": name,
+                "draw:style-name": DRAWING_PAGE_STYLE_NAME,
+                "draw:id": name,
+                "draw:master-page-name": "Master1-Master",
+            },
         )
         self.name = name
         self.theme = theme
