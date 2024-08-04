@@ -4,6 +4,11 @@ dopptx:
 unpptx:
 	python src/presentpy/writer/slides.py unpptx .
 
+clean-all:
+	rm -rf *.pptx
+	rm -rf *.odp
+	rm -rf *_odp
+
 fmt:
 	black .
 	isort .

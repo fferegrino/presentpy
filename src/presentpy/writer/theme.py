@@ -107,3 +107,11 @@ class Theme:
 
     def font_size(self, pts):
         return f"{pts}pt"
+
+    @property
+    def content_font_size(self):
+        return self.font_size(28)
+
+    @property
+    def title_font_size(self):
+        return self.font_size(44)

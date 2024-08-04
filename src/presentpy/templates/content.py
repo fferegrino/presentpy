@@ -41,9 +41,9 @@ class Content(XMLFile):
             "style:text-properties",
         )
         master_title_text_properties.set(namespaces("fo:color"), self.theme.title_color)
-        master_title_text_properties.set(namespaces("fo:font-size"), self.theme.font_size(48))
-        master_title_text_properties.set(namespaces("style:font-size-asian"), self.theme.font_size(48))
-        master_title_text_properties.set(namespaces("style:font-size-complex"), self.theme.font_size(48))
+        master_title_text_properties.set(namespaces("fo:font-size"), self.theme.title_font_size)
+        master_title_text_properties.set(namespaces("style:font-size-asian"), self.theme.title_font_size)
+        master_title_text_properties.set(namespaces("style:font-size-complex"), self.theme.title_font_size)
 
         master_content_text_properties = self.xpath(
             "office:document-content",
@@ -52,9 +52,9 @@ class Content(XMLFile):
             "style:text-properties",
         )
         master_content_text_properties.set(namespaces("fo:color"), self.theme.content_color)
-        master_content_text_properties.set(namespaces("fo:font-size"), self.theme.font_size(18))
-        master_content_text_properties.set(namespaces("style:font-size-asian"), self.theme.font_size(18))
-        master_content_text_properties.set(namespaces("style:font-size-complex"), self.theme.font_size(18))
+        master_content_text_properties.set(namespaces("fo:font-size"), self.theme.content_font_size)
+        master_content_text_properties.set(namespaces("style:font-size-asian"), self.theme.content_font_size)
+        master_content_text_properties.set(namespaces("style:font-size-complex"), self.theme.content_font_size)
 
         default_slide_properties = self.xpath(
             "office:document-content",

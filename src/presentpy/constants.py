@@ -1,6 +1,8 @@
 CODE_FRAME_STYLE_NAME = "codeFrame"
 CODE_HIGHLIGHT_PARAGRAPH_STYLE_NAME = "highlightedCodeParagraph"
 CODE_PARAGRAPH_STYLE_NAME = "codeParagraph"
+CONTENT_PARAGRAPH_STYLE_NAME = "contentParagraph"
+CONTENT_LIST_PARAGRAPH_STYLE_NAME = "contentListParagraph"
 DRAWING_PAGE_STYLE_NAME = "defaultSlide"
 MASTER_TITLE_STYLE_NAME = "masterTitle"
 MASTER_CONTENT_STYLE_NAME = "masterContent"

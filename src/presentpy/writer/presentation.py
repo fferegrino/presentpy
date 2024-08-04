@@ -70,7 +70,7 @@ class Presentation:
                 slide.title_text_box.append(output_p)
             else:
                 if isinstance(child, mistletoe.block_token.Paragraph):
-                    p = self.process_makrdown_pharagraph(child)
+                    p = self.process_markdown_paragraph(child, CONTENT_PARAGRAPH_STYLE_NAME)
                     slide.content_text_box.append(p)
 
                 elif isinstance(child, mistletoe.block_token.List):
@@ -88,7 +88,9 @@ class Presentation:
                         )
 
                         if isinstance(list_item.children[0], mistletoe.block_token.Paragraph):
-                            p = self.process_makrdown_pharagraph(list_item.children[0])
+                            p = self.process_markdown_paragraph(
+                                list_item.children[0], CONTENT_LIST_PARAGRAPH_STYLE_NAME
+                            )
                             list_item_tag.append(p)
                         else:
                             print(f"Skipping {list_item.__class__.__name__}")
@@ -105,10 +107,13 @@ class Presentation:
                     )
                     slide.content_text_box.append(output_p)
 
-    def process_makrdown_pharagraph(self, child):
+    def process_markdown_paragraph(self, child, paragraph_style_name):
         p = Tag(
             "text:p",
             self.namespaces,
+            {
+                "text:style-name": paragraph_style_name,
+            },
         )
         for span in child.children:
 
