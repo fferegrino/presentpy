@@ -37,14 +37,25 @@ odf_namespaces = {
 @click.option(
     "--theme",
     default="default",
-    help="Pygments style to be applied to the presentation. Defaults to 'default'. See https://pygments.org/docs/styles/ for available styles.",
+    help=(
+        "Pygments style to be applied to the presentation."
+        "Defaults to 'default'. See https://pygments.org/docs/styles/ for available styles."
+    ),
 )
 @click.option(
     "--prettify",
     is_flag=True,
     default=False,
+    help="Prettify the output ODP file. NOT RECOMMENDED unless you are debugging the output file.",
+    hidden=True,
 )
-def process(notebook, output, theme, prettify):
+@click.option(
+    "--outputs",
+    is_flag=True,
+    default=False,
+    help="Include code cell outputs in the presentation.",
+)
+def process(notebook, output, theme, prettify, outputs):
     """
     A CLI tool to convert Jupyter Notebooks to slides.
     """
@@ -60,8 +71,8 @@ def process(notebook, output, theme, prettify):
 
         for cell in nb.cells:
             if cell.cell_type == "code":
-                slode = CodeSlideSource.from_code_cell(cell)
-                presentation.add_source_code(slode)
+                code_slide = CodeSlideSource.from_code_cell(cell)
+                presentation.add_source_code(code_slide, with_output=outputs)
             elif cell.cell_type == "markdown":
                 document = mistletoe.Document(cell.source)
                 presentation.add_content(document)
@@ -69,7 +80,7 @@ def process(notebook, output, theme, prettify):
     elif notebook.suffix == ".py":
         with open(notebook) as f:
             source = f.read()
-            slode = CodeSlideSource.from_source_code(source)
-            presentation.add_source_code(slode)
+            code_slide = CodeSlideSource.from_source_code(source)
+            presentation.add_source_code(code_slide)
 
     presentation.write(output, prettify=prettify)

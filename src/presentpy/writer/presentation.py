@@ -14,6 +14,7 @@ from presentpy.templates import Content, Styles
 from presentpy.writer.slide_tag import (
     BlankSlide,
     SlideTag,
+    TitleAndCodeSlide,
     TitleAndContentSlide,
     TitleCodeAndOutputSlide,
     TitleSlide,
@@ -131,9 +132,24 @@ class Presentation:
             p.append(span_tag)
         return p
 
-    def add_source_code(self, code: CodeSlideSource, slide_name: str = None):
+    def add_source_code(self, code: CodeSlideSource, slide_name: str = None, with_output=False):
         for highlight in code.highlights:
-            new_slide = self.new_slide(slide_name)
+            new_slide = self.new_slide(
+                slide_name, slide_type=TitleCodeAndOutputSlide if with_output else TitleAndCodeSlide
+            )
+
+            output_p = Tag(
+                "text:p",
+                self.namespaces,
+            )
+            span = Tag(
+                "text:span",
+                self.namespaces,
+            )
+            span.text = code.title
+            output_p.append(span)
+            new_slide.title_text_box.append(output_p)
+
             for line_no, line in enumerate(code.lines, 1):
                 p = Tag(
                     "text:p",
@@ -169,33 +185,22 @@ class Presentation:
                     p.append(span)
                 new_slide.content_text_box.append(p)
 
-            for line_no, line in enumerate(code.outputs, 1):
-                output_p = Tag(
-                    "text:p",
-                    self.namespaces,
-                    {
-                        "text:style-name": CODE_PARAGRAPH_STYLE_NAME,
-                    },
-                )
-                span = Tag(
-                    "text:span",
-                    self.namespaces,
-                )
-                span.text = line
-                output_p.append(span)
-                new_slide.output_text_box.append(output_p)
-
-            output_p = Tag(
-                "text:p",
-                self.namespaces,
-            )
-            span = Tag(
-                "text:span",
-                self.namespaces,
-            )
-            span.text = code.title
-            output_p.append(span)
-            new_slide.title_text_box.append(output_p)
+            if with_output:
+                for line_no, line in enumerate(code.outputs, 1):
+                    output_p = Tag(
+                        "text:p",
+                        self.namespaces,
+                        {
+                            "text:style-name": CODE_PARAGRAPH_STYLE_NAME,
+                        },
+                    )
+                    span = Tag(
+                        "text:span",
+                        self.namespaces,
+                    )
+                    span.text = line
+                    output_p.append(span)
+                    new_slide.output_text_box.append(output_p)
 
     def write(self, path: Path, prettify: bool = False):
 
