@@ -56,7 +56,7 @@ Consider the notebook shown below, when converted to slides using the `default` 
 <table>
 	<tbody>
         <tr>
-			<th colspan="2">Original notebook</th>
+			<th colspan="2">Original notebook [<a href="tests/files/demo.ipynb" target="_blank">view .ipynb</a>]</th>
         </tr>
         <tr>
 			<td colspan="2">
@@ -64,8 +64,14 @@ Consider the notebook shown below, when converted to slides using the `default` 
             </td>
         </tr>
 		<tr>
-			<th>Default theme</th>
-			<th>Fruity theme</th>
+			<th>Default theme 
+                [<a href="https://drive.google.com/file/d/1HuYzFU8rTMa21dC0r7hD9gFByJJ3Cd4f/view?usp=sharing" target="_blank">as PDF</a>]
+                [<a href="https://docs.google.com/presentation/d/1MhBUNGyC0tNBJ8j4xStThWSJHDXOdyFfEGUQVBRdHzU/edit?usp=sharing">as Google Slides</a>]
+            </th>
+			<th>Fruity theme 
+                [<a href="https://drive.google.com/file/d/1a5FwVKyBWUS7iGJZoFlO_vnd_czbMZBe/view?usp=drive_link" target="_blank">as PDF</a>]
+                [<a href="https://docs.google.com/presentation/d/19P_4jZu8sXNhaGssI-G0BCiruai8YZNsPq31WwA01XE/edit?usp=drive_link">as Google Slides</a>]
+            </th>
 		</tr>
 		<tr>
             <td>
