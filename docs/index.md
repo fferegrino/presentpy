@@ -49,23 +49,41 @@ You can configure the code cells to be displayed in the slides by adding a comme
  - `title`: The title of the slide
  - `highlights`: A comma separated list of lines to highlight, each highlight could be a number or a range of lines separated by a dash, e.g. `1,3-6,6-7`
 
-For example, take the following code:
+## Example
 
-```python
-def compute_hcf(x, y):
-    if x > y:
-        smaller = y
-    else:
-        smaller = x
-    for i in range(1, smaller+1):
-        if((x % i == 0) and (y % i == 0)):
-            hcf = i 
-    return hcf
-#% title="Find the H.C.F of two numbers" highlights=1,2-3,4-5,9
-```
+Consider the notebook shown below, when converted to slides using the `default` theme, it will look like the first image in the table below. When converted using the `fruity` theme, it will look like the second image.
 
-The code above will generate 5 slides showing the same code but highlighting different lines in each slide – see how it looks below:
-
-<iframe src="https://www.slideshare.net/slideshow/embed_code/key/LmOcrrRuEaitnJ?hostedIn=slideshare&page=upload" width="476" height="400" frameborder="0" marginwidth="0" marginheight="0" scrolling="no"></iframe>
+<table>
+	<tbody>
+        <tr>
+			<th colspan="2">Original notebook</th>
+        </tr>
+        <tr>
+			<td colspan="2">
+                <img src="images/demo-notebook.png" />
+            </td>
+        </tr>
+		<tr>
+			<th>Default theme</th>
+			<th>Fruity theme</th>
+		</tr>
+		<tr>
+            <td>
+                <img src="images/demo-default/Slide1.jpeg" />
+            </td>
+			<td>
+                <img src="images/demo-fruity/Slide1.jpeg" />
+            </td>
+		</tr>
+		<tr>
+            <td>
+                <img src="images/demo-default/Slide2.jpeg" />
+            </td>
+			<td>
+                <img src="images/demo-fruity/Slide2.jpeg" />
+            </td>
+		</tr>
+	</tbody>
+</table>
 
 You can then use these slides in your presentation deck.
