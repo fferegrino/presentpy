@@ -10,6 +10,7 @@ from presentpy.writer.slide_tag import (
     TitleCodeAndOutputSlide,
     TitleSlide,
 )
+from presentpy.writer.tag import Tag
 from presentpy.writer.theme import Theme
 
 
@@ -18,6 +19,8 @@ class Styles(XMLFile):
     def __init__(self, path: Path, namespaces: Namespaces, theme: Theme):
         super().__init__(path, namespaces)
         self.theme = theme
+
+        office_styles = self.xpath("office:document-styles", "office:styles")
 
         page_layout_properties = self.xpath(
             "office:document-styles",
@@ -98,10 +101,30 @@ class Styles(XMLFile):
             TitleCodeAndOutputSlide("TitleCodeAndOutput", self.namespaces, self.theme),
         ]
 
-        for idx, slide in enumerate(slides):
-            prefix = MASTER_SLIDE_PREFIX
-            if idx > 0:
-                prefix = f"{prefix}-Layout{idx}"
-            prefix = f"{prefix}-thing"
-            master_page = slide.to_master_page(prefix, DEFAULT_PAGE_LAYOUT_NAME, DEFAULT_STYLE_NAME)
+        for slide in slides:
+            master_page = slide.to_master_page(DEFAULT_PAGE_LAYOUT_NAME, DEFAULT_STYLE_NAME)
             maaster_styles.append(master_page.to_element())
+
+            # 	<style:style style:name="Master1-thing-BlankSlide-background" style:family="presentation">
+            # 			<style:graphic-properties draw:stroke="none" draw:fill="solid" draw:fill-color="#00ff00"/>
+            # 		</style:style>
+
+            background_style = Tag(
+                "style:style",
+                self.namespaces,
+                {
+                    "style:name": f"{master_page['style:name']}-background",
+                    "style:family": "presentation",
+                },
+            )
+            graphic_properties = Tag(
+                "style:graphic-properties",
+                self.namespaces,
+                {
+                    "draw:stroke": "none",
+                    "draw:fill": "solid",
+                    "draw:fill-color": self.theme.background_color,
+                },
+            )
+            background_style.append(graphic_properties)
+            office_styles.append(background_style.to_element())

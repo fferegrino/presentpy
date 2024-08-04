@@ -66,11 +66,11 @@ Consider the notebook shown below, when converted to slides using the `default` 
 		<tr>
 			<th>Default theme 
                 [<a href="https://drive.google.com/file/d/1HuYzFU8rTMa21dC0r7hD9gFByJJ3Cd4f/view?usp=sharing" target="_blank">as PDF</a>]
-                [<a href="https://docs.google.com/presentation/d/1MhBUNGyC0tNBJ8j4xStThWSJHDXOdyFfEGUQVBRdHzU/edit?usp=sharing">as Google Slides</a>]
+                [<a href="https://docs.google.com/presentation/d/1eWJIMHMXL9F9xY9zuc6vBxTPCxLSM1dbXKiWSExm5t8/edit?usp=sharing">as Google Slides</a>]
             </th>
 			<th>Fruity theme 
                 [<a href="https://drive.google.com/file/d/1a5FwVKyBWUS7iGJZoFlO_vnd_czbMZBe/view?usp=drive_link" target="_blank">as PDF</a>]
-                [<a href="https://docs.google.com/presentation/d/19P_4jZu8sXNhaGssI-G0BCiruai8YZNsPq31WwA01XE/edit?usp=drive_link">as Google Slides</a>]
+                [<a href="https://docs.google.com/presentation/d/1knSB-dXCEELR2j2rp1KoH4XwyfP-iA-eL4Kb4X9aKuI/edit?usp=drive_link">as Google Slides</a>]
             </th>
 		</tr>
 		<tr>

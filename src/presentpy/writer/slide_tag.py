@@ -6,6 +6,10 @@ from presentpy.writer.theme import Theme
 
 class SlideTag(Tag):
 
+    __prefix__ = MASTER_SLIDE_PREFIX
+    __layout__ = ""
+    __infix__ = "presentpy"
+
     def __init__(self, name, namespaces: Namespaces, theme: Theme):
         super().__init__(
             "draw:page",
@@ -14,7 +18,7 @@ class SlideTag(Tag):
                 "draw:name": name,
                 "draw:style-name": DRAWING_PAGE_STYLE_NAME,
                 "draw:id": name,
-                "draw:master-page-name": "Master1-Master",
+                "draw:master-page-name": self.get_master_page_style_name(),
             },
         )
         self.name = name
@@ -54,12 +58,15 @@ class SlideTag(Tag):
             return self.text_boxes[item]
         raise AttributeError(f"'{self.__class__.__name__}' object has no attribute '{item}'")
 
-    def to_master_page(self, prefix, layout, style):
+    def get_master_page_style_name(self):
+        return f"{self.__prefix__}-{self.__layout__}-{self.__infix__}-{self.__class__.__name__}"
+
+    def to_master_page(self, layout, style):
         master_page = Tag(
             "style:master-page",
             self.namespaces,
             {
-                "style:name": f"{prefix}-{self.__class__.__name__}",
+                "style:name": self.get_master_page_style_name(),
                 "style:page-layout-name": layout,
                 "draw:style-name": style,
             },
@@ -88,6 +95,8 @@ class BlankSlide(SlideTag):
     └────────────────────────────────────────────────┘
     """
 
+    __layout__ = "Layout1"
+
     def __init__(self, name, namespaces: Namespaces, theme: Theme):
         super().__init__(
             name,
@@ -114,6 +123,8 @@ class TitleSlide(SlideTag):
     │                                                │
     └────────────────────────────────────────────────┘
     """
+
+    __layout__ = "Layout2"
 
     def __init__(self, name, namespaces: Namespaces, theme: Theme):
         super().__init__(
@@ -150,6 +161,8 @@ class TitleAndContentSlide(SlideTag):
     │ └────────────────────────────────────────────┘ │
     └────────────────────────────────────────────────┘
     """
+
+    __layout__ = "Layout3"
 
     def __init__(self, name, namespaces: Namespaces, theme: Theme):
         super().__init__(
@@ -194,6 +207,8 @@ class TitleAndCodeSlide(SlideTag):
     └────────────────────────────────────────────────┘
     """
 
+    __layout__ = "Layout4"
+
     def __init__(self, name, namespaces: Namespaces, theme: Theme):
         super().__init__(
             name,
@@ -236,6 +251,8 @@ class TitleCodeAndOutputSlide(SlideTag):
     │ └────────────────────────────────────────────┘ │
     └────────────────────────────────────────────────┘
     """
+
+    __layout__ = "Layout5"
 
     def __init__(self, name, namespaces: Namespaces, theme: Theme):
         super().__init__(
