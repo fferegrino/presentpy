@@ -1,8 +1,6 @@
 PresentPy
 =========
 
-# PresentPy
-
  > Create slides from Jupyter Notebooks
 
 _PresentPy_ allows you to take your Jupyter Notebooks and turn them into slides (compatible with PowerPoint, Keynote, LibreOffice...) that then can be integrated into your presentation decks.
@@ -24,14 +22,16 @@ To turn a notebook into slides, simply run:
 ```bash
 Usage: presentpy [OPTIONS] NOTEBOOK
 
-  presentpy: A CLI tool to convert Jupyter Notebooks to ODP presentations.
+  A CLI tool to convert Jupyter Notebooks to slides.
 
 Options:
   --output PATH  Directory or file path where the output ODP file will be
                  saved. Defaults to the current directory.
-  --theme TEXT   Pygments style to be applied to the presentation. Defaults to
+  --theme TEXT   Pygments style to be applied to the presentation.Defaults to
                  'default'. See https://pygments.org/docs/styles/ for
                  available styles.
+  --outputs      Include code cell outputs in the presentation.
+  --help         Show this message and exit.
 ```
 
 <!-- 
