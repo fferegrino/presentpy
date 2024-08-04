@@ -202,7 +202,7 @@ class Presentation:
                     output_p.append(span)
                     new_slide.output_text_box.append(output_p)
 
-    def write(self, path: Path, prettify: bool = False):
+    def write(self, path: Path, keep_intermediate: bool = False, prettify: bool = False):
 
         source = importlib.resources.files("presentpy") / "templates/odp/"
 
@@ -230,6 +230,9 @@ class Presentation:
         with zipfile.ZipFile(pptx_file, "w") as zip_ref:
             for file in exploded_presentation_path.glob("**/*"):
                 zip_ref.write(file, file.relative_to(exploded_presentation_path))
+
+        if not keep_intermediate:
+            shutil.rmtree(exploded_presentation_path)
 
 
 def get_raw_text(token):

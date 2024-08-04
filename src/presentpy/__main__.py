@@ -46,7 +46,14 @@ odf_namespaces = {
     "--prettify",
     is_flag=True,
     default=False,
-    help="Prettify the output ODP file. NOT RECOMMENDED unless you are debugging the output file.",
+    help="Prettify the output ODP file. NOT RECOMMENDED unless you are debugging the output files.",
+    hidden=True,
+)
+@click.option(
+    "--keep-intermediate",
+    is_flag=True,
+    default=False,
+    help="Keep the intermediate files. NOT RECOMMENDED unless you are debugging the output files.",
     hidden=True,
 )
 @click.option(
@@ -55,7 +62,7 @@ odf_namespaces = {
     default=False,
     help="Include code cell outputs in the presentation.",
 )
-def process(notebook, output, theme, prettify, outputs):
+def process(notebook, output, theme, prettify, keep_intermediate, outputs):
     """
     A CLI tool to convert Jupyter Notebooks to slides.
     """
@@ -83,4 +90,4 @@ def process(notebook, output, theme, prettify, outputs):
             code_slide = CodeSlideSource.from_source_code(source)
             presentation.add_source_code(code_slide)
 
-    presentation.write(output, prettify=prettify)
+    presentation.write(output, prettify=prettify, keep_intermediate=keep_intermediate)
