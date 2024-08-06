@@ -79,7 +79,8 @@ def test_process_notebook(tmp_path):
 
     with runner.isolated_filesystem(tmp_path):
         result = runner.invoke(
-            process, [str(input_file), "--theme", "default", "--output", str(output_file), "--prettify"]
+            process,
+            [str(input_file), "--theme", "default", "--output", str(output_file), "--prettify", "--keep-intermediate"],
         )
 
         assert result.exit_code == 0
