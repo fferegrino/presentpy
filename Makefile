@@ -9,6 +9,11 @@ clean-all:
 	rm -rf *.odp
 	rm -rf *_odp
 
+reset-test:
+	presentpy tests/files/test.ipynb --theme default --output test.odp --keep-intermediate --prettify
+	cp -r test_odp/ tests/outputs/test_odp
+	rm -rf test_odp
+
 fmt:
 	black .
 	isort .
