@@ -1403,6 +1403,23 @@
 					</draw:text-box>
 				</draw:frame>
 			</draw:page>
+			<draw:page draw:name="slide5" draw:style-name="defaultSlide" draw:id="slide5" draw:master-page-name="Master1-Layout6-presentpy-TitleAndImageSlide">
+				<draw:frame draw:style-name="masterTitle" svg:x="0.9in" svg:y="0.4in" svg:width="11.53in" svg:height="1.00in" presentation:class="title">
+					<draw:text-box>
+						<text:p>
+							<text:span>Plot with error bands</text:span>
+						</text:p>
+					</draw:text-box>
+				</draw:frame>
+				<draw:frame draw:style-name="image" svg:x="1.6in" svg:y="1.3in" svg:width="10.11in" svg:height="6.11in" presentation:class="object">
+					<draw:image xlink:href="media/image1.png" xlink:type="simple" xlink:show="embed" xlink:actuate="onLoad"/>
+				</draw:frame>
+			</draw:page>
+			<draw:page draw:name="slide6" draw:style-name="defaultSlide" draw:id="slide6" draw:master-page-name="Master1-Layout7-presentpy-ImageSlide">
+				<draw:frame draw:style-name="image" svg:x="2.5in" svg:y="0.82in" svg:width="8.38in" svg:height="5.86in" presentation:class="object">
+					<draw:image xlink:href="media/image2.png" xlink:type="simple" xlink:show="embed" xlink:actuate="onLoad"/>
+				</draw:frame>
+			</draw:page>
 		</office:presentation>
 	</office:body>
 </office:document-content>

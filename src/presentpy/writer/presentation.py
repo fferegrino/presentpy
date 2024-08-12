@@ -1,11 +1,15 @@
+import base64
 import importlib.resources
+import os
 import shutil
+import tempfile
 import zipfile
+from io import BytesIO
 from pathlib import Path
 from typing import List
 
 import mistletoe
-from lxml import etree
+from PIL import Image
 
 from presentpy.code_slide_source import CodeSlideSource
 from presentpy.constants import *
@@ -13,11 +17,12 @@ from presentpy.namespaces import Namespaces
 from presentpy.templates import Content, Styles
 from presentpy.writer.slide_tag import (
     BlankSlide,
+    ImageSlide,
     SlideTag,
     TitleAndCodeSlide,
     TitleAndContentSlide,
+    TitleAndImageSlide,
     TitleCodeAndOutputSlide,
-    TitleSlide,
 )
 from presentpy.writer.tag import Tag
 from presentpy.writer.theme import Theme
@@ -30,6 +35,9 @@ class Presentation:
         self.styles: List[Tag] = []
         self.slides: List[SlideTag] = []
         self.current_slide_count = 0
+        self.current_image_count = 0
+        self._temp_dir = tempfile.mkdtemp()
+        os.makedirs(f"{self._temp_dir}/media", exist_ok=True)
 
     def new_slide(self, name=None, slide_type: SlideTag = TitleCodeAndOutputSlide):
         if name is None:
@@ -133,6 +141,39 @@ class Presentation:
         return p
 
     def add_source_code(self, code: CodeSlideSource, slide_name: str = None, with_output=False):
+        if code.output.image_png:
+            self.current_image_count += 1
+            media_path = f"media/image{self.current_image_count}.png"
+            image_path = f"{self._temp_dir}/{media_path}"
+            image_object = Image.open(BytesIO(base64.decodebytes(bytes(code.output.image_png, "utf-8"))))
+            image_object.save(image_path)
+
+            width, height = image_object.size
+            dpi_x, dpi_y = image_object.info["dpi"]
+
+            width_in_inches = width / dpi_x
+            height_in_inches = height / dpi_y
+
+            new_slide = self.new_slide(slide_name, slide_type=ImageSlide if not code.title else TitleAndImageSlide)
+            new_slide.add_image(media_path, width_in_inches, height_in_inches)
+
+            if code.title:
+                output_p = Tag(
+                    "text:p",
+                    self.namespaces,
+                )
+                span = Tag(
+                    "text:span",
+                    self.namespaces,
+                )
+                span.text = code.title
+                output_p.append(span)
+                new_slide.title_text_box.append(output_p)
+
+        else:
+            self._add_code_slide(code, slide_name, with_output)
+
+    def _add_code_slide(self, code, slide_name, with_output):
         for highlight in code.highlights:
             new_slide = self.new_slide(
                 slide_name, slide_type=TitleCodeAndOutputSlide if with_output else TitleAndCodeSlide
@@ -209,6 +250,7 @@ class Presentation:
         exploded_presentation_path = path.parent / f"{path.stem}_odp"
 
         shutil.copytree(source, exploded_presentation_path, dirs_exist_ok=True)
+        shutil.copytree(self._temp_dir, exploded_presentation_path, dirs_exist_ok=True)
 
         content_path = f"{exploded_presentation_path}/content.xml"
         content_xml = Content(content_path, self.namespaces, self.theme)

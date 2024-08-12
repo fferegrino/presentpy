@@ -3,6 +3,7 @@ import pytest
 from pygments.token import Token
 
 from presentpy.code_slide_source import (
+    CodeOutputs,
     CodeSlideSource,
     get_parsed_lines,
     parse_highlights,
@@ -62,7 +63,10 @@ def test_full_parse(get_cell):
 
     assert code_slide.code == cell.source
     assert code_slide.title == "Find the H.C.F of two numbers"
-    assert code_slide.outputs == ["The H.C.F. is 100", "100"]
+    assert code_slide.output == CodeOutputs(
+        stream="The H.C.F. is 100",
+        text_plain="100",
+    )
     assert code_slide.lines == get_parsed_lines(real_source)
     # fmt: off
     assert code_slide.highlights == [[-1,],[1,],[2,3,],[4,5,],[9,],]
