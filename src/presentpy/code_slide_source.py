@@ -116,10 +116,9 @@ class CodeSlideSource:
         if highlights := config.get("highlights"):
             dataclass_attributes["highlights"].extend(parse_highlights(highlights))
 
-        # dataclass_attributes["outputs"] = []
-
         stream = [output for output in cell.outputs if output.output_type == "stream"]
         execute_result = [output for output in cell.outputs if output.output_type == "execute_result"]
+        display_data = [output for output in cell.outputs if output.output_type == "display_data"]
 
         outputs = {}
 
@@ -127,6 +126,8 @@ class CodeSlideSource:
             outputs["stream"] = stream[0].text.strip()
         if execute_result:
             outputs["text_plain"] = execute_result[0].data["text/plain"].strip()
+        if display_data:
+            outputs["image_png"] = display_data[0].data.get("image/png")
 
         dataclass_attributes["output"] = CodeOutputs(**outputs)
 
