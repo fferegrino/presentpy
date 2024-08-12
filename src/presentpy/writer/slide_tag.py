@@ -24,10 +24,11 @@ class SlideTag(Tag):
         self.name = name
         self.theme = theme
 
+        self.frames = {}
         self.text_boxes = {}
         self.master_page_items = []
 
-    def add_text_box(self, identifier, container_style, x, y, w, h, text_box_style=None, presentation_class=None):
+    def add_frame(self, identifier, container_style, x, y, w, h, frame_style=None, presentation_class=None):
         frame_attributes = {
             "draw:style-name": container_style,
             "svg:x": f"{x:.2}in",
@@ -40,6 +41,16 @@ class SlideTag(Tag):
             frame_attributes["presentation:class"] = presentation_class
 
         frame = Tag("draw:frame", self.namespaces, frame_attributes)
+        self.frames[identifier] = frame
+        self.append(frame)
+
+        return frame
+
+    def add_text_box(self, identifier, container_style, x, y, w, h, text_box_style=None, presentation_class=None):
+
+        frame = self.add_frame(
+            f"{identifier}_frame", container_style, x, y, w, h, presentation_class=presentation_class
+        )
 
         text_box_style_def = {}
         if text_box_style:
@@ -47,7 +58,6 @@ class SlideTag(Tag):
         text_box = Tag("draw:text-box", self.namespaces, text_box_style_def)
 
         frame.append(text_box)
-        self.append(frame)
 
         self.text_boxes[identifier] = text_box
 
@@ -287,4 +297,132 @@ class TitleCodeAndOutputSlide(SlideTag):
             w,
             content_h,
             presentation_class="object",
+        )
+
+
+class TitleAndImageSlide(SlideTag):
+    """
+    ┌────────────────────────────────────────────────┐
+    │ ┌────────────────────────────────────────────┐ │
+    │ │ Title                                      │ │
+    │ └────────────────────────────────────────────┘ │
+    │ ┌────────────────────────────────────────────┐ │
+    │ │ Image                                      │ │
+    │ │                                            │ │
+    │ │                                            │ │
+    │ │                                            │ │
+    │ │                                            │ │
+    │ │                                            │ │
+    │ └────────────────────────────────────────────┘ │
+    └────────────────────────────────────────────────┘
+    """
+
+    __layout__ = "Layout6"
+
+    def __init__(self, name, namespaces: Namespaces, theme: Theme):
+        super().__init__(
+            name,
+            namespaces,
+            theme,
+        )
+        self.name = name
+        self.theme = theme
+
+        x = 0.9
+        title_y = 0.4
+        w = self.theme.width - (2 * x)
+        title_h = 1
+
+        super().add_text_box(
+            "title_text_box", MASTER_TITLE_STYLE_NAME, x, title_y, w, title_h, presentation_class="title"
+        )
+
+        content_y = title_y + title_h + 0.2
+        content_h = self.theme.height - content_y - 0.4
+
+        self.content_location = (x, content_y, w, content_h)
+
+    def add_image(self, image_path, image_width, image_height):
+        x, y, w, h = self.content_location
+        mid_point = (x + w / 2, y + h / 2)
+
+        image_x = mid_point[0] - image_width / 2
+        image_y = mid_point[1] - image_height / 2
+
+        image_frame = super().add_frame(
+            "object_frame", "image", image_x, image_y, image_width, image_height, presentation_class="object"
+        )
+
+        image_frame.append(
+            Tag(
+                "draw:image",
+                self.namespaces,
+                {
+                    "xlink:href": image_path,
+                    "xlink:type": "simple",
+                    "xlink:show": "embed",
+                    "xlink:actuate": "onLoad",
+                },
+            )
+        )
+
+
+class ImageSlide(SlideTag):
+    """
+    ┌────────────────────────────────────────────────┐
+    │ ┌────────────────────────────────────────────┐ │
+    │ │ Image                                      │ │
+    │ │                                            │ │
+    │ │                                            │ │
+    │ │                                            │ │
+    │ │                                            │ │
+    │ │                                            │ │
+    │ │                                            │ │
+    │ │                                            │ │
+    │ │                                            │ │
+    │ │                                            │ │
+    │ └────────────────────────────────────────────┘ │
+    └────────────────────────────────────────────────┘
+    """
+
+    __layout__ = "Layout7"
+
+    def __init__(self, name, namespaces: Namespaces, theme: Theme):
+        super().__init__(
+            name,
+            namespaces,
+            theme,
+        )
+        self.name = name
+        self.theme = theme
+
+        x = 0.9
+        y = 0.4
+        w = self.theme.width - (2 * x)
+        h = self.theme.height - (2 * y)
+
+        self.content_location = (x, y, w, h)
+
+    def add_image(self, image_path, image_width, image_height):
+        x, y, w, h = self.content_location
+        mid_point = (x + w / 2, y + h / 2)
+
+        image_x = mid_point[0] - image_width / 2
+        image_y = mid_point[1] - image_height / 2
+
+        image_frame = super().add_frame(
+            "object_frame", "image", image_x, image_y, image_width, image_height, presentation_class="object"
+        )
+
+        image_frame.append(
+            Tag(
+                "draw:image",
+                self.namespaces,
+                {
+                    "xlink:href": image_path,
+                    "xlink:type": "simple",
+                    "xlink:show": "embed",
+                    "xlink:actuate": "onLoad",
+                },
+            )
         )
