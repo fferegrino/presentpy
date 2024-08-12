@@ -8,6 +8,7 @@ clean-all:
 	rm -rf *.pptx
 	rm -rf *.odp
 	rm -rf *_odp
+	find . -name ".DS_Store" -delete
 
 reset-test:
 	presentpy tests/files/test.ipynb --theme default --output test.odp --keep-intermediate --prettify
