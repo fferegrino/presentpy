@@ -63,11 +63,29 @@ def extract_config_from_source_code(source_code):
 
 
 @dataclass
+class CodeOutputs:
+    stream: Optional[str] = None
+    image_png: Optional[str] = None
+    text_plain: Optional[str] = None
+    text_html: Optional[str] = None
+
+    def __bool__(self):
+        return any([self.stream, self.image_png, self.text_plain, self.text_html])
+
+    def get_text_lines(self):
+        if self.text_plain:
+            return self.text_plain.split("\n")
+        elif self.stream:
+            return self.stream.split("\n")
+        return []
+
+
+@dataclass
 class CodeSlideSource:
     code: str
     lines: List[List[Tuple[Any, str]]]
     highlights: List[List[int]] = field(default_factory=list)
-    outputs: Optional[List[str]] = None
+    output: CodeOutputs = field(default_factory=CodeOutputs)
     title: Optional[str] = None
 
     @classmethod
@@ -98,15 +116,19 @@ class CodeSlideSource:
         if highlights := config.get("highlights"):
             dataclass_attributes["highlights"].extend(parse_highlights(highlights))
 
-        dataclass_attributes["outputs"] = []
+        # dataclass_attributes["outputs"] = []
 
         stream = [output for output in cell.outputs if output.output_type == "stream"]
         execute_result = [output for output in cell.outputs if output.output_type == "execute_result"]
 
+        outputs = {}
+
         if stream:
-            dataclass_attributes["outputs"].extend(stream[0].text.strip().split("\n"))
+            outputs["stream"] = stream[0].text.strip()
         if execute_result:
-            dataclass_attributes["outputs"].extend(execute_result[0].data["text/plain"].strip().split("\n"))
+            outputs["text_plain"] = execute_result[0].data["text/plain"].strip()
+
+        dataclass_attributes["output"] = CodeOutputs(**outputs)
 
         return cls(
             code=cell.source,
