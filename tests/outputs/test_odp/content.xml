@@ -235,239 +235,65 @@
 		<style:style style:family="text" style:name="span__default__token_error">
 			<style:text-properties/>
 		</style:style>
+		<table:table-template table:name="table1-template">
+			<table:first-row table:style-name="table1-first-row"/>
+		</table:table-template>
+		<style:style style:family="table-cell" style:name="table1-odd-row">
+			<style:table-cell-properties fo:background-color="#ffffff" fo:border-bottom="0.03in solid white" fo:border-top="0.03in solid white" fo:border-left="0.03in solid white" fo:border-right="0.03in solid white"/>
+		</style:style>
+		<style:style style:family="text" style:name="table1-text">
+			<style:text-properties fo:color="white"/>
+		</style:style>
+		<style:style style:family="text" style:name="table1-text-heading">
+			<style:text-properties fo:color="white" fo:font-weight="bold"/>
+		</style:style>
+		<style:style style:family="table-cell" style:name="table1-even-row">
+			<style:table-cell-properties fo:background-color="#ebebeb" fo:border-bottom="0.03in solid white" fo:border-top="0.03in solid white" fo:border-left="0.03in solid white" fo:border-right="0.03in solid white"/>
+		</style:style>
+		<style:style style:family="table-column" style:name="table1-column">
+			<style:table-column-properties style:column-width="2.306in"/>
+		</style:style>
 	</office:automatic-styles>
 	<office:body>
 		<office:presentation>
-			<draw:page draw:name="slide0" draw:style-name="defaultSlide" draw:id="slide0" draw:master-page-name="Master1-Layout4-presentpy-TitleAndCodeSlide">
+			<draw:page draw:name="slide0" draw:style-name="defaultSlide" draw:id="slide0" draw:master-page-name="Master1-Layout3-presentpy-TitleAndContentSlide">
 				<draw:frame draw:style-name="masterTitle" svg:x="0.9in" svg:y="0.4in" svg:width="11.53in" svg:height="1.00in" presentation:class="title">
 					<draw:text-box>
 						<text:p>
-							<text:span>Find the H.C.F of two numbers</text:span>
+							<text:span>What is the highest common factor?</text:span>
 						</text:p>
 					</draw:text-box>
 				</draw:frame>
-				<draw:frame draw:style-name="codeFrame" svg:x="0.9in" svg:y="1.6in" svg:width="11.53in" svg:height="5.50in" presentation:class="object">
+				<draw:frame draw:style-name="masterContent" svg:x="0.9in" svg:y="1.6in" svg:width="11.53in" svg:height="5.50in" presentation:class="object">
 					<draw:text-box>
-						<text:p text:style-name="codeParagraph" text:class-names="" text:cond-style-name="">
-							<text:span text:style-name="span__default__token_keyword" text:class-names="">def</text:span>
-							<text:span text:style-name="span__default__token" text:class-names="">
-								<text:s text:c="1"/>
-							</text:span>
-							<text:span text:style-name="span__default__token_name_function" text:class-names="">compute_hcf</text:span>
-							<text:span text:style-name="span__default__token" text:class-names="">(</text:span>
-							<text:span text:style-name="span__default__token" text:class-names="">x</text:span>
-							<text:span text:style-name="span__default__token" text:class-names="">,</text:span>
-							<text:span text:style-name="span__default__token" text:class-names="">
-								<text:s text:c="1"/>
-							</text:span>
-							<text:span text:style-name="span__default__token" text:class-names="">y</text:span>
-							<text:span text:style-name="span__default__token" text:class-names="">)</text:span>
-							<text:span text:style-name="span__default__token" text:class-names="">:</text:span>
+						<text:p text:style-name="contentParagraph">
+							<text:span>The </text:span>
+							<text:span text:style-name="span__strong">highest common factor (HCF)</text:span>
+							<text:span> or </text:span>
+							<text:span text:style-name="span__emphasis">greatest common factor</text:span>
+							<text:span> is the largest integer that two or more numbers can be divided by.</text:span>
 						</text:p>
-						<text:p text:style-name="codeParagraph" text:class-names="" text:cond-style-name="">
-							<text:span text:style-name="span__default__token" text:class-names="">
-								<text:s text:c="4"/>
-							</text:span>
-							<text:span text:style-name="span__default__token_keyword" text:class-names="">if</text:span>
-							<text:span text:style-name="span__default__token" text:class-names="">
-								<text:s text:c="1"/>
-							</text:span>
-							<text:span text:style-name="span__default__token" text:class-names="">x</text:span>
-							<text:span text:style-name="span__default__token" text:class-names="">
-								<text:s text:c="1"/>
-							</text:span>
-							<text:span text:style-name="span__default__token_operator" text:class-names="">&gt;</text:span>
-							<text:span text:style-name="span__default__token" text:class-names="">
-								<text:s text:c="1"/>
-							</text:span>
-							<text:span text:style-name="span__default__token" text:class-names="">y</text:span>
-							<text:span text:style-name="span__default__token" text:class-names="">:</text:span>
-						</text:p>
-						<text:p text:style-name="codeParagraph" text:class-names="" text:cond-style-name="">
-							<text:span text:style-name="span__default__token" text:class-names="">
-								<text:s text:c="8"/>
-							</text:span>
-							<text:span text:style-name="span__default__token" text:class-names="">smaller</text:span>
-							<text:span text:style-name="span__default__token" text:class-names="">
-								<text:s text:c="1"/>
-							</text:span>
-							<text:span text:style-name="span__default__token_operator" text:class-names="">=</text:span>
-							<text:span text:style-name="span__default__token" text:class-names="">
-								<text:s text:c="1"/>
-							</text:span>
-							<text:span text:style-name="span__default__token" text:class-names="">y</text:span>
-						</text:p>
-						<text:p text:style-name="codeParagraph" text:class-names="" text:cond-style-name="">
-							<text:span text:style-name="span__default__token" text:class-names="">
-								<text:s text:c="4"/>
-							</text:span>
-							<text:span text:style-name="span__default__token_keyword" text:class-names="">else</text:span>
-							<text:span text:style-name="span__default__token" text:class-names="">:</text:span>
-						</text:p>
-						<text:p text:style-name="codeParagraph" text:class-names="" text:cond-style-name="">
-							<text:span text:style-name="span__default__token" text:class-names="">
-								<text:s text:c="8"/>
-							</text:span>
-							<text:span text:style-name="span__default__token" text:class-names="">smaller</text:span>
-							<text:span text:style-name="span__default__token" text:class-names="">
-								<text:s text:c="1"/>
-							</text:span>
-							<text:span text:style-name="span__default__token_operator" text:class-names="">=</text:span>
-							<text:span text:style-name="span__default__token" text:class-names="">
-								<text:s text:c="1"/>
-							</text:span>
-							<text:span text:style-name="span__default__token" text:class-names="">x</text:span>
-						</text:p>
-						<text:p text:style-name="codeParagraph" text:class-names="" text:cond-style-name="">
-							<text:span text:style-name="span__default__token" text:class-names="">
-								<text:s text:c="4"/>
-							</text:span>
-							<text:span text:style-name="span__default__token_keyword" text:class-names="">for</text:span>
-							<text:span text:style-name="span__default__token" text:class-names="">
-								<text:s text:c="1"/>
-							</text:span>
-							<text:span text:style-name="span__default__token" text:class-names="">i</text:span>
-							<text:span text:style-name="span__default__token" text:class-names="">
-								<text:s text:c="1"/>
-							</text:span>
-							<text:span text:style-name="span__default__token_operator_word" text:class-names="">in</text:span>
-							<text:span text:style-name="span__default__token" text:class-names="">
-								<text:s text:c="1"/>
-							</text:span>
-							<text:span text:style-name="span__default__token_name_builtin" text:class-names="">range</text:span>
-							<text:span text:style-name="span__default__token" text:class-names="">(</text:span>
-							<text:span text:style-name="span__default__token_literal_number" text:class-names="">1</text:span>
-							<text:span text:style-name="span__default__token" text:class-names="">,</text:span>
-							<text:span text:style-name="span__default__token" text:class-names="">
-								<text:s text:c="1"/>
-							</text:span>
-							<text:span text:style-name="span__default__token" text:class-names="">smaller</text:span>
-							<text:span text:style-name="span__default__token" text:class-names="">
-								<text:s text:c="1"/>
-							</text:span>
-							<text:span text:style-name="span__default__token_operator" text:class-names="">+</text:span>
-							<text:span text:style-name="span__default__token" text:class-names="">
-								<text:s text:c="1"/>
-							</text:span>
-							<text:span text:style-name="span__default__token_literal_number" text:class-names="">1</text:span>
-							<text:span text:style-name="span__default__token" text:class-names="">)</text:span>
-							<text:span text:style-name="span__default__token" text:class-names="">:</text:span>
-						</text:p>
-						<text:p text:style-name="codeParagraph" text:class-names="" text:cond-style-name="">
-							<text:span text:style-name="span__default__token" text:class-names="">
-								<text:s text:c="8"/>
-							</text:span>
-							<text:span text:style-name="span__default__token_keyword" text:class-names="">if</text:span>
-							<text:span text:style-name="span__default__token" text:class-names="">
-								<text:s text:c="1"/>
-							</text:span>
-							<text:span text:style-name="span__default__token" text:class-names="">(</text:span>
-							<text:span text:style-name="span__default__token" text:class-names="">x</text:span>
-							<text:span text:style-name="span__default__token" text:class-names="">
-								<text:s text:c="1"/>
-							</text:span>
-							<text:span text:style-name="span__default__token_operator" text:class-names="">%</text:span>
-							<text:span text:style-name="span__default__token" text:class-names="">
-								<text:s text:c="1"/>
-							</text:span>
-							<text:span text:style-name="span__default__token" text:class-names="">i</text:span>
-							<text:span text:style-name="span__default__token" text:class-names="">
-								<text:s text:c="1"/>
-							</text:span>
-							<text:span text:style-name="span__default__token_operator" text:class-names="">==</text:span>
-							<text:span text:style-name="span__default__token" text:class-names="">
-								<text:s text:c="1"/>
-							</text:span>
-							<text:span text:style-name="span__default__token_literal_number" text:class-names="">0</text:span>
-							<text:span text:style-name="span__default__token" text:class-names="">)</text:span>
-							<text:span text:style-name="span__default__token" text:class-names="">
-								<text:s text:c="1"/>
-							</text:span>
-							<text:span text:style-name="span__default__token_operator_word" text:class-names="">and</text:span>
-							<text:span text:style-name="span__default__token" text:class-names="">
-								<text:s text:c="1"/>
-							</text:span>
-							<text:span text:style-name="span__default__token" text:class-names="">(</text:span>
-							<text:span text:style-name="span__default__token" text:class-names="">y</text:span>
-							<text:span text:style-name="span__default__token" text:class-names="">
-								<text:s text:c="1"/>
-							</text:span>
-							<text:span text:style-name="span__default__token_operator" text:class-names="">%</text:span>
-							<text:span text:style-name="span__default__token" text:class-names="">
-								<text:s text:c="1"/>
-							</text:span>
-							<text:span text:style-name="span__default__token" text:class-names="">i</text:span>
-							<text:span text:style-name="span__default__token" text:class-names="">
-								<text:s text:c="1"/>
-							</text:span>
-							<text:span text:style-name="span__default__token_operator" text:class-names="">==</text:span>
-							<text:span text:style-name="span__default__token" text:class-names="">
-								<text:s text:c="1"/>
-							</text:span>
-							<text:span text:style-name="span__default__token_literal_number" text:class-names="">0</text:span>
-							<text:span text:style-name="span__default__token" text:class-names="">)</text:span>
-							<text:span text:style-name="span__default__token" text:class-names="">:</text:span>
-						</text:p>
-						<text:p text:style-name="codeParagraph" text:class-names="" text:cond-style-name="">
-							<text:span text:style-name="span__default__token" text:class-names="">
-								<text:s text:c="12"/>
-							</text:span>
-							<text:span text:style-name="span__default__token" text:class-names="">hcf</text:span>
-							<text:span text:style-name="span__default__token" text:class-names="">
-								<text:s text:c="1"/>
-							</text:span>
-							<text:span text:style-name="span__default__token_operator" text:class-names="">=</text:span>
-							<text:span text:style-name="span__default__token" text:class-names="">
-								<text:s text:c="1"/>
-							</text:span>
-							<text:span text:style-name="span__default__token" text:class-names="">i</text:span>
-						</text:p>
-						<text:p text:style-name="codeParagraph" text:class-names="" text:cond-style-name="">
-							<text:span text:style-name="span__default__token" text:class-names="">
-								<text:s text:c="4"/>
-							</text:span>
-							<text:span text:style-name="span__default__token_keyword" text:class-names="">return</text:span>
-							<text:span text:style-name="span__default__token" text:class-names="">
-								<text:s text:c="1"/>
-							</text:span>
-							<text:span text:style-name="span__default__token" text:class-names="">hcf</text:span>
-						</text:p>
-						<text:p text:style-name="codeParagraph" text:class-names="" text:cond-style-name=""/>
-						<text:p text:style-name="codeParagraph" text:class-names="" text:cond-style-name=""/>
-						<text:p text:style-name="codeParagraph" text:class-names="" text:cond-style-name="">
-							<text:span text:style-name="span__default__token" text:class-names="">hcf</text:span>
-							<text:span text:style-name="span__default__token" text:class-names="">
-								<text:s text:c="1"/>
-							</text:span>
-							<text:span text:style-name="span__default__token_operator" text:class-names="">=</text:span>
-							<text:span text:style-name="span__default__token" text:class-names="">
-								<text:s text:c="1"/>
-							</text:span>
-							<text:span text:style-name="span__default__token" text:class-names="">compute_hcf</text:span>
-							<text:span text:style-name="span__default__token" text:class-names="">(</text:span>
-							<text:span text:style-name="span__default__token_literal_number" text:class-names="">300</text:span>
-							<text:span text:style-name="span__default__token" text:class-names="">,</text:span>
-							<text:span text:style-name="span__default__token" text:class-names="">
-								<text:s text:c="1"/>
-							</text:span>
-							<text:span text:style-name="span__default__token_literal_number" text:class-names="">400</text:span>
-							<text:span text:style-name="span__default__token" text:class-names="">)</text:span>
-						</text:p>
-						<text:p text:style-name="codeParagraph" text:class-names="" text:cond-style-name="">
-							<text:span text:style-name="span__default__token_name_builtin" text:class-names="">print</text:span>
-							<text:span text:style-name="span__default__token" text:class-names="">(</text:span>
-							<text:span text:style-name="span__default__token_literal_string" text:class-names="">f</text:span>
-							<text:span text:style-name="span__default__token_literal_string" text:class-names="">&quot;</text:span>
-							<text:span text:style-name="span__default__token_literal_string" text:class-names="">The H.C.F. is </text:span>
-							<text:span text:style-name="span__default__token_literal_string_interpol" text:class-names="">{</text:span>
-							<text:span text:style-name="span__default__token" text:class-names="">hcf</text:span>
-							<text:span text:style-name="span__default__token_literal_string_interpol" text:class-names="">}</text:span>
-							<text:span text:style-name="span__default__token_literal_string" text:class-names="">&quot;</text:span>
-							<text:span text:style-name="span__default__token" text:class-names="">)</text:span>
-						</text:p>
-						<text:p text:style-name="codeParagraph" text:class-names="" text:cond-style-name="">
-							<text:span text:style-name="span__default__token" text:class-names="">hcf</text:span>
-						</text:p>
+						<text:p/>
+						<text:list text:style-name="list">
+							<text:list-item>
+								<text:p text:style-name="contentListParagraph">
+									<text:span text:style-name="span__strong">Highest</text:span>
+									<text:span> meaning largest number or greatest.</text:span>
+								</text:p>
+							</text:list-item>
+							<text:list-item>
+								<text:p text:style-name="contentListParagraph">
+									<text:span text:style-name="span__strong">Common</text:span>
+									<text:span> meaning shared between two or more numbers.</text:span>
+								</text:p>
+							</text:list-item>
+							<text:list-item>
+								<text:p text:style-name="contentListParagraph">
+									<text:span text:style-name="span__strong">Factor</text:span>
+									<text:span> meaning an integer that a whole number can be divided by (a divisor).</text:span>
+								</text:p>
+							</text:list-item>
+						</text:list>
 					</draw:text-box>
 				</draw:frame>
 			</draw:page>
@@ -481,7 +307,7 @@
 				</draw:frame>
 				<draw:frame draw:style-name="codeFrame" svg:x="0.9in" svg:y="1.6in" svg:width="11.53in" svg:height="5.50in" presentation:class="object">
 					<draw:text-box>
-						<text:p text:style-name="highlightedCodeParagraph" text:class-names="" text:cond-style-name="">
+						<text:p text:style-name="codeParagraph" text:class-names="" text:cond-style-name="">
 							<text:span text:style-name="span__default__token_keyword" text:class-names="">def</text:span>
 							<text:span text:style-name="span__default__token" text:class-names="">
 								<text:s text:c="1"/>
@@ -714,7 +540,7 @@
 				</draw:frame>
 				<draw:frame draw:style-name="codeFrame" svg:x="0.9in" svg:y="1.6in" svg:width="11.53in" svg:height="5.50in" presentation:class="object">
 					<draw:text-box>
-						<text:p text:style-name="codeParagraph" text:class-names="" text:cond-style-name="">
+						<text:p text:style-name="highlightedCodeParagraph" text:class-names="" text:cond-style-name="">
 							<text:span text:style-name="span__default__token_keyword" text:class-names="">def</text:span>
 							<text:span text:style-name="span__default__token" text:class-names="">
 								<text:s text:c="1"/>
@@ -730,7 +556,7 @@
 							<text:span text:style-name="span__default__token" text:class-names="">)</text:span>
 							<text:span text:style-name="span__default__token" text:class-names="">:</text:span>
 						</text:p>
-						<text:p text:style-name="highlightedCodeParagraph" text:class-names="" text:cond-style-name="">
+						<text:p text:style-name="codeParagraph" text:class-names="" text:cond-style-name="">
 							<text:span text:style-name="span__default__token" text:class-names="">
 								<text:s text:c="4"/>
 							</text:span>
@@ -749,7 +575,7 @@
 							<text:span text:style-name="span__default__token" text:class-names="">y</text:span>
 							<text:span text:style-name="span__default__token" text:class-names="">:</text:span>
 						</text:p>
-						<text:p text:style-name="highlightedCodeParagraph" text:class-names="" text:cond-style-name="">
+						<text:p text:style-name="codeParagraph" text:class-names="" text:cond-style-name="">
 							<text:span text:style-name="span__default__token" text:class-names="">
 								<text:s text:c="8"/>
 							</text:span>
@@ -963,7 +789,7 @@
 							<text:span text:style-name="span__default__token" text:class-names="">)</text:span>
 							<text:span text:style-name="span__default__token" text:class-names="">:</text:span>
 						</text:p>
-						<text:p text:style-name="codeParagraph" text:class-names="" text:cond-style-name="">
+						<text:p text:style-name="highlightedCodeParagraph" text:class-names="" text:cond-style-name="">
 							<text:span text:style-name="span__default__token" text:class-names="">
 								<text:s text:c="4"/>
 							</text:span>
@@ -982,7 +808,7 @@
 							<text:span text:style-name="span__default__token" text:class-names="">y</text:span>
 							<text:span text:style-name="span__default__token" text:class-names="">:</text:span>
 						</text:p>
-						<text:p text:style-name="codeParagraph" text:class-names="" text:cond-style-name="">
+						<text:p text:style-name="highlightedCodeParagraph" text:class-names="" text:cond-style-name="">
 							<text:span text:style-name="span__default__token" text:class-names="">
 								<text:s text:c="8"/>
 							</text:span>
@@ -996,14 +822,14 @@
 							</text:span>
 							<text:span text:style-name="span__default__token" text:class-names="">y</text:span>
 						</text:p>
-						<text:p text:style-name="highlightedCodeParagraph" text:class-names="" text:cond-style-name="">
+						<text:p text:style-name="codeParagraph" text:class-names="" text:cond-style-name="">
 							<text:span text:style-name="span__default__token" text:class-names="">
 								<text:s text:c="4"/>
 							</text:span>
 							<text:span text:style-name="span__default__token_keyword" text:class-names="">else</text:span>
 							<text:span text:style-name="span__default__token" text:class-names="">:</text:span>
 						</text:p>
-						<text:p text:style-name="highlightedCodeParagraph" text:class-names="" text:cond-style-name="">
+						<text:p text:style-name="codeParagraph" text:class-names="" text:cond-style-name="">
 							<text:span text:style-name="span__default__token" text:class-names="">
 								<text:s text:c="8"/>
 							</text:span>
@@ -1229,6 +1055,239 @@
 							</text:span>
 							<text:span text:style-name="span__default__token" text:class-names="">y</text:span>
 						</text:p>
+						<text:p text:style-name="highlightedCodeParagraph" text:class-names="" text:cond-style-name="">
+							<text:span text:style-name="span__default__token" text:class-names="">
+								<text:s text:c="4"/>
+							</text:span>
+							<text:span text:style-name="span__default__token_keyword" text:class-names="">else</text:span>
+							<text:span text:style-name="span__default__token" text:class-names="">:</text:span>
+						</text:p>
+						<text:p text:style-name="highlightedCodeParagraph" text:class-names="" text:cond-style-name="">
+							<text:span text:style-name="span__default__token" text:class-names="">
+								<text:s text:c="8"/>
+							</text:span>
+							<text:span text:style-name="span__default__token" text:class-names="">smaller</text:span>
+							<text:span text:style-name="span__default__token" text:class-names="">
+								<text:s text:c="1"/>
+							</text:span>
+							<text:span text:style-name="span__default__token_operator" text:class-names="">=</text:span>
+							<text:span text:style-name="span__default__token" text:class-names="">
+								<text:s text:c="1"/>
+							</text:span>
+							<text:span text:style-name="span__default__token" text:class-names="">x</text:span>
+						</text:p>
+						<text:p text:style-name="codeParagraph" text:class-names="" text:cond-style-name="">
+							<text:span text:style-name="span__default__token" text:class-names="">
+								<text:s text:c="4"/>
+							</text:span>
+							<text:span text:style-name="span__default__token_keyword" text:class-names="">for</text:span>
+							<text:span text:style-name="span__default__token" text:class-names="">
+								<text:s text:c="1"/>
+							</text:span>
+							<text:span text:style-name="span__default__token" text:class-names="">i</text:span>
+							<text:span text:style-name="span__default__token" text:class-names="">
+								<text:s text:c="1"/>
+							</text:span>
+							<text:span text:style-name="span__default__token_operator_word" text:class-names="">in</text:span>
+							<text:span text:style-name="span__default__token" text:class-names="">
+								<text:s text:c="1"/>
+							</text:span>
+							<text:span text:style-name="span__default__token_name_builtin" text:class-names="">range</text:span>
+							<text:span text:style-name="span__default__token" text:class-names="">(</text:span>
+							<text:span text:style-name="span__default__token_literal_number" text:class-names="">1</text:span>
+							<text:span text:style-name="span__default__token" text:class-names="">,</text:span>
+							<text:span text:style-name="span__default__token" text:class-names="">
+								<text:s text:c="1"/>
+							</text:span>
+							<text:span text:style-name="span__default__token" text:class-names="">smaller</text:span>
+							<text:span text:style-name="span__default__token" text:class-names="">
+								<text:s text:c="1"/>
+							</text:span>
+							<text:span text:style-name="span__default__token_operator" text:class-names="">+</text:span>
+							<text:span text:style-name="span__default__token" text:class-names="">
+								<text:s text:c="1"/>
+							</text:span>
+							<text:span text:style-name="span__default__token_literal_number" text:class-names="">1</text:span>
+							<text:span text:style-name="span__default__token" text:class-names="">)</text:span>
+							<text:span text:style-name="span__default__token" text:class-names="">:</text:span>
+						</text:p>
+						<text:p text:style-name="codeParagraph" text:class-names="" text:cond-style-name="">
+							<text:span text:style-name="span__default__token" text:class-names="">
+								<text:s text:c="8"/>
+							</text:span>
+							<text:span text:style-name="span__default__token_keyword" text:class-names="">if</text:span>
+							<text:span text:style-name="span__default__token" text:class-names="">
+								<text:s text:c="1"/>
+							</text:span>
+							<text:span text:style-name="span__default__token" text:class-names="">(</text:span>
+							<text:span text:style-name="span__default__token" text:class-names="">x</text:span>
+							<text:span text:style-name="span__default__token" text:class-names="">
+								<text:s text:c="1"/>
+							</text:span>
+							<text:span text:style-name="span__default__token_operator" text:class-names="">%</text:span>
+							<text:span text:style-name="span__default__token" text:class-names="">
+								<text:s text:c="1"/>
+							</text:span>
+							<text:span text:style-name="span__default__token" text:class-names="">i</text:span>
+							<text:span text:style-name="span__default__token" text:class-names="">
+								<text:s text:c="1"/>
+							</text:span>
+							<text:span text:style-name="span__default__token_operator" text:class-names="">==</text:span>
+							<text:span text:style-name="span__default__token" text:class-names="">
+								<text:s text:c="1"/>
+							</text:span>
+							<text:span text:style-name="span__default__token_literal_number" text:class-names="">0</text:span>
+							<text:span text:style-name="span__default__token" text:class-names="">)</text:span>
+							<text:span text:style-name="span__default__token" text:class-names="">
+								<text:s text:c="1"/>
+							</text:span>
+							<text:span text:style-name="span__default__token_operator_word" text:class-names="">and</text:span>
+							<text:span text:style-name="span__default__token" text:class-names="">
+								<text:s text:c="1"/>
+							</text:span>
+							<text:span text:style-name="span__default__token" text:class-names="">(</text:span>
+							<text:span text:style-name="span__default__token" text:class-names="">y</text:span>
+							<text:span text:style-name="span__default__token" text:class-names="">
+								<text:s text:c="1"/>
+							</text:span>
+							<text:span text:style-name="span__default__token_operator" text:class-names="">%</text:span>
+							<text:span text:style-name="span__default__token" text:class-names="">
+								<text:s text:c="1"/>
+							</text:span>
+							<text:span text:style-name="span__default__token" text:class-names="">i</text:span>
+							<text:span text:style-name="span__default__token" text:class-names="">
+								<text:s text:c="1"/>
+							</text:span>
+							<text:span text:style-name="span__default__token_operator" text:class-names="">==</text:span>
+							<text:span text:style-name="span__default__token" text:class-names="">
+								<text:s text:c="1"/>
+							</text:span>
+							<text:span text:style-name="span__default__token_literal_number" text:class-names="">0</text:span>
+							<text:span text:style-name="span__default__token" text:class-names="">)</text:span>
+							<text:span text:style-name="span__default__token" text:class-names="">:</text:span>
+						</text:p>
+						<text:p text:style-name="codeParagraph" text:class-names="" text:cond-style-name="">
+							<text:span text:style-name="span__default__token" text:class-names="">
+								<text:s text:c="12"/>
+							</text:span>
+							<text:span text:style-name="span__default__token" text:class-names="">hcf</text:span>
+							<text:span text:style-name="span__default__token" text:class-names="">
+								<text:s text:c="1"/>
+							</text:span>
+							<text:span text:style-name="span__default__token_operator" text:class-names="">=</text:span>
+							<text:span text:style-name="span__default__token" text:class-names="">
+								<text:s text:c="1"/>
+							</text:span>
+							<text:span text:style-name="span__default__token" text:class-names="">i</text:span>
+						</text:p>
+						<text:p text:style-name="codeParagraph" text:class-names="" text:cond-style-name="">
+							<text:span text:style-name="span__default__token" text:class-names="">
+								<text:s text:c="4"/>
+							</text:span>
+							<text:span text:style-name="span__default__token_keyword" text:class-names="">return</text:span>
+							<text:span text:style-name="span__default__token" text:class-names="">
+								<text:s text:c="1"/>
+							</text:span>
+							<text:span text:style-name="span__default__token" text:class-names="">hcf</text:span>
+						</text:p>
+						<text:p text:style-name="codeParagraph" text:class-names="" text:cond-style-name=""/>
+						<text:p text:style-name="codeParagraph" text:class-names="" text:cond-style-name=""/>
+						<text:p text:style-name="codeParagraph" text:class-names="" text:cond-style-name="">
+							<text:span text:style-name="span__default__token" text:class-names="">hcf</text:span>
+							<text:span text:style-name="span__default__token" text:class-names="">
+								<text:s text:c="1"/>
+							</text:span>
+							<text:span text:style-name="span__default__token_operator" text:class-names="">=</text:span>
+							<text:span text:style-name="span__default__token" text:class-names="">
+								<text:s text:c="1"/>
+							</text:span>
+							<text:span text:style-name="span__default__token" text:class-names="">compute_hcf</text:span>
+							<text:span text:style-name="span__default__token" text:class-names="">(</text:span>
+							<text:span text:style-name="span__default__token_literal_number" text:class-names="">300</text:span>
+							<text:span text:style-name="span__default__token" text:class-names="">,</text:span>
+							<text:span text:style-name="span__default__token" text:class-names="">
+								<text:s text:c="1"/>
+							</text:span>
+							<text:span text:style-name="span__default__token_literal_number" text:class-names="">400</text:span>
+							<text:span text:style-name="span__default__token" text:class-names="">)</text:span>
+						</text:p>
+						<text:p text:style-name="codeParagraph" text:class-names="" text:cond-style-name="">
+							<text:span text:style-name="span__default__token_name_builtin" text:class-names="">print</text:span>
+							<text:span text:style-name="span__default__token" text:class-names="">(</text:span>
+							<text:span text:style-name="span__default__token_literal_string" text:class-names="">f</text:span>
+							<text:span text:style-name="span__default__token_literal_string" text:class-names="">&quot;</text:span>
+							<text:span text:style-name="span__default__token_literal_string" text:class-names="">The H.C.F. is </text:span>
+							<text:span text:style-name="span__default__token_literal_string_interpol" text:class-names="">{</text:span>
+							<text:span text:style-name="span__default__token" text:class-names="">hcf</text:span>
+							<text:span text:style-name="span__default__token_literal_string_interpol" text:class-names="">}</text:span>
+							<text:span text:style-name="span__default__token_literal_string" text:class-names="">&quot;</text:span>
+							<text:span text:style-name="span__default__token" text:class-names="">)</text:span>
+						</text:p>
+						<text:p text:style-name="codeParagraph" text:class-names="" text:cond-style-name="">
+							<text:span text:style-name="span__default__token" text:class-names="">hcf</text:span>
+						</text:p>
+					</draw:text-box>
+				</draw:frame>
+			</draw:page>
+			<draw:page draw:name="slide5" draw:style-name="defaultSlide" draw:id="slide5" draw:master-page-name="Master1-Layout4-presentpy-TitleAndCodeSlide">
+				<draw:frame draw:style-name="masterTitle" svg:x="0.9in" svg:y="0.4in" svg:width="11.53in" svg:height="1.00in" presentation:class="title">
+					<draw:text-box>
+						<text:p>
+							<text:span>Find the H.C.F of two numbers</text:span>
+						</text:p>
+					</draw:text-box>
+				</draw:frame>
+				<draw:frame draw:style-name="codeFrame" svg:x="0.9in" svg:y="1.6in" svg:width="11.53in" svg:height="5.50in" presentation:class="object">
+					<draw:text-box>
+						<text:p text:style-name="codeParagraph" text:class-names="" text:cond-style-name="">
+							<text:span text:style-name="span__default__token_keyword" text:class-names="">def</text:span>
+							<text:span text:style-name="span__default__token" text:class-names="">
+								<text:s text:c="1"/>
+							</text:span>
+							<text:span text:style-name="span__default__token_name_function" text:class-names="">compute_hcf</text:span>
+							<text:span text:style-name="span__default__token" text:class-names="">(</text:span>
+							<text:span text:style-name="span__default__token" text:class-names="">x</text:span>
+							<text:span text:style-name="span__default__token" text:class-names="">,</text:span>
+							<text:span text:style-name="span__default__token" text:class-names="">
+								<text:s text:c="1"/>
+							</text:span>
+							<text:span text:style-name="span__default__token" text:class-names="">y</text:span>
+							<text:span text:style-name="span__default__token" text:class-names="">)</text:span>
+							<text:span text:style-name="span__default__token" text:class-names="">:</text:span>
+						</text:p>
+						<text:p text:style-name="codeParagraph" text:class-names="" text:cond-style-name="">
+							<text:span text:style-name="span__default__token" text:class-names="">
+								<text:s text:c="4"/>
+							</text:span>
+							<text:span text:style-name="span__default__token_keyword" text:class-names="">if</text:span>
+							<text:span text:style-name="span__default__token" text:class-names="">
+								<text:s text:c="1"/>
+							</text:span>
+							<text:span text:style-name="span__default__token" text:class-names="">x</text:span>
+							<text:span text:style-name="span__default__token" text:class-names="">
+								<text:s text:c="1"/>
+							</text:span>
+							<text:span text:style-name="span__default__token_operator" text:class-names="">&gt;</text:span>
+							<text:span text:style-name="span__default__token" text:class-names="">
+								<text:s text:c="1"/>
+							</text:span>
+							<text:span text:style-name="span__default__token" text:class-names="">y</text:span>
+							<text:span text:style-name="span__default__token" text:class-names="">:</text:span>
+						</text:p>
+						<text:p text:style-name="codeParagraph" text:class-names="" text:cond-style-name="">
+							<text:span text:style-name="span__default__token" text:class-names="">
+								<text:s text:c="8"/>
+							</text:span>
+							<text:span text:style-name="span__default__token" text:class-names="">smaller</text:span>
+							<text:span text:style-name="span__default__token" text:class-names="">
+								<text:s text:c="1"/>
+							</text:span>
+							<text:span text:style-name="span__default__token_operator" text:class-names="">=</text:span>
+							<text:span text:style-name="span__default__token" text:class-names="">
+								<text:s text:c="1"/>
+							</text:span>
+							<text:span text:style-name="span__default__token" text:class-names="">y</text:span>
+						</text:p>
 						<text:p text:style-name="codeParagraph" text:class-names="" text:cond-style-name="">
 							<text:span text:style-name="span__default__token" text:class-names="">
 								<text:s text:c="4"/>
@@ -1403,7 +1462,7 @@
 					</draw:text-box>
 				</draw:frame>
 			</draw:page>
-			<draw:page draw:name="slide5" draw:style-name="defaultSlide" draw:id="slide5" draw:master-page-name="Master1-Layout6-presentpy-TitleAndImageSlide">
+			<draw:page draw:name="slide6" draw:style-name="defaultSlide" draw:id="slide6" draw:master-page-name="Master1-Layout6-presentpy-TitleAndImageSlide">
 				<draw:frame draw:style-name="masterTitle" svg:x="0.9in" svg:y="0.4in" svg:width="11.53in" svg:height="1.00in" presentation:class="title">
 					<draw:text-box>
 						<text:p>
@@ -1415,9 +1474,142 @@
 					<draw:image xlink:href="media/image1.png" xlink:type="simple" xlink:show="embed" xlink:actuate="onLoad"/>
 				</draw:frame>
 			</draw:page>
-			<draw:page draw:name="slide6" draw:style-name="defaultSlide" draw:id="slide6" draw:master-page-name="Master1-Layout7-presentpy-ImageSlide">
+			<draw:page draw:name="slide7" draw:style-name="defaultSlide" draw:id="slide7" draw:master-page-name="Master1-Layout7-presentpy-ImageSlide">
 				<draw:frame draw:style-name="image" svg:x="2.5in" svg:y="0.82in" svg:width="8.38in" svg:height="5.86in" presentation:class="object">
 					<draw:image xlink:href="media/image2.png" xlink:type="simple" xlink:show="embed" xlink:actuate="onLoad"/>
+				</draw:frame>
+			</draw:page>
+			<draw:page draw:name="slide8" draw:style-name="defaultSlide" draw:id="slide8" draw:master-page-name="Master1-Layout8-presentpy-TitleAndObjectSlide">
+				<draw:frame draw:style-name="masterTitle" svg:x="0.9in" svg:y="0.4in" svg:width="11.53in" svg:height="1.00in" presentation:class="title">
+					<draw:text-box/>
+				</draw:frame>
+				<draw:frame draw:style-name="object" svg:x="0.9in" svg:y="1.6in" svg:width="11.53in" svg:height="5.50in" presentation:class="object">
+					<table:table table:use-banding-columns-styles="false" table:use-banding-rows-styles="true" table:use-first-column-styles="false" table:use-first-row-styles="true" table:use-last-column-styles="false" table:use-last-row-styles="false" table:template-name="table1-template">
+						<table:table-column table:style-name="table1-column"/>
+						<table:table-column table:style-name="table1-column"/>
+						<table:table-column table:style-name="table1-column"/>
+						<table:table-column table:style-name="table1-column"/>
+						<table:table-column table:style-name="table1-column"/>
+						<table:table-row>
+							<table:table-cell table:style-name="table1-even-row">
+								<text:p text:style-name="table1-text-heading"/>
+							</table:table-cell>
+							<table:table-cell table:style-name="table1-even-row">
+								<text:p text:style-name="table1-text-heading">A</text:p>
+							</table:table-cell>
+							<table:table-cell table:style-name="table1-even-row">
+								<text:p text:style-name="table1-text-heading">B</text:p>
+							</table:table-cell>
+							<table:table-cell table:style-name="table1-even-row">
+								<text:p text:style-name="table1-text-heading">C</text:p>
+							</table:table-cell>
+							<table:table-cell table:style-name="table1-even-row">
+								<text:p text:style-name="table1-text-heading">D</text:p>
+							</table:table-cell>
+						</table:table-row>
+						<table:table-row>
+							<table:table-cell table:style-name="table1-odd-row">
+								<text:p text:style-name="table1-text">2013-01-01</text:p>
+							</table:table-cell>
+							<table:table-cell table:style-name="table1-odd-row">
+								<text:p text:style-name="table1-text">2.680860</text:p>
+							</table:table-cell>
+							<table:table-cell table:style-name="table1-odd-row">
+								<text:p text:style-name="table1-text">-1.422334</text:p>
+							</table:table-cell>
+							<table:table-cell table:style-name="table1-odd-row">
+								<text:p text:style-name="table1-text">-0.702262</text:p>
+							</table:table-cell>
+							<table:table-cell table:style-name="table1-odd-row">
+								<text:p text:style-name="table1-text">0.267985</text:p>
+							</table:table-cell>
+						</table:table-row>
+						<table:table-row>
+							<table:table-cell table:style-name="table1-even-row">
+								<text:p text:style-name="table1-text">2013-01-02</text:p>
+							</table:table-cell>
+							<table:table-cell table:style-name="table1-even-row">
+								<text:p text:style-name="table1-text">-0.212013</text:p>
+							</table:table-cell>
+							<table:table-cell table:style-name="table1-even-row">
+								<text:p text:style-name="table1-text">-0.660518</text:p>
+							</table:table-cell>
+							<table:table-cell table:style-name="table1-even-row">
+								<text:p text:style-name="table1-text">-0.037430</text:p>
+							</table:table-cell>
+							<table:table-cell table:style-name="table1-even-row">
+								<text:p text:style-name="table1-text">0.096065</text:p>
+							</table:table-cell>
+						</table:table-row>
+						<table:table-row>
+							<table:table-cell table:style-name="table1-odd-row">
+								<text:p text:style-name="table1-text">2013-01-03</text:p>
+							</table:table-cell>
+							<table:table-cell table:style-name="table1-odd-row">
+								<text:p text:style-name="table1-text">-0.844791</text:p>
+							</table:table-cell>
+							<table:table-cell table:style-name="table1-odd-row">
+								<text:p text:style-name="table1-text">0.121855</text:p>
+							</table:table-cell>
+							<table:table-cell table:style-name="table1-odd-row">
+								<text:p text:style-name="table1-text">-1.644785</text:p>
+							</table:table-cell>
+							<table:table-cell table:style-name="table1-odd-row">
+								<text:p text:style-name="table1-text">-0.793636</text:p>
+							</table:table-cell>
+						</table:table-row>
+						<table:table-row>
+							<table:table-cell table:style-name="table1-even-row">
+								<text:p text:style-name="table1-text">2013-01-04</text:p>
+							</table:table-cell>
+							<table:table-cell table:style-name="table1-even-row">
+								<text:p text:style-name="table1-text">0.129759</text:p>
+							</table:table-cell>
+							<table:table-cell table:style-name="table1-even-row">
+								<text:p text:style-name="table1-text">-0.047782</text:p>
+							</table:table-cell>
+							<table:table-cell table:style-name="table1-even-row">
+								<text:p text:style-name="table1-text">-0.296256</text:p>
+							</table:table-cell>
+							<table:table-cell table:style-name="table1-even-row">
+								<text:p text:style-name="table1-text">-1.693386</text:p>
+							</table:table-cell>
+						</table:table-row>
+						<table:table-row>
+							<table:table-cell table:style-name="table1-odd-row">
+								<text:p text:style-name="table1-text">2013-01-05</text:p>
+							</table:table-cell>
+							<table:table-cell table:style-name="table1-odd-row">
+								<text:p text:style-name="table1-text">1.185204</text:p>
+							</table:table-cell>
+							<table:table-cell table:style-name="table1-odd-row">
+								<text:p text:style-name="table1-text">0.717236</text:p>
+							</table:table-cell>
+							<table:table-cell table:style-name="table1-odd-row">
+								<text:p text:style-name="table1-text">-2.060969</text:p>
+							</table:table-cell>
+							<table:table-cell table:style-name="table1-odd-row">
+								<text:p text:style-name="table1-text">0.603855</text:p>
+							</table:table-cell>
+						</table:table-row>
+						<table:table-row>
+							<table:table-cell table:style-name="table1-even-row">
+								<text:p text:style-name="table1-text">2013-01-06</text:p>
+							</table:table-cell>
+							<table:table-cell table:style-name="table1-even-row">
+								<text:p text:style-name="table1-text">0.075380</text:p>
+							</table:table-cell>
+							<table:table-cell table:style-name="table1-even-row">
+								<text:p text:style-name="table1-text">-2.020066</text:p>
+							</table:table-cell>
+							<table:table-cell table:style-name="table1-even-row">
+								<text:p text:style-name="table1-text">0.156442</text:p>
+							</table:table-cell>
+							<table:table-cell table:style-name="table1-even-row">
+								<text:p text:style-name="table1-text">-0.121374</text:p>
+							</table:table-cell>
+						</table:table-row>
+					</table:table>
 				</draw:frame>
 			</draw:page>
 		</office:presentation>

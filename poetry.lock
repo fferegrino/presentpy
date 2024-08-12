@@ -507,6 +507,20 @@ files = [
 ]
 
 [[package]]
+name = "colour"
+version = "0.1.5"
+description = "converts and manipulates various color representation (HSL, RVB, web, X11, ...)"
+optional = false
+python-versions = "*"
+files = [
+    {file = "colour-0.1.5-py2.py3-none-any.whl", hash = "sha256:33f6db9d564fadc16e59921a56999b79571160ce09916303d35346dddc17978c"},
+    {file = "colour-0.1.5.tar.gz", hash = "sha256:af20120fefd2afede8b001fbef2ea9da70ad7d49fafdb6489025dae8745c3aee"},
+]
+
+[package.extras]
+test = ["nose"]
+
+[[package]]
 name = "comm"
 version = "0.2.2"
 description = "Jupyter Python Comm implementation, for usage in ipykernel, xeus-python etc."
@@ -3248,4 +3262,4 @@ files = [
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.10"
-content-hash = "033dfcfa78756a99074de7140447a749f5c59d201b0d0b0b9e4d80931a40ce14"
+content-hash = "414f9238c4373bf5e3ff559863ebc397b0b6e37e3784aa3a2d620e37aea29d46"
