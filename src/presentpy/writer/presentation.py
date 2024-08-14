@@ -143,6 +143,19 @@ class Presentation:
             p.append(span_tag)
         return p
 
+    def _add_title(self, title: str, slide: SlideTag):
+        output_p = Tag(
+            "text:p",
+            self.namespaces,
+        )
+        span = Tag(
+            "text:span",
+            self.namespaces,
+        )
+        span.text = title
+        output_p.append(span)
+        slide.title_text_box.append(output_p)
+
     def add_source_code(self, code: CodeSlideSource, slide_name: str = None, with_output=False):
         if code.output.image_png:
             self.current_image_count += 1
@@ -161,17 +174,7 @@ class Presentation:
             new_slide.add_image(media_path, width_in_inches, height_in_inches)
 
             if code.title:
-                output_p = Tag(
-                    "text:p",
-                    self.namespaces,
-                )
-                span = Tag(
-                    "text:span",
-                    self.namespaces,
-                )
-                span.text = code.title
-                output_p.append(span)
-                new_slide.title_text_box.append(output_p)
+                self._add_title(code.title, new_slide)
 
         elif code.output.text_html:
 
@@ -298,6 +301,10 @@ class Presentation:
                     table_row.append(cell_tag)
                 table.append(table_row)
             new_slide.object_frame.append(table)
+
+            if code.title:
+                self._add_title(code.title, new_slide)
+
         else:
             self._add_code_slide(code, slide_name, with_output)
 
@@ -307,17 +314,8 @@ class Presentation:
                 slide_name, slide_type=TitleCodeAndOutputSlide if with_output else TitleAndCodeSlide
             )
 
-            output_p = Tag(
-                "text:p",
-                self.namespaces,
-            )
-            span = Tag(
-                "text:span",
-                self.namespaces,
-            )
-            span.text = code.title
-            output_p.append(span)
-            new_slide.title_text_box.append(output_p)
+            if code.title:
+                self._add_title(code.title, new_slide)
 
             for line_no, line in enumerate(code.lines, 1):
                 p = Tag(

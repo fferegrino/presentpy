@@ -1481,7 +1481,11 @@
 			</draw:page>
 			<draw:page draw:name="slide8" draw:style-name="defaultSlide" draw:id="slide8" draw:master-page-name="Master1-Layout8-presentpy-TitleAndObjectSlide">
 				<draw:frame draw:style-name="masterTitle" svg:x="0.9in" svg:y="0.4in" svg:width="11.53in" svg:height="1.00in" presentation:class="title">
-					<draw:text-box/>
+					<draw:text-box>
+						<text:p>
+							<text:span>A DataFrame packed with information</text:span>
+						</text:p>
+					</draw:text-box>
 				</draw:frame>
 				<draw:frame draw:style-name="object" svg:x="0.9in" svg:y="1.6in" svg:width="11.53in" svg:height="5.50in" presentation:class="object">
 					<table:table table:use-banding-columns-styles="false" table:use-banding-rows-styles="true" table:use-first-column-styles="false" table:use-first-row-styles="true" table:use-last-column-styles="false" table:use-last-row-styles="false" table:template-name="table1-template">
