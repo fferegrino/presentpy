@@ -15,6 +15,9 @@ reset-test:
 	cp -r test_odp/ tests/outputs/test_odp
 	rm -rf test_odp
 
+docs-serve:
+	mkdocs serve
+
 fmt:
 	black .
 	isort .
