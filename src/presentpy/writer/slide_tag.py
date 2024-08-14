@@ -28,6 +28,15 @@ class SlideTag(Tag):
         self.text_boxes = {}
         self.master_page_items = []
 
+    def get_dimensions(self, frame_name):
+        frame = self.frames[frame_name]
+        x = frame["svg:x"]
+        y = frame["svg:y"]
+        w = frame["svg:width"]
+        h = frame["svg:height"]
+
+        return [float(measure[:-2]) for measure in [x, y, w, h]]
+
     def add_frame(self, identifier, container_style, x, y, w, h, frame_style=None, presentation_class=None):
         frame_attributes = {
             "draw:style-name": container_style,
@@ -66,6 +75,8 @@ class SlideTag(Tag):
     def __getattr__(self, item):
         if item in self.text_boxes:
             return self.text_boxes[item]
+        if item in self.frames:
+            return self.frames[item]
         raise AttributeError(f"'{self.__class__.__name__}' object has no attribute '{item}'")
 
     def get_master_page_style_name(self):
@@ -426,3 +437,48 @@ class ImageSlide(SlideTag):
                 },
             )
         )
+
+
+class TitleAndObjectSlide(SlideTag):
+    """
+    ┌────────────────────────────────────────────────┐
+    │ ┌────────────────────────────────────────────┐ │
+    │ │ Title                                      │ │
+    │ └────────────────────────────────────────────┘ │
+    │ ┌────────────────────────────────────────────┐ │
+    │ │ Object                                     │ │
+    │ │                                            │ │
+    │ │                                            │ │
+    │ │                                            │ │
+    │ │                                            │ │
+    │ │                                            │ │
+    │ └────────────────────────────────────────────┘ │
+    └────────────────────────────────────────────────┘
+    """
+
+    __layout__ = "Layout8"
+
+    def __init__(self, name, namespaces: Namespaces, theme: Theme):
+        super().__init__(
+            name,
+            namespaces,
+            theme,
+        )
+        self.name = name
+        self.theme = theme
+
+        x = 0.9
+        title_y = 0.4
+        w = self.theme.width - (2 * x)
+        title_h = 1
+
+        super().add_text_box(
+            "title_text_box", MASTER_TITLE_STYLE_NAME, x, title_y, w, title_h, presentation_class="title"
+        )
+
+        content_y = title_y + title_h + 0.2
+        content_h = self.theme.height - content_y - 0.4
+
+        self.content_location = (x, content_y, w, content_h)
+
+        self.add_frame("object_frame", "object", x, content_y, w, content_h, presentation_class="object")

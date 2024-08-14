@@ -55,7 +55,7 @@ def test_get_parsed_lines_default():
 
 
 def test_full_parse(get_cell):
-    cell = get_cell(0)
+    cell = get_cell(1)
 
     real_source = "\n".join(cell.source.split("\n")[:-1])
 
@@ -66,6 +66,7 @@ def test_full_parse(get_cell):
     assert code_slide.output == CodeOutputs(
         stream="The H.C.F. is 100",
         text_plain="100",
+        text_html="",
     )
     assert code_slide.lines == get_parsed_lines(real_source)
     # fmt: off

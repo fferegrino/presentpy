@@ -1,3 +1,4 @@
+from colour import Color
 from pygments.styles import get_all_styles, get_style_by_name
 from pygments.token import Comment, Literal, String, Token
 
@@ -72,22 +73,51 @@ class Theme:
             self.token_styles.add(inner_style_name)
             self.styles.append(text_style)
 
+        self._table_row_odd_background_color = Color(self.style.background_color)
+        max_luminance = min(self._table_row_odd_background_color.luminance + 0.05, 1)
+        self._table_row_odd_background_color.set_luminance(max_luminance)
+
+        self._table_row_even_background_color = Color(self.style.background_color)
+        min_luminance = max(self._table_row_even_background_color.luminance - 0.05, 0)
+        self._table_row_even_background_color.set_luminance(min_luminance)
+
+        fallback_color = Color(self.style.background_color)
+        fallback_color_luma = 0.2126 * fallback_color.red + 0.7152 * fallback_color.green + 0.0722 * fallback_color.blue
+        if fallback_color_luma > 128:
+            self._fallback_color = Color(self.style.background_color)
+            self._fallback_color.set_luminance(max(fallback_color.get_luminance() - 0.5, 0))
+        else:
+            self._fallback_color = Color(self.style.background_color)
+            self._fallback_color.set_luminance(min(fallback_color.get_luminance() + 0.5, 1))
+
+    @property
+    def table_row_odd_background_color(self):
+        return convert_color(self._table_row_odd_background_color.hex)
+
+    @property
+    def table_row_even_background_color(self):
+        return convert_color(self._table_row_even_background_color.hex)
+
     @property
     def background_color(self):
         return convert_color(self.style.background_color)
 
     @property
     def title_color(self):
-        selected_token_style = self._find_style_for_token(String, Literal)
+        selected_token_style = self._find_style_for_token(String, Literal, Comment)
         style_parts = set(selected_token_style.split())
         for part in style_parts:
             if part.startswith("#"):
                 return convert_color(part)
-        return "#ffffff"
+        return str(self._fallback_color)
 
     @property
     def highlight_color(self):
         return convert_color(self.style.highlight_color)
+
+    @property
+    def table_border_width(self):
+        return f"{0.03}in"
 
     @property
     def content_color(self):
@@ -96,7 +126,16 @@ class Theme:
         for part in style_parts:
             if part.startswith("#"):
                 return convert_color(part)
-        return "#ffffff"
+        return str(self._fallback_color)
+
+    @property
+    def content_color_alt(self):
+        selected_token_style = self._find_style_for_token()
+        style_parts = set(selected_token_style.split())
+        for part in style_parts:
+            if part.startswith("#"):
+                return convert_color(part)
+        return str(self._fallback_color)
 
     def _find_style_for_token(self, *token):
         for t in token:

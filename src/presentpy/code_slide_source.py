@@ -125,7 +125,8 @@ class CodeSlideSource:
         if stream:
             outputs["stream"] = stream[0].text.strip()
         if execute_result:
-            outputs["text_plain"] = execute_result[0].data["text/plain"].strip()
+            outputs["text_plain"] = execute_result[0].data.get("text/plain", "").strip()
+            outputs["text_html"] = execute_result[0].data.get("text/html", "").strip()
         if display_data:
             outputs["image_png"] = display_data[0].data.get("image/png")
 
