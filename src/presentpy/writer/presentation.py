@@ -425,8 +425,8 @@ class Presentation:
         for slide in self.slides:
             content_xml.presentation.append(slide.to_element())
 
-        manifest_xml.write(prettify=prettify)
-        content_xml.write(prettify=True)
+        manifest_xml.write(prettify=True)
+        content_xml.write(prettify=prettify)
         styles_xml.write(prettify=True)
 
         pptx_file = path.parent / f"{path.stem}.odp"
