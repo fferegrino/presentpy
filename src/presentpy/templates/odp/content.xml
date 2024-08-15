@@ -15,6 +15,7 @@
 	xmlns:formx="urn:openoffice:names:experimental:ooxml-odf-interop:xmlns:form:1.0"
 	xmlns:grddl="http://www.w3.org/2003/g/data-view#"
 	xmlns:loext="urn:org:documentfoundation:names:experimental:office:xmlns:loext:1.0"
+	xmlns:manifest="urn:oasis:names:tc:opendocument:xmlns:manifest:1.0"
 	xmlns:math="http://www.w3.org/1998/Math/MathML"
 	xmlns:meta="urn:oasis:names:tc:opendocument:xmlns:meta:1.0"
 	xmlns:number="urn:oasis:names:tc:opendocument:xmlns:datastyle:1.0"

@@ -16,6 +16,7 @@ from presentpy.code_slide_source import CodeSlideSource
 from presentpy.constants import *
 from presentpy.namespaces import Namespaces
 from presentpy.templates import Content, Styles
+from presentpy.templates.manifest import Manifest
 from presentpy.writer.slide_tag import (
     BlankSlide,
     ImageSlide,
@@ -40,6 +41,7 @@ class Presentation:
         self.current_image_count = 0
         self.current_table_count = 0
         self._temp_dir = tempfile.mkdtemp()
+        self.file_entries = []
         os.makedirs(f"{self._temp_dir}/media", exist_ok=True)
 
     def new_slide(self, name=None, slide_type: SlideTag = TitleCodeAndOutputSlide):
@@ -161,6 +163,7 @@ class Presentation:
             self.current_image_count += 1
             media_path = f"media/image{self.current_image_count}.png"
             image_path = f"{self._temp_dir}/{media_path}"
+            self.file_entries.append((media_path, "image/png"))
             image_object = Image.open(BytesIO(base64.decodebytes(bytes(code.output.image_png, "utf-8"))))
             image_object.save(image_path)
 
@@ -384,6 +387,12 @@ class Presentation:
         styles_path = f"{exploded_presentation_path}/styles.xml"
         styles_xml = Styles(styles_path, self.namespaces, self.theme)
 
+        manifest_path = f"{exploded_presentation_path}/META-INF/manifest.xml"
+        manifest_xml = Manifest(manifest_path, self.namespaces)
+
+        for file_path, media_type in self.file_entries:
+            manifest_xml.add_file_entry(file_path, media_type)
+
         for style in self.theme.styles:
             content_xml.automatic_styles.append(style.to_element())
 
@@ -393,7 +402,8 @@ class Presentation:
         for slide in self.slides:
             content_xml.presentation.append(slide.to_element())
 
-        content_xml.write(prettify=prettify)
+        manifest_xml.write(prettify=prettify)
+        content_xml.write(prettify=True)
         styles_xml.write(prettify=True)
 
         pptx_file = path.parent / f"{path.stem}.odp"
