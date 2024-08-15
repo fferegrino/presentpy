@@ -36,10 +36,12 @@
 	xmlns:xhtml="http://www.w3.org/1999/xhtml"
 	xmlns:xlink="http://www.w3.org/1999/xlink"
 office:version="1.2">
-	<office:styles>
+	<office:automatic-styles>
 		<style:page-layout style:name="pageLayout1">
-			<style:page-layout-properties style:print-orientation="landscape" style:register-truth-ref-style-name=""/>
+			<style:page-layout-properties style:print-orientation="landscape"/>
 		</style:page-layout>
+	</office:automatic-styles>
+	<office:styles>
 		<style:style style:family="drawing-page" style:name="masterStyle">
 			<style:drawing-page-properties draw:fill="solid" draw:opacity="100%" presentation:visibility="visible" draw:background-size="border" presentation:background-objects-visible="false" presentation:display-header="false" presentation:display-footer="false" presentation:display-page-number="false" presentation:display-date-time="false"/>
 		</style:style>

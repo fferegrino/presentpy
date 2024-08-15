@@ -32,8 +32,8 @@ class Styles(XMLFile):
 
         page_layout_properties = self.xpath(
             "office:document-styles",
-            "office:styles",
-            "style:page-layout[@style:name='pageLayout1']",
+            "office:automatic-styles",
+            f"style:page-layout[@style:name='{DEFAULT_PAGE_LAYOUT_NAME}']",
             "style:page-layout-properties",
         )
         page_layout_properties.set(namespaces("fo:page-width"), f"{self.theme.width:.2f}in")

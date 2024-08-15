@@ -5,6 +5,7 @@ from lxml import etree
 
 from presentpy.constants import (
     CODE_HIGHLIGHT_PARAGRAPH_STYLE_NAME,
+    DEFAULT_PAGE_LAYOUT_NAME,
     DRAWING_PAGE_STYLE_NAME,
     MASTER_CONTENT_STYLE_NAME,
     MASTER_TITLE_STYLE_NAME,
@@ -25,8 +26,8 @@ class Content(XMLFile):
 
         page_layout_properties = self.xpath(
             "office:document-content",
-            "office:styles",
-            "style:page-layout[@style:name='pageLayout1']",
+            "office:automatic-styles",
+            f"style:page-layout[@style:name='{DEFAULT_PAGE_LAYOUT_NAME}']",
             "style:page-layout-properties",
         )
         page_layout_properties.set(namespaces("fo:page-width"), f"{self.theme.width:.2f}in")
