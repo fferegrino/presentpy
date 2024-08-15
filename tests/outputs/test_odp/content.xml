@@ -239,7 +239,9 @@
 			<table:first-row table:style-name="table1-first-row"/>
 		</table:table-template>
 		<style:style style:family="table-cell" style:name="table1-odd-row">
-			<style:table-cell-properties fo:background-color="#ffffff" fo:border-bottom="0.03in solid white" fo:border-top="0.03in solid white" fo:border-left="0.03in solid white" fo:border-right="0.03in solid white"/>
+			<style:table-cell-properties fo:background-color="#ffffff" fo:border-bottom="0.03in solid white" fo:border-top="0.03in solid white" fo:border-left="0.03in solid white" fo:border-right="0.03in solid white" fo:border="0.03in solid white"/>
+			<loext:graphic-properties draw:fill="solid" draw:fill-color="#ffffff"/>
+			<style:paragraph-properties fo:border="0.03in solid white"/>
 		</style:style>
 		<style:style style:family="text" style:name="table1-text">
 			<style:text-properties fo:color="white"/>
@@ -248,7 +250,9 @@
 			<style:text-properties fo:color="white" fo:font-weight="bold"/>
 		</style:style>
 		<style:style style:family="table-cell" style:name="table1-even-row">
-			<style:table-cell-properties fo:background-color="#ebebeb" fo:border-bottom="0.03in solid white" fo:border-top="0.03in solid white" fo:border-left="0.03in solid white" fo:border-right="0.03in solid white"/>
+			<style:table-cell-properties fo:background-color="#ebebeb" fo:border-bottom="0.03in solid white" fo:border-top="0.03in solid white" fo:border-left="0.03in solid white" fo:border-right="0.03in solid white" fo:border="0.03in solid white"/>
+			<loext:graphic-properties draw:fill="solid" draw:fill-color="#ebebeb"/>
+			<style:paragraph-properties fo:border="0.03in solid white"/>
 		</style:style>
 		<style:style style:family="table-column" style:name="table1-column">
 			<style:table-column-properties style:column-width="2.306in"/>
@@ -1494,123 +1498,193 @@
 						<table:table-column table:style-name="table1-column"/>
 						<table:table-column table:style-name="table1-column"/>
 						<table:table-column table:style-name="table1-column"/>
-						<table:table-row>
-							<table:table-cell table:style-name="table1-even-row">
-								<text:p text:style-name="table1-text-heading"/>
+						<table:table-row table:default-cell-style-name="table1-even-row">
+							<table:table-cell>
+								<text:p>
+									<text:span text:style-name="table1-text-heading"/>
+								</text:p>
 							</table:table-cell>
-							<table:table-cell table:style-name="table1-even-row">
-								<text:p text:style-name="table1-text-heading">A</text:p>
+							<table:table-cell>
+								<text:p>
+									<text:span text:style-name="table1-text-heading">A</text:span>
+								</text:p>
 							</table:table-cell>
-							<table:table-cell table:style-name="table1-even-row">
-								<text:p text:style-name="table1-text-heading">B</text:p>
+							<table:table-cell>
+								<text:p>
+									<text:span text:style-name="table1-text-heading">B</text:span>
+								</text:p>
 							</table:table-cell>
-							<table:table-cell table:style-name="table1-even-row">
-								<text:p text:style-name="table1-text-heading">C</text:p>
+							<table:table-cell>
+								<text:p>
+									<text:span text:style-name="table1-text-heading">C</text:span>
+								</text:p>
 							</table:table-cell>
-							<table:table-cell table:style-name="table1-even-row">
-								<text:p text:style-name="table1-text-heading">D</text:p>
-							</table:table-cell>
-						</table:table-row>
-						<table:table-row>
-							<table:table-cell table:style-name="table1-odd-row">
-								<text:p text:style-name="table1-text">2013-01-01</text:p>
-							</table:table-cell>
-							<table:table-cell table:style-name="table1-odd-row">
-								<text:p text:style-name="table1-text">2.680860</text:p>
-							</table:table-cell>
-							<table:table-cell table:style-name="table1-odd-row">
-								<text:p text:style-name="table1-text">-1.422334</text:p>
-							</table:table-cell>
-							<table:table-cell table:style-name="table1-odd-row">
-								<text:p text:style-name="table1-text">-0.702262</text:p>
-							</table:table-cell>
-							<table:table-cell table:style-name="table1-odd-row">
-								<text:p text:style-name="table1-text">0.267985</text:p>
+							<table:table-cell>
+								<text:p>
+									<text:span text:style-name="table1-text-heading">D</text:span>
+								</text:p>
 							</table:table-cell>
 						</table:table-row>
-						<table:table-row>
-							<table:table-cell table:style-name="table1-even-row">
-								<text:p text:style-name="table1-text">2013-01-02</text:p>
+						<table:table-row table:default-cell-style-name="table1-odd-row">
+							<table:table-cell>
+								<text:p>
+									<text:span text:style-name="table1-text">2013-01-01</text:span>
+								</text:p>
 							</table:table-cell>
-							<table:table-cell table:style-name="table1-even-row">
-								<text:p text:style-name="table1-text">-0.212013</text:p>
+							<table:table-cell>
+								<text:p>
+									<text:span text:style-name="table1-text">2.680860</text:span>
+								</text:p>
 							</table:table-cell>
-							<table:table-cell table:style-name="table1-even-row">
-								<text:p text:style-name="table1-text">-0.660518</text:p>
+							<table:table-cell>
+								<text:p>
+									<text:span text:style-name="table1-text">-1.422334</text:span>
+								</text:p>
 							</table:table-cell>
-							<table:table-cell table:style-name="table1-even-row">
-								<text:p text:style-name="table1-text">-0.037430</text:p>
+							<table:table-cell>
+								<text:p>
+									<text:span text:style-name="table1-text">-0.702262</text:span>
+								</text:p>
 							</table:table-cell>
-							<table:table-cell table:style-name="table1-even-row">
-								<text:p text:style-name="table1-text">0.096065</text:p>
-							</table:table-cell>
-						</table:table-row>
-						<table:table-row>
-							<table:table-cell table:style-name="table1-odd-row">
-								<text:p text:style-name="table1-text">2013-01-03</text:p>
-							</table:table-cell>
-							<table:table-cell table:style-name="table1-odd-row">
-								<text:p text:style-name="table1-text">-0.844791</text:p>
-							</table:table-cell>
-							<table:table-cell table:style-name="table1-odd-row">
-								<text:p text:style-name="table1-text">0.121855</text:p>
-							</table:table-cell>
-							<table:table-cell table:style-name="table1-odd-row">
-								<text:p text:style-name="table1-text">-1.644785</text:p>
-							</table:table-cell>
-							<table:table-cell table:style-name="table1-odd-row">
-								<text:p text:style-name="table1-text">-0.793636</text:p>
+							<table:table-cell>
+								<text:p>
+									<text:span text:style-name="table1-text">0.267985</text:span>
+								</text:p>
 							</table:table-cell>
 						</table:table-row>
-						<table:table-row>
-							<table:table-cell table:style-name="table1-even-row">
-								<text:p text:style-name="table1-text">2013-01-04</text:p>
+						<table:table-row table:default-cell-style-name="table1-even-row">
+							<table:table-cell>
+								<text:p>
+									<text:span text:style-name="table1-text">2013-01-02</text:span>
+								</text:p>
 							</table:table-cell>
-							<table:table-cell table:style-name="table1-even-row">
-								<text:p text:style-name="table1-text">0.129759</text:p>
+							<table:table-cell>
+								<text:p>
+									<text:span text:style-name="table1-text">-0.212013</text:span>
+								</text:p>
 							</table:table-cell>
-							<table:table-cell table:style-name="table1-even-row">
-								<text:p text:style-name="table1-text">-0.047782</text:p>
+							<table:table-cell>
+								<text:p>
+									<text:span text:style-name="table1-text">-0.660518</text:span>
+								</text:p>
 							</table:table-cell>
-							<table:table-cell table:style-name="table1-even-row">
-								<text:p text:style-name="table1-text">-0.296256</text:p>
+							<table:table-cell>
+								<text:p>
+									<text:span text:style-name="table1-text">-0.037430</text:span>
+								</text:p>
 							</table:table-cell>
-							<table:table-cell table:style-name="table1-even-row">
-								<text:p text:style-name="table1-text">-1.693386</text:p>
-							</table:table-cell>
-						</table:table-row>
-						<table:table-row>
-							<table:table-cell table:style-name="table1-odd-row">
-								<text:p text:style-name="table1-text">2013-01-05</text:p>
-							</table:table-cell>
-							<table:table-cell table:style-name="table1-odd-row">
-								<text:p text:style-name="table1-text">1.185204</text:p>
-							</table:table-cell>
-							<table:table-cell table:style-name="table1-odd-row">
-								<text:p text:style-name="table1-text">0.717236</text:p>
-							</table:table-cell>
-							<table:table-cell table:style-name="table1-odd-row">
-								<text:p text:style-name="table1-text">-2.060969</text:p>
-							</table:table-cell>
-							<table:table-cell table:style-name="table1-odd-row">
-								<text:p text:style-name="table1-text">0.603855</text:p>
+							<table:table-cell>
+								<text:p>
+									<text:span text:style-name="table1-text">0.096065</text:span>
+								</text:p>
 							</table:table-cell>
 						</table:table-row>
-						<table:table-row>
-							<table:table-cell table:style-name="table1-even-row">
-								<text:p text:style-name="table1-text">2013-01-06</text:p>
+						<table:table-row table:default-cell-style-name="table1-odd-row">
+							<table:table-cell>
+								<text:p>
+									<text:span text:style-name="table1-text">2013-01-03</text:span>
+								</text:p>
 							</table:table-cell>
-							<table:table-cell table:style-name="table1-even-row">
-								<text:p text:style-name="table1-text">0.075380</text:p>
+							<table:table-cell>
+								<text:p>
+									<text:span text:style-name="table1-text">-0.844791</text:span>
+								</text:p>
 							</table:table-cell>
-							<table:table-cell table:style-name="table1-even-row">
-								<text:p text:style-name="table1-text">-2.020066</text:p>
+							<table:table-cell>
+								<text:p>
+									<text:span text:style-name="table1-text">0.121855</text:span>
+								</text:p>
 							</table:table-cell>
-							<table:table-cell table:style-name="table1-even-row">
-								<text:p text:style-name="table1-text">0.156442</text:p>
+							<table:table-cell>
+								<text:p>
+									<text:span text:style-name="table1-text">-1.644785</text:span>
+								</text:p>
 							</table:table-cell>
-							<table:table-cell table:style-name="table1-even-row">
-								<text:p text:style-name="table1-text">-0.121374</text:p>
+							<table:table-cell>
+								<text:p>
+									<text:span text:style-name="table1-text">-0.793636</text:span>
+								</text:p>
+							</table:table-cell>
+						</table:table-row>
+						<table:table-row table:default-cell-style-name="table1-even-row">
+							<table:table-cell>
+								<text:p>
+									<text:span text:style-name="table1-text">2013-01-04</text:span>
+								</text:p>
+							</table:table-cell>
+							<table:table-cell>
+								<text:p>
+									<text:span text:style-name="table1-text">0.129759</text:span>
+								</text:p>
+							</table:table-cell>
+							<table:table-cell>
+								<text:p>
+									<text:span text:style-name="table1-text">-0.047782</text:span>
+								</text:p>
+							</table:table-cell>
+							<table:table-cell>
+								<text:p>
+									<text:span text:style-name="table1-text">-0.296256</text:span>
+								</text:p>
+							</table:table-cell>
+							<table:table-cell>
+								<text:p>
+									<text:span text:style-name="table1-text">-1.693386</text:span>
+								</text:p>
+							</table:table-cell>
+						</table:table-row>
+						<table:table-row table:default-cell-style-name="table1-odd-row">
+							<table:table-cell>
+								<text:p>
+									<text:span text:style-name="table1-text">2013-01-05</text:span>
+								</text:p>
+							</table:table-cell>
+							<table:table-cell>
+								<text:p>
+									<text:span text:style-name="table1-text">1.185204</text:span>
+								</text:p>
+							</table:table-cell>
+							<table:table-cell>
+								<text:p>
+									<text:span text:style-name="table1-text">0.717236</text:span>
+								</text:p>
+							</table:table-cell>
+							<table:table-cell>
+								<text:p>
+									<text:span text:style-name="table1-text">-2.060969</text:span>
+								</text:p>
+							</table:table-cell>
+							<table:table-cell>
+								<text:p>
+									<text:span text:style-name="table1-text">0.603855</text:span>
+								</text:p>
+							</table:table-cell>
+						</table:table-row>
+						<table:table-row table:default-cell-style-name="table1-even-row">
+							<table:table-cell>
+								<text:p>
+									<text:span text:style-name="table1-text">2013-01-06</text:span>
+								</text:p>
+							</table:table-cell>
+							<table:table-cell>
+								<text:p>
+									<text:span text:style-name="table1-text">0.075380</text:span>
+								</text:p>
+							</table:table-cell>
+							<table:table-cell>
+								<text:p>
+									<text:span text:style-name="table1-text">-2.020066</text:span>
+								</text:p>
+							</table:table-cell>
+							<table:table-cell>
+								<text:p>
+									<text:span text:style-name="table1-text">0.156442</text:span>
+								</text:p>
+							</table:table-cell>
+							<table:table-cell>
+								<text:p>
+									<text:span text:style-name="table1-text">-0.121374</text:span>
+								</text:p>
 							</table:table-cell>
 						</table:table-row>
 					</table:table>
