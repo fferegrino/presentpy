@@ -88,6 +88,17 @@ class Content(XMLFile):
         )
         output_frame_text_properties.set(namespaces("fo:color"), self.theme.content_color)
 
+        list_level_style_bullet = self.xpath(
+            "office:document-content",
+            "office:automatic-styles",
+            "text:list-style[@style:name='list']",
+            "text:list-level-style-bullet",
+            single=False,
+        )
+        for bullet in list_level_style_bullet:
+            text_properties = bullet.xpath("style:text-properties", namespaces=self.namespaces.data)[0]
+            text_properties.set(namespaces("fo:color"), self.theme.content_color)
+
     def write(self, path: Optional[Path] = None, prettify: bool = False):
         etree.indent(self.automatic_styles)
         super().write(path, prettify=prettify)
