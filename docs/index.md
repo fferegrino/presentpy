@@ -56,7 +56,7 @@ Consider the notebook shown below, when converted to slides using the `default` 
 <table>
 	<tbody>
         <tr>
-			<th colspan="2">Original notebook [<a href="tests/files/demo.ipynb" target="_blank">view .ipynb</a>]</th>
+			<th colspan="2">Original notebook [<a href="tests/files/test.ipynb" target="_blank">view .ipynb</a>]</th>
         </tr>
         <tr>
 			<td colspan="2">
@@ -66,11 +66,11 @@ Consider the notebook shown below, when converted to slides using the `default` 
 		<tr>
 			<th>Default theme 
                 [<a href="https://drive.google.com/file/d/1HuYzFU8rTMa21dC0r7hD9gFByJJ3Cd4f/view?usp=sharing" target="_blank">as PDF</a>]
-                [<a href="https://docs.google.com/presentation/d/1eWJIMHMXL9F9xY9zuc6vBxTPCxLSM1dbXKiWSExm5t8/edit?usp=sharing">as Google Slides</a>]
+                [<a href="https://docs.google.com/presentation/d/1ZuRIwh6Eq11AAp6JtsMZw9yhbDB2yZAzAFEDrw3bvF4/edit?usp=sharing">as Google Slides</a>]
             </th>
 			<th>Fruity theme 
                 [<a href="https://drive.google.com/file/d/1a5FwVKyBWUS7iGJZoFlO_vnd_czbMZBe/view?usp=drive_link" target="_blank">as PDF</a>]
-                [<a href="https://docs.google.com/presentation/d/1knSB-dXCEELR2j2rp1KoH4XwyfP-iA-eL4Kb4X9aKuI/edit?usp=drive_link">as Google Slides</a>]
+                [<a href="https://docs.google.com/presentation/d/1ObZPZx9lEE_UuqjXcfrRuwPq2dmQTahiO7yq1Zqjwc8/edit?usp=sharing">as Google Slides</a>]
             </th>
 		</tr>
 		<tr>
@@ -87,6 +87,43 @@ Consider the notebook shown below, when converted to slides using the `default` 
             </td>
 			<td>
                 <img src="images/demo-fruity/Slide2.jpeg" />
+            </td>
+		</tr>
+		<tr>
+            <td>
+                <img src="images/demo-default/Slide3.jpeg" />
+            </td>
+			<td>
+                <img src="images/demo-fruity/Slide3.jpeg" />
+            </td>
+		</tr>
+		<tr>
+            <td colspan="2">
+                Slides omitted as the only change is the highlighting of the code.
+            </td>
+		</tr>
+		<tr>
+            <td>
+                <img src="images/demo-default/Slide7.jpeg" />
+            </td>
+			<td>
+                <img src="images/demo-fruity/Slide7.jpeg" />
+            </td>
+		</tr>
+		<tr>
+            <td>
+                <img src="images/demo-default/Slide8.jpeg" />
+            </td>
+			<td>
+                <img src="images/demo-fruity/Slide8.jpeg" />
+            </td>
+		</tr>
+		<tr>
+            <td>
+                <img src="images/demo-default/Slide9.jpeg" />
+            </td>
+			<td>
+                <img src="images/demo-fruity/Slide9.jpeg" />
             </td>
 		</tr>
 	</tbody>
