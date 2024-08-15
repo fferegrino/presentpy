@@ -1,5 +1,4 @@
 from pathlib import Path
-from typing import Any, List, Tuple
 
 import click
 import mistletoe
@@ -8,7 +7,6 @@ import nbformat
 from presentpy.code_slide_source import CodeSlideSource
 from presentpy.namespaces import Namespaces
 from presentpy.writer.presentation import Presentation
-from presentpy.writer.slide_tag import TitleAndContentSlide
 from presentpy.writer.theme import Theme
 
 odf_namespaces = {

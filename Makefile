@@ -20,8 +20,8 @@ docs-serve:
 
 fmt:
 	black .
-	isort .
+	ruff check .
 
 lint:
 	black --check .
-	isort --check .
+	ruff check --fix .

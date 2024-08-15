@@ -1,8 +1,7 @@
 from colour import Color
-from pygments.styles import get_all_styles, get_style_by_name
+from pygments.styles import get_style_by_name
 from pygments.token import Comment, Literal, String, Token
 
-from presentpy.constants import *
 from presentpy.namespaces import Namespaces
 from presentpy.writer.tag import Tag
 

@@ -1,6 +1,5 @@
 from pathlib import Path
 
-from presentpy.constants import *
 from presentpy.namespaces import Namespaces
 from presentpy.templates.xml_file import XMLFile
 from presentpy.writer.tag import Tag

@@ -13,7 +13,12 @@ from bs4 import BeautifulSoup
 from PIL import Image
 
 from presentpy.code_slide_source import CodeSlideSource
-from presentpy.constants import *
+from presentpy.constants import (
+    CODE_HIGHLIGHT_PARAGRAPH_STYLE_NAME,
+    CODE_PARAGRAPH_STYLE_NAME,
+    CONTENT_LIST_PARAGRAPH_STYLE_NAME,
+    CONTENT_PARAGRAPH_STYLE_NAME,
+)
 from presentpy.namespaces import Namespaces
 from presentpy.templates import Content, Styles
 from presentpy.templates.manifest import Manifest
@@ -189,7 +194,6 @@ class Presentation:
         [*_, content_width, content_height] = new_slide.get_dimensions("object_frame")
 
         cell_width = content_width / column_count
-        cell_height = content_height / len(rows)
 
         template_name = f"{table_name}-template"
         table_attrs["table:template-name"] = template_name
