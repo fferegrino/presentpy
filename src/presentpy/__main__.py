@@ -15,6 +15,7 @@ odf_namespaces = {
     "dom": "http://www.w3.org/2001/xml-events",
     "draw": "urn:oasis:names:tc:opendocument:xmlns:drawing:1.0",
     "fo": "urn:oasis:names:tc:opendocument:xmlns:xsl-fo-compatible:1.0",
+    "loext": "urn:org:documentfoundation:names:experimental:office:xmlns:loext:1.0",
     "manifest": "urn:oasis:names:tc:opendocument:xmlns:manifest:1.0",
     "office": "urn:oasis:names:tc:opendocument:xmlns:office:1.0",
     "presentation": "urn:oasis:names:tc:opendocument:xmlns:presentation:1.0",

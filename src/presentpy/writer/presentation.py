@@ -228,9 +228,25 @@ class Presentation:
                         "fo:border-top": f"{self.theme.table_border_width} solid {self.theme.content_color_alt}",
                         "fo:border-left": f"{self.theme.table_border_width} solid {self.theme.content_color_alt}",
                         "fo:border-right": f"{self.theme.table_border_width} solid {self.theme.content_color_alt}",
+                        "fo:border": f"{self.theme.table_border_width} solid {self.theme.content_color_alt}",
                     },
                 )
             )
+            odd_row_style.append(
+                Tag(
+                    "loext:graphic-properties",
+                    self.namespaces,
+                    {"draw:fill": "solid", "draw:fill-color": self.theme.table_row_odd_background_color},
+                )
+            )
+            odd_row_style.append(
+                Tag(
+                    "style:paragraph-properties",
+                    self.namespaces,
+                    {"fo:border": f"{self.theme.table_border_width} solid {self.theme.content_color_alt}"},
+                )
+            )
+
             self.styles.append(odd_row_style)
 
             text_style_name = f"{table_name}-text"
@@ -267,7 +283,22 @@ class Presentation:
                         "fo:border-top": f"{self.theme.table_border_width} solid {self.theme.content_color_alt}",
                         "fo:border-left": f"{self.theme.table_border_width} solid {self.theme.content_color_alt}",
                         "fo:border-right": f"{self.theme.table_border_width} solid {self.theme.content_color_alt}",
+                        "fo:border": f"{self.theme.table_border_width} solid {self.theme.content_color_alt}",
                     },
+                )
+            )
+            even_row_style.append(
+                Tag(
+                    "loext:graphic-properties",
+                    self.namespaces,
+                    {"draw:fill": "solid", "draw:fill-color": self.theme.table_row_even_background_color},
+                )
+            )
+            even_row_style.append(
+                Tag(
+                    "style:paragraph-properties",
+                    self.namespaces,
+                    {"fo:border": f"{self.theme.table_border_width} solid {self.theme.content_color_alt}"},
                 )
             )
             self.styles.append(even_row_style)
@@ -289,18 +320,12 @@ class Presentation:
                     text_style = text_heading_style_name
                 else:
                     text_style = text_style_name
-                table_row = Tag("table:table-row", self.namespaces)
+                table_row = Tag("table:table-row", self.namespaces, {"table:default-cell-style-name": row_style_name})
                 for cell in row.find_all("th"):
-                    cell_tag = Tag("table:table-cell", self.namespaces, {"table:style-name": row_style_name})
-                    text_p = Tag("text:p", self.namespaces, {"text:style-name": text_style})
-                    text_p.text = cell.text
-                    cell_tag.append(text_p)
+                    cell_tag = self._table_create_cell(text_style, cell)
                     table_row.append(cell_tag)
                 for cell in row.find_all("td"):
-                    cell_tag = Tag("table:table-cell", self.namespaces, {"table:style-name": row_style_name})
-                    text_p = Tag("text:p", self.namespaces, {"text:style-name": text_style})
-                    text_p.text = cell.text
-                    cell_tag.append(text_p)
+                    cell_tag = self._table_create_cell(text_style, cell)
                     table_row.append(cell_tag)
                 table.append(table_row)
             new_slide.object_frame.append(table)
@@ -310,6 +335,18 @@ class Presentation:
 
         else:
             self._add_code_slide(code, slide_name, with_output)
+
+    def _table_create_cell(self, text_style, cell):
+        cell_tag = Tag(
+            "table:table-cell",
+            self.namespaces,
+        )
+        text_p = Tag("text:p", self.namespaces)
+        span = Tag("text:span", self.namespaces, {"text:style-name": text_style})
+        span.text = cell.text
+        text_p.append(span)
+        cell_tag.append(text_p)
+        return cell_tag
 
     def _add_code_slide(self, code, slide_name, with_output):
         for highlight in code.highlights:
