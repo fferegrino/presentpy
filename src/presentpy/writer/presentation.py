@@ -160,181 +160,163 @@ class Presentation:
 
     def add_source_code(self, code: CodeSlideSource, slide_name: str = None, with_output=False):
         if code.output.image_png:
-            self.current_image_count += 1
-            media_path = f"media/image{self.current_image_count}.png"
-            image_path = f"{self._temp_dir}/{media_path}"
-            self.file_entries.append((media_path, "image/png"))
-            image_object = Image.open(BytesIO(base64.decodebytes(bytes(code.output.image_png, "utf-8"))))
-            image_object.save(image_path)
-
-            width, height = image_object.size
-            dpi_x, dpi_y = image_object.info["dpi"]
-
-            width_in_inches = width / dpi_x
-            height_in_inches = height / dpi_y
-
-            new_slide = self.new_slide(slide_name, slide_type=ImageSlide if not code.title else TitleAndImageSlide)
-            new_slide.add_image(media_path, width_in_inches, height_in_inches)
-
-            if code.title:
-                self._add_title(code.title, new_slide)
-
+            self._source_code_slide_add_image_slide(code, slide_name)
         elif code.output.text_html:
-
-            new_slide = self.new_slide(slide_name, slide_type=TitleAndObjectSlide)
-            soup = BeautifulSoup(code.output.text_html, "lxml")
-
-            table_attrs = {
-                "table:use-banding-columns-styles": "false",
-                "table:use-banding-rows-styles": "true",
-                "table:use-first-column-styles": "false",
-                "table:use-first-row-styles": "true",
-                "table:use-last-column-styles": "false",
-                "table:use-last-row-styles": "false",
-            }
-            table_table = soup.find("table", class_="dataframe")
-            rows = table_table.find_all("tr")
-            column_count = len(rows[0].find_all("th")) + len(rows[0].find_all("td"))
-
-            self.current_table_count += 1
-
-            table_name = f"table{self.current_table_count}"
-
-            [*_, content_width, content_height] = new_slide.get_dimensions("object_frame")
-
-            cell_width = content_width / column_count
-            cell_height = content_height / len(rows)
-
-            template_name = f"{table_name}-template"
-            table_attrs["table:template-name"] = template_name
-
-            table_template = Tag("table:table-template", self.namespaces, {"table:name": template_name})
-            table_template.append(
-                Tag("table:first-row", self.namespaces, {"table:style-name": f"{table_name}-first-row"})
-            )
-            self.styles.append(table_template)
-
-            odd_row_style_name = f"{table_name}-odd-row"
-            odd_row_style = Tag(
-                "style:style", self.namespaces, {"style:family": "table-cell", "style:name": odd_row_style_name}
-            )
-            odd_row_style.append(
-                Tag(
-                    "style:table-cell-properties",
-                    self.namespaces,
-                    {
-                        "fo:background-color": f"{self.theme.table_row_odd_background_color}",
-                        "fo:border-bottom": f"{self.theme.table_border_width} solid {self.theme.content_color_alt}",
-                        "fo:border-top": f"{self.theme.table_border_width} solid {self.theme.content_color_alt}",
-                        "fo:border-left": f"{self.theme.table_border_width} solid {self.theme.content_color_alt}",
-                        "fo:border-right": f"{self.theme.table_border_width} solid {self.theme.content_color_alt}",
-                        "fo:border": f"{self.theme.table_border_width} solid {self.theme.content_color_alt}",
-                    },
-                )
-            )
-            odd_row_style.append(
-                Tag(
-                    "loext:graphic-properties",
-                    self.namespaces,
-                    {"draw:fill": "solid", "draw:fill-color": self.theme.table_row_odd_background_color},
-                )
-            )
-            odd_row_style.append(
-                Tag(
-                    "style:paragraph-properties",
-                    self.namespaces,
-                    {"fo:border": f"{self.theme.table_border_width} solid {self.theme.content_color_alt}"},
-                )
-            )
-
-            self.styles.append(odd_row_style)
-
-            text_style_name = f"{table_name}-text"
-            text_style = Tag("style:style", self.namespaces, {"style:family": "text", "style:name": text_style_name})
-            text_style.append(
-                Tag("style:text-properties", self.namespaces, {"fo:color": f"{self.theme.content_color_alt}"})
-            )
-            self.styles.append(text_style)
-
-            text_heading_style_name = f"{table_name}-text-heading"
-            text_heading_style = Tag(
-                "style:style", self.namespaces, {"style:family": "text", "style:name": text_heading_style_name}
-            )
-            text_heading_style.append(
-                Tag(
-                    "style:text-properties",
-                    self.namespaces,
-                    {"fo:color": f"{self.theme.content_color_alt}", "fo:font-weight": "bold"},
-                )
-            )
-            self.styles.append(text_heading_style)
-
-            even_row_style_name = f"{table_name}-even-row"
-            even_row_style = Tag(
-                "style:style", self.namespaces, {"style:family": "table-cell", "style:name": even_row_style_name}
-            )
-            even_row_style.append(
-                Tag(
-                    "style:table-cell-properties",
-                    self.namespaces,
-                    {
-                        "fo:background-color": f"{self.theme.table_row_even_background_color}",
-                        "fo:border-bottom": f"{self.theme.table_border_width} solid {self.theme.content_color_alt}",
-                        "fo:border-top": f"{self.theme.table_border_width} solid {self.theme.content_color_alt}",
-                        "fo:border-left": f"{self.theme.table_border_width} solid {self.theme.content_color_alt}",
-                        "fo:border-right": f"{self.theme.table_border_width} solid {self.theme.content_color_alt}",
-                        "fo:border": f"{self.theme.table_border_width} solid {self.theme.content_color_alt}",
-                    },
-                )
-            )
-            even_row_style.append(
-                Tag(
-                    "loext:graphic-properties",
-                    self.namespaces,
-                    {"draw:fill": "solid", "draw:fill-color": self.theme.table_row_even_background_color},
-                )
-            )
-            even_row_style.append(
-                Tag(
-                    "style:paragraph-properties",
-                    self.namespaces,
-                    {"fo:border": f"{self.theme.table_border_width} solid {self.theme.content_color_alt}"},
-                )
-            )
-            self.styles.append(even_row_style)
-
-            column_style = Tag(
-                "style:style", self.namespaces, {"style:family": "table-column", "style:name": f"{table_name}-column"}
-            )
-            column_style.append(
-                Tag("style:table-column-properties", self.namespaces, {"style:column-width": f"{cell_width}in"})
-            )
-            self.styles.append(column_style)
-
-            table = Tag("table:table", self.namespaces, table_attrs)
-            for _ in range(column_count):
-                table.append(Tag("table:table-column", self.namespaces, {"table:style-name": f"{table_name}-column"}))
-            for row_no, row in enumerate(rows):
-                row_style_name = f"{table_name}-even-row" if row_no % 2 == 0 else f"{table_name}-odd-row"
-                if row_no == 0:
-                    text_style = text_heading_style_name
-                else:
-                    text_style = text_style_name
-                table_row = Tag("table:table-row", self.namespaces, {"table:default-cell-style-name": row_style_name})
-                for cell in row.find_all("th"):
-                    cell_tag = self._table_create_cell(text_style, cell)
-                    table_row.append(cell_tag)
-                for cell in row.find_all("td"):
-                    cell_tag = self._table_create_cell(text_style, cell)
-                    table_row.append(cell_tag)
-                table.append(table_row)
-            new_slide.object_frame.append(table)
-
-            if code.title:
-                self._add_title(code.title, new_slide)
-
+            self._source_code_slide_add_table_slide(code, slide_name)
         else:
-            self._add_code_slide(code, slide_name, with_output)
+            self._source_code_slide_add_code_slide(code, slide_name, with_output)
+
+    def _source_code_slide_add_table_slide(self, code, slide_name):
+        new_slide = self.new_slide(slide_name, slide_type=TitleAndObjectSlide)
+        soup = BeautifulSoup(code.output.text_html, "lxml")
+
+        table_attrs = {
+            "table:use-banding-columns-styles": "false",
+            "table:use-banding-rows-styles": "true",
+            "table:use-first-column-styles": "false",
+            "table:use-first-row-styles": "true",
+            "table:use-last-column-styles": "false",
+            "table:use-last-row-styles": "false",
+        }
+        table_table = soup.find("table", class_="dataframe")
+        rows = table_table.find_all("tr")
+        column_count = len(rows[0].find_all("th")) + len(rows[0].find_all("td"))
+
+        self.current_table_count += 1
+
+        table_name = f"table{self.current_table_count}"
+
+        [*_, content_width, content_height] = new_slide.get_dimensions("object_frame")
+
+        cell_width = content_width / column_count
+        cell_height = content_height / len(rows)
+
+        template_name = f"{table_name}-template"
+        table_attrs["table:template-name"] = template_name
+
+        table_template = Tag("table:table-template", self.namespaces, {"table:name": template_name})
+        table_template.append(Tag("table:first-row", self.namespaces, {"table:style-name": f"{table_name}-first-row"}))
+        self.styles.append(table_template)
+
+        odd_row_style_name = f"{table_name}-odd-row"
+        odd_row_style = self._table_generate_row_style(
+            odd_row_style_name,
+            self.theme.content_color_alt,
+            self.theme.table_row_odd_background_color,
+            self.theme.table_border_width,
+        )
+        self.styles.append(odd_row_style)
+
+        even_row_style_name = f"{table_name}-even-row"
+        even_row_style = self._table_generate_row_style(
+            even_row_style_name,
+            self.theme.content_color_alt,
+            self.theme.table_row_even_background_color,
+            self.theme.table_border_width,
+        )
+        self.styles.append(even_row_style)
+
+        text_style_name = f"{table_name}-text"
+        text_style = Tag("style:style", self.namespaces, {"style:family": "text", "style:name": text_style_name})
+        text_style.append(
+            Tag("style:text-properties", self.namespaces, {"fo:color": f"{self.theme.content_color_alt}"})
+        )
+        self.styles.append(text_style)
+
+        text_heading_style_name = f"{table_name}-text-heading"
+        text_heading_style = Tag(
+            "style:style", self.namespaces, {"style:family": "text", "style:name": text_heading_style_name}
+        )
+        text_heading_style.append(
+            Tag(
+                "style:text-properties",
+                self.namespaces,
+                {"fo:color": f"{self.theme.content_color_alt}", "fo:font-weight": "bold"},
+            )
+        )
+        self.styles.append(text_heading_style)
+
+        column_style = Tag(
+            "style:style", self.namespaces, {"style:family": "table-column", "style:name": f"{table_name}-column"}
+        )
+        column_style.append(
+            Tag("style:table-column-properties", self.namespaces, {"style:column-width": f"{cell_width}in"})
+        )
+        self.styles.append(column_style)
+
+        table = Tag("table:table", self.namespaces, table_attrs)
+        for _ in range(column_count):
+            table.append(Tag("table:table-column", self.namespaces, {"table:style-name": f"{table_name}-column"}))
+        for row_no, row in enumerate(rows):
+            row_style_name = f"{table_name}-even-row" if row_no % 2 == 0 else f"{table_name}-odd-row"
+            text_style = text_heading_style_name if row_no == 0 else text_style_name
+            table_row = Tag("table:table-row", self.namespaces, {"table:default-cell-style-name": row_style_name})
+            for cell in row.find_all("th"):
+                cell_tag = self._table_create_cell(text_style, cell)
+                table_row.append(cell_tag)
+            for cell in row.find_all("td"):
+                cell_tag = self._table_create_cell(text_style, cell)
+                table_row.append(cell_tag)
+            table.append(table_row)
+        new_slide.object_frame.append(table)
+
+        if code.title:
+            self._add_title(code.title, new_slide)
+
+    def _source_code_slide_add_image_slide(self, code, slide_name):
+        self.current_image_count += 1
+        media_path = f"media/image{self.current_image_count}.png"
+        image_path = f"{self._temp_dir}/{media_path}"
+        self.file_entries.append((media_path, "image/png"))
+        image_object = Image.open(BytesIO(base64.decodebytes(bytes(code.output.image_png, "utf-8"))))
+        image_object.save(image_path)
+
+        width, height = image_object.size
+        dpi_x, dpi_y = image_object.info["dpi"]
+
+        width_in_inches = width / dpi_x
+        height_in_inches = height / dpi_y
+
+        new_slide = self.new_slide(slide_name, slide_type=ImageSlide if not code.title else TitleAndImageSlide)
+        new_slide.add_image(media_path, width_in_inches, height_in_inches)
+
+        if code.title:
+            self._add_title(code.title, new_slide)
+
+    def _table_generate_row_style(self, even_row_style_name, table_content_color, row_background_color, border_width):
+        even_row_style = Tag(
+            "style:style", self.namespaces, {"style:family": "table-cell", "style:name": even_row_style_name}
+        )
+        even_row_style.append(
+            Tag(
+                "style:table-cell-properties",
+                self.namespaces,
+                {
+                    "fo:background-color": f"{row_background_color}",
+                    "fo:border-bottom": f"{border_width} solid {table_content_color}",
+                    "fo:border-top": f"{border_width} solid {table_content_color}",
+                    "fo:border-left": f"{border_width} solid {table_content_color}",
+                    "fo:border-right": f"{border_width} solid {table_content_color}",
+                    "fo:border": f"{border_width} solid {table_content_color}",
+                },
+            )
+        )
+        even_row_style.append(
+            Tag(
+                "loext:graphic-properties",
+                self.namespaces,
+                {"draw:fill": "solid", "draw:fill-color": row_background_color},
+            )
+        )
+        even_row_style.append(
+            Tag(
+                "style:paragraph-properties",
+                self.namespaces,
+                {"fo:border": f"{border_width} solid {table_content_color}"},
+            )
+        )
+
+        return even_row_style
 
     def _table_create_cell(self, text_style, cell):
         cell_tag = Tag(
@@ -348,7 +330,7 @@ class Presentation:
         cell_tag.append(text_p)
         return cell_tag
 
-    def _add_code_slide(self, code, slide_name, with_output):
+    def _source_code_slide_add_code_slide(self, code, slide_name, with_output):
         for highlight in code.highlights:
             new_slide = self.new_slide(
                 slide_name, slide_type=TitleCodeAndOutputSlide if with_output else TitleAndCodeSlide

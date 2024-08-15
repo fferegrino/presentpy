@@ -243,16 +243,16 @@
 			<loext:graphic-properties draw:fill="solid" draw:fill-color="#ffffff"/>
 			<style:paragraph-properties fo:border="0.03in solid white"/>
 		</style:style>
+		<style:style style:family="table-cell" style:name="table1-even-row">
+			<style:table-cell-properties fo:background-color="#ebebeb" fo:border-bottom="0.03in solid white" fo:border-top="0.03in solid white" fo:border-left="0.03in solid white" fo:border-right="0.03in solid white" fo:border="0.03in solid white"/>
+			<loext:graphic-properties draw:fill="solid" draw:fill-color="#ebebeb"/>
+			<style:paragraph-properties fo:border="0.03in solid white"/>
+		</style:style>
 		<style:style style:family="text" style:name="table1-text">
 			<style:text-properties fo:color="white"/>
 		</style:style>
 		<style:style style:family="text" style:name="table1-text-heading">
 			<style:text-properties fo:color="white" fo:font-weight="bold"/>
-		</style:style>
-		<style:style style:family="table-cell" style:name="table1-even-row">
-			<style:table-cell-properties fo:background-color="#ebebeb" fo:border-bottom="0.03in solid white" fo:border-top="0.03in solid white" fo:border-left="0.03in solid white" fo:border-right="0.03in solid white" fo:border="0.03in solid white"/>
-			<loext:graphic-properties draw:fill="solid" draw:fill-color="#ebebeb"/>
-			<style:paragraph-properties fo:border="0.03in solid white"/>
 		</style:style>
 		<style:style style:family="table-column" style:name="table1-column">
 			<style:table-column-properties style:column-width="2.306in"/>
