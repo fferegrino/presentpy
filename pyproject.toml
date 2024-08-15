@@ -24,7 +24,6 @@ colour = "^0.1.5"
 [tool.poetry.group.dev.dependencies]
 black = "^24.4.2"
 bump-my-version = "^0.24.3"
-isort = "^5.13.2"
 mkdocs-material = "^9.5.30"
 pytest = "^8.3.1"
 ruff = "^0.5.4"
@@ -59,16 +58,20 @@ search = 'version = "{current_version}"'
 replace = 'version = "{new_version}"'
 
 [tool.ruff]
-select = ["E", "F", "I","C90", "N"]
-ignore = []
 line-length = 120
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "N"]
+ignore = ["C90"]
+
+[tool.ruff.lint.per-file-ignores]
+"__init__.py" = ["F401"]
+
+[tool.ruff.lint.isort]
+known-first-party = ["presentpy"]
 
 [tool.black]
 line-length = 120
-
-[tool.isort]
-profile = "black"
-known_first_party = ["presentpy"]
 
 [build-system]
 requires = ["poetry-core"]

@@ -1,4 +1,11 @@
-from presentpy.constants import *
+from presentpy.constants import (
+    CODE_FRAME_STYLE_NAME,
+    DRAWING_PAGE_STYLE_NAME,
+    MASTER_CONTENT_STYLE_NAME,
+    MASTER_SLIDE_PREFIX,
+    MASTER_TITLE_STYLE_NAME,
+    OUTPUT_FRAME_STYLE_NAME,
+)
 from presentpy.namespaces import Namespaces
 from presentpy.writer.tag import Tag
 from presentpy.writer.theme import Theme

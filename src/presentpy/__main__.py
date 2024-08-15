@@ -1,5 +1,4 @@
 from pathlib import Path
-from typing import Any, List, Tuple
 
 import click
 import mistletoe
@@ -8,13 +7,14 @@ import nbformat
 from presentpy.code_slide_source import CodeSlideSource
 from presentpy.namespaces import Namespaces
 from presentpy.writer.presentation import Presentation
-from presentpy.writer.slide_tag import TitleAndContentSlide
 from presentpy.writer.theme import Theme
 
 odf_namespaces = {
     "dom": "http://www.w3.org/2001/xml-events",
     "draw": "urn:oasis:names:tc:opendocument:xmlns:drawing:1.0",
     "fo": "urn:oasis:names:tc:opendocument:xmlns:xsl-fo-compatible:1.0",
+    "loext": "urn:org:documentfoundation:names:experimental:office:xmlns:loext:1.0",
+    "manifest": "urn:oasis:names:tc:opendocument:xmlns:manifest:1.0",
     "office": "urn:oasis:names:tc:opendocument:xmlns:office:1.0",
     "presentation": "urn:oasis:names:tc:opendocument:xmlns:presentation:1.0",
     "script": "urn:oasis:names:tc:opendocument:xmlns:script:1.0",

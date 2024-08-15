@@ -1,6 +1,14 @@
 from pathlib import Path
 
-from presentpy.constants import *
+from presentpy.constants import (
+    CODE_HIGHLIGHT_PARAGRAPH_STYLE_NAME,
+    DEFAULT_PAGE_LAYOUT_NAME,
+    DEFAULT_STYLE_NAME,
+    DRAWING_PAGE_STYLE_NAME,
+    MASTER_CONTENT_STYLE_NAME,
+    MASTER_TITLE_STYLE_NAME,
+    OUTPUT_FRAME_STYLE_NAME,
+)
 from presentpy.namespaces import Namespaces
 from presentpy.templates.xml_file import XMLFile
 from presentpy.writer.slide_tag import (
@@ -104,11 +112,6 @@ class Styles(XMLFile):
         for slide in slides:
             master_page = slide.to_master_page(DEFAULT_PAGE_LAYOUT_NAME, DEFAULT_STYLE_NAME)
             maaster_styles.append(master_page.to_element())
-
-            # 	<style:style style:name="Master1-thing-BlankSlide-background" style:family="presentation">
-            # 			<style:graphic-properties draw:stroke="none" draw:fill="solid" draw:fill-color="#00ff00"/>
-            # 		</style:style>
-
             background_style = Tag(
                 "style:style",
                 self.namespaces,

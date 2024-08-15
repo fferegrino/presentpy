@@ -2,6 +2,7 @@
 <office:document-settings	
 	xmlns:anim="urn:oasis:names:tc:opendocument:xmlns:animation:1.0"
 	xmlns:config="urn:oasis:names:tc:opendocument:xmlns:config:1.0"
+	xmlns:manifest="urn:oasis:names:tc:opendocument:xmlns:manifest:1.0"
 	xmlns:office="urn:oasis:names:tc:opendocument:xmlns:office:1.0"
 	xmlns:officeooo="http://openoffice.org/2009/office"
 	xmlns:ooo="http://openoffice.org/2004/office"

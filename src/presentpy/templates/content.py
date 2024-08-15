@@ -3,7 +3,13 @@ from typing import Optional
 
 from lxml import etree
 
-from presentpy.constants import *
+from presentpy.constants import (
+    CODE_HIGHLIGHT_PARAGRAPH_STYLE_NAME,
+    DRAWING_PAGE_STYLE_NAME,
+    MASTER_CONTENT_STYLE_NAME,
+    MASTER_TITLE_STYLE_NAME,
+    OUTPUT_FRAME_STYLE_NAME,
+)
 from presentpy.namespaces import Namespaces
 from presentpy.templates.xml_file import XMLFile
 from presentpy.writer.theme import Theme
