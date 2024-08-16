@@ -41,9 +41,6 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 office:version="1.2">
 	<office:styles>
-		<style:page-layout style:name="pageLayout1">
-			<style:page-layout-properties style:print-orientation="landscape" style:register-truth-ref-style-name=""/>
-		</style:page-layout>
 		<style:style style:family="drawing-page" style:name="masterStyle">
 			<style:drawing-page-properties draw:fill="solid" draw:opacity="100%" presentation:visibility="visible" draw:background-size="border" presentation:background-objects-visible="false" presentation:display-header="false" presentation:display-footer="false" presentation:display-page-number="false" presentation:display-date-time="false"/>
 		</style:style>
@@ -104,6 +101,9 @@ office:version="1.2">
 		</style:presentation-page-layout>
 	</office:styles>
 	<office:automatic-styles>
+		<style:page-layout style:name="pageLayout1">
+			<style:page-layout-properties style:print-orientation="landscape"/>
+		</style:page-layout>
 		<style:style style:family="text" style:name="span__strong">
 			<style:text-properties fo:font-weight="bold"/>
 		</style:style>

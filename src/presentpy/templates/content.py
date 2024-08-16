@@ -5,6 +5,7 @@ from lxml import etree
 
 from presentpy.constants import (
     CODE_HIGHLIGHT_PARAGRAPH_STYLE_NAME,
+    DEFAULT_PAGE_LAYOUT_NAME,
     DRAWING_PAGE_STYLE_NAME,
     MASTER_CONTENT_STYLE_NAME,
     MASTER_TITLE_STYLE_NAME,
@@ -25,8 +26,8 @@ class Content(XMLFile):
 
         page_layout_properties = self.xpath(
             "office:document-content",
-            "office:styles",
-            "style:page-layout[@style:name='pageLayout1']",
+            "office:automatic-styles",
+            f"style:page-layout[@style:name='{DEFAULT_PAGE_LAYOUT_NAME}']",
             "style:page-layout-properties",
         )
         page_layout_properties.set(namespaces("fo:page-width"), f"{self.theme.width:.2f}in")
@@ -86,6 +87,17 @@ class Content(XMLFile):
             "style:text-properties",
         )
         output_frame_text_properties.set(namespaces("fo:color"), self.theme.content_color)
+
+        list_level_style_bullet = self.xpath(
+            "office:document-content",
+            "office:automatic-styles",
+            "text:list-style[@style:name='list']",
+            "text:list-level-style-bullet",
+            single=False,
+        )
+        for bullet in list_level_style_bullet:
+            text_properties = bullet.xpath("style:text-properties", namespaces=self.namespaces.data)[0]
+            text_properties.set(namespaces("fo:color"), self.theme.content_color)
 
     def write(self, path: Optional[Path] = None, prettify: bool = False):
         etree.indent(self.automatic_styles)
