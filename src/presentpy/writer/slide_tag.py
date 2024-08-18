@@ -1,6 +1,6 @@
 from presentpy.constants import (
     CODE_FRAME_STYLE_NAME,
-    DRAWING_PAGE_STYLE_NAME,
+    DEFAULT_STYLE_NAME_FOR_CONTENT,
     MASTER_CONTENT_STYLE_NAME,
     MASTER_SLIDE_PREFIX,
     MASTER_TITLE_FRAME_STYLE_NAME,
@@ -23,7 +23,7 @@ class SlideTag(Tag):
             namespaces,
             {
                 "draw:name": name,
-                "draw:style-name": DRAWING_PAGE_STYLE_NAME,
+                "draw:style-name": DEFAULT_STYLE_NAME_FOR_CONTENT,
                 "draw:id": name,
                 "draw:master-page-name": self.get_master_page_style_name(),
             },

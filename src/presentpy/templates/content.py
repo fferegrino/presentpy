@@ -5,11 +5,8 @@ from lxml import etree
 
 from presentpy.constants import (
     CODE_HIGHLIGHT_PARAGRAPH_STYLE_NAME,
-    DEFAULT_PAGE_LAYOUT_NAME,
-    DEFAULT_STYLE_NAME,
+    DEFAULT_STYLE_NAME_FOR_CONTENT,
     DRAWING_PAGE_STYLE_NAME,
-    MASTER_CONTENT_STYLE_NAME,
-    MASTER_TITLE_FRAME_STYLE_NAME,
     OUTPUT_FRAME_STYLE_NAME,
 )
 from presentpy.namespaces import Namespaces
@@ -23,21 +20,13 @@ class Content(XMLFile):
         super().__init__(path, namespaces)
         self.theme = theme
         self.automatic_styles = self.xpath("office:document-content", "office:automatic-styles")
+        self.styles = self.xpath("office:document-content", "office:styles")
         self.presentation = self.xpath("office:document-content", "office:body", "office:presentation")
-
-        page_layout_properties = self.xpath(
-            "office:document-content",
-            "office:automatic-styles",
-            f"style:page-layout[@style:name='{DEFAULT_PAGE_LAYOUT_NAME}']",
-            "style:page-layout-properties",
-        )
-        page_layout_properties.set(namespaces("fo:page-width"), f"{self.theme.width:.2f}in")
-        page_layout_properties.set(namespaces("fo:page-height"), f"{self.theme.height:.2f}in")
 
         drawing_page_properties = self.xpath(
             "office:document-content",
             "office:automatic-styles",
-            f"style:style[@style:name='{DEFAULT_STYLE_NAME}']",
+            f"style:style[@style:name='{DEFAULT_STYLE_NAME_FOR_CONTENT}']",
             "style:drawing-page-properties",
         )
         drawing_page_properties.set(namespaces("draw:fill-color"), self.theme.background_color)
@@ -45,7 +34,7 @@ class Content(XMLFile):
         master_title_text_properties = self.xpath(
             "office:document-content",
             "office:automatic-styles",
-            f"style:style[@style:name='{MASTER_TITLE_FRAME_STYLE_NAME}']",
+            "style:style[@style:name='masterTitleSpan']",
             "style:text-properties",
         )
         master_title_text_properties.set(namespaces("fo:color"), self.theme.title_color)
@@ -53,16 +42,23 @@ class Content(XMLFile):
         master_title_text_properties.set(namespaces("style:font-size-asian"), self.theme.title_font_size)
         master_title_text_properties.set(namespaces("style:font-size-complex"), self.theme.title_font_size)
 
-        master_content_text_properties = self.xpath(
-            "office:document-content",
-            "office:automatic-styles",
-            f"style:style[@style:name='{MASTER_CONTENT_STYLE_NAME}']",
-            "style:text-properties",
-        )
-        master_content_text_properties.set(namespaces("fo:color"), self.theme.content_color)
-        master_content_text_properties.set(namespaces("fo:font-size"), self.theme.content_font_size)
-        master_content_text_properties.set(namespaces("style:font-size-asian"), self.theme.content_font_size)
-        master_content_text_properties.set(namespaces("style:font-size-complex"), self.theme.content_font_size)
+        for span_styles in [
+            "content_span",
+            "content_span__strong",
+            "content_span__strikethrough",
+            "content_span__emphasis",
+            "content_span__underline",
+        ]:
+            master_content_text_properties = self.xpath(
+                "office:document-content",
+                "office:automatic-styles",
+                f"style:style[@style:name='{span_styles}']",
+                "style:text-properties",
+            )
+            master_content_text_properties.set(namespaces("fo:color"), self.theme.content_color)
+            master_content_text_properties.set(namespaces("fo:font-size"), self.theme.content_font_size)
+            master_content_text_properties.set(namespaces("style:font-size-asian"), self.theme.content_font_size)
+            master_content_text_properties.set(namespaces("style:font-size-complex"), self.theme.content_font_size)
 
         default_slide_properties = self.xpath(
             "office:document-content",

@@ -37,23 +37,11 @@
 	xmlns:xlink="http://www.w3.org/1999/xlink"
 office:version="1.2">
 <office:automatic-styles>
-		<style:page-layout style:name="pageLayout1">
+		<style:page-layout style:name="PM1">
 			<style:page-layout-properties style:print-orientation="landscape"/>
 		</style:page-layout>
-		<style:style style:family="drawing-page" style:name="masterStyle">
+		<style:style style:family="drawing-page" style:name="Mdp1">
 			<style:drawing-page-properties draw:fill="solid" draw:opacity="100%" presentation:visibility="visible" draw:background-size="border" presentation:background-objects-visible="false" presentation:display-header="false" presentation:display-footer="false" presentation:display-page-number="false" presentation:display-date-time="false"/>
-		</style:style>
-		<style:style style:family="text" style:name="span__strong">
-			<style:text-properties fo:font-weight="bold"/>
-		</style:style>
-		<style:style style:family="text" style:name="span__strikethrough">
-			<style:text-properties style:text-line-through-type="single" style:text-line-through-style="solid" style:text-line-through-width="auto" style:text-line-through-color="font-color"  />
-		</style:style>
-		<style:style style:family="text" style:name="span__emphasis"> <!-- italic -->
-			<style:text-properties fo:font-style="italic" style:font-style-asian="italic" style:font-style-complex="italic" />
-		</style:style>
-		<style:style style:family="text" style:name="span__underline">
-			<style:text-properties  style:text-underline-type="single" style:text-underline-style="solid" style:text-underline-width="auto" style:text-underline-color="font-color" />
 		</style:style>
 		<text:list-style style:name="list">
 			<text:list-level-style-bullet text:level="1" text:bullet-char="•">
@@ -100,6 +88,15 @@ office:version="1.2">
 			</style:paragraph-properties>
 			<style:text-properties fo:font-variant="normal" fo:text-transform="none" style:text-line-through-type="none" style:text-line-through-style="none" style:text-line-through-width="auto" style:text-line-through-color="font-color" style:text-position="0% 100%" fo:letter-spacing="0in" fo:font-style="normal" style:font-style-asian="normal" style:font-style-complex="normal" style:text-underline-type="none" style:text-underline-style="none" style:text-underline-width="auto" style:text-underline-color="font-color" fo:font-weight="normal" style:font-weight-asian="normal" style:font-weight-complex="normal" style:text-underline-mode="continuous" style:letter-kerning="false"/>
 		</style:style>
+		<style:style style:family="paragraph" style:name="masterTitleParagraph">
+			<style:paragraph-properties fo:line-height="90%" fo:text-align="left" style:tab-stop-distance="1in" fo:margin-left="0in" fo:margin-right="0in" fo:text-indent="0in" fo:margin-top="0.13889in" fo:margin-bottom="0in" style:punctuation-wrap="hanging" style:vertical-align="auto" style:writing-mode="lr-tb">
+				<style:tab-stops/>
+			</style:paragraph-properties>
+			<style:text-properties style:text-position="0% 100%" fo:letter-spacing="0in" fo:font-style="normal" style:font-style-asian="normal" style:font-style-complex="normal" style:text-underline-type="none" style:text-underline-style="none" style:text-underline-width="auto" style:text-underline-color="font-color" fo:font-weight="normal" style:font-weight-asian="normal" style:font-weight-complex="normal" style:text-underline-mode="continuous" style:letter-kerning="false"/>
+		</style:style>
+		<style:style style:family="text" style:name="masterTitleSpan">
+			<style:text-properties fo:color="#fec418"/>
+		</style:style>
 		<style:style style:family="graphic" style:name="masterContent">
             <style:graphic-properties draw:fill="none" draw:opacity="100%" draw:stroke="none" />
 			<style:paragraph-properties fo:line-height="90%" fo:text-align="left" style:tab-stop-distance="1in" fo:margin-left="0in" fo:margin-right="0in" fo:text-indent="0in" fo:margin-top="0in" fo:margin-bottom="0in" style:punctuation-wrap="hanging" style:vertical-align="auto" style:writing-mode="lr-tb">
@@ -112,6 +109,21 @@ office:version="1.2">
 				<style:tab-stops/>
 			</style:paragraph-properties>
 			<style:text-properties  style:text-position="0% 100%" fo:letter-spacing="0in" fo:font-style="normal" style:font-style-asian="normal" style:font-style-complex="normal" style:text-underline-type="none" style:text-underline-style="none" style:text-underline-width="auto" style:text-underline-color="font-color" fo:font-weight="normal" style:font-weight-asian="normal" style:font-weight-complex="normal" style:text-underline-mode="continuous" style:letter-kerning="false"/>
+		</style:style>
+		<style:style style:family="text" style:name="content_span">
+			<style:text-properties  style:text-position="0% 100%" fo:letter-spacing="0in" fo:font-style="normal" style:font-style-asian="normal" style:font-style-complex="normal" style:text-underline-type="none" style:text-underline-style="none" style:text-underline-width="auto" style:text-underline-color="font-color" fo:font-weight="normal" style:font-weight-asian="normal" style:font-weight-complex="normal" style:text-underline-mode="continuous" style:letter-kerning="false"/>
+		</style:style>
+		<style:style style:family="text" style:name="content_span__strong">
+			<style:text-properties fo:font-weight="bold"/>
+		</style:style>
+		<style:style style:family="text" style:name="content_span__strikethrough">
+			<style:text-properties style:text-line-through-type="single" style:text-line-through-style="solid" style:text-line-through-width="auto" style:text-line-through-color="font-color"  />
+		</style:style>
+		<style:style style:family="text" style:name="content_span__emphasis"> <!-- italic -->
+			<style:text-properties fo:font-style="italic" style:font-style-asian="italic" style:font-style-complex="italic" />
+		</style:style>
+		<style:style style:family="text" style:name="content_span__underline">
+			<style:text-properties  style:text-underline-type="single" style:text-underline-style="solid" style:text-underline-width="auto" style:text-underline-color="font-color" />
 		</style:style>
 		<style:style style:family="paragraph" style:name="contentListParagraph">
 			<style:paragraph-properties fo:line-height="90%" fo:text-align="left" style:tab-stop-distance="1in" fo:margin-left="0.25in" fo:margin-right="0in"  fo:text-indent="-0.25in" fo:margin-top="0.13889in" fo:margin-bottom="0in" style:punctuation-wrap="hanging" style:vertical-align="auto" style:writing-mode="lr-tb">
@@ -148,8 +160,8 @@ office:version="1.2">
 			<presentation:placeholder presentation:object="title" svg:x="0.91667in" svg:y="0.39931in" svg:width="11.49653in" svg:height="1.44965in"/>
 			<presentation:placeholder presentation:object="object" svg:x="0.91667in" svg:y="1.99653in" svg:width="11.49653in" svg:height="4.75868in"/>
 		</style:presentation-page-layout>
-	
 	</office:automatic-styles>
+	<office:styles />
 	<office:master-styles>
 		<draw:layer-set>
 			<draw:layer draw:name="Master1-bg" draw:protected="true"/>

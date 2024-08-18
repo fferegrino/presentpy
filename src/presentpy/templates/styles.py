@@ -5,16 +5,17 @@ from presentpy.constants import (
     DEFAULT_PAGE_LAYOUT_NAME,
     DEFAULT_STYLE_NAME,
     DRAWING_PAGE_STYLE_NAME,
-    MASTER_CONTENT_STYLE_NAME,
-    MASTER_TITLE_FRAME_STYLE_NAME,
     OUTPUT_FRAME_STYLE_NAME,
 )
 from presentpy.namespaces import Namespaces
 from presentpy.templates.xml_file import XMLFile
 from presentpy.writer.slide_tag import (
     BlankSlide,
+    ImageSlide,
     TitleAndCodeSlide,
     TitleAndContentSlide,
+    TitleAndImageSlide,
+    TitleAndObjectSlide,
     TitleCodeAndOutputSlide,
     TitleSlide,
 )
@@ -28,7 +29,8 @@ class Styles(XMLFile):
         super().__init__(path, namespaces)
         self.theme = theme
 
-        office_styles = self.xpath("office:document-styles", "office:automatic-styles")
+        self.automatic_styles = self.xpath("office:document-styles", "office:automatic-styles")
+        self.styles = self.xpath("office:document-styles", "office:styles")
 
         page_layout_properties = self.xpath(
             "office:document-styles",
@@ -50,7 +52,7 @@ class Styles(XMLFile):
         master_title_text_properties = self.xpath(
             "office:document-styles",
             "office:automatic-styles",
-            f"style:style[@style:name='{MASTER_TITLE_FRAME_STYLE_NAME}']",
+            "style:style[@style:name='masterTitleSpan']",
             "style:text-properties",
         )
         master_title_text_properties.set(namespaces("fo:color"), self.theme.title_color)
@@ -58,17 +60,23 @@ class Styles(XMLFile):
         master_title_text_properties.set(namespaces("style:font-size-asian"), self.theme.title_font_size)
         master_title_text_properties.set(namespaces("style:font-size-complex"), self.theme.title_font_size)
 
-        master_content_text_properties = self.xpath(
-            "office:document-styles",
-            "office:automatic-styles",
-            f"style:style[@style:name='{MASTER_CONTENT_STYLE_NAME}']",
-            "style:text-properties",
-        )
-
-        master_content_text_properties.set(namespaces("fo:color"), self.theme.content_color)
-        master_content_text_properties.set(namespaces("fo:font-size"), self.theme.content_font_size)
-        master_content_text_properties.set(namespaces("style:font-size-asian"), self.theme.content_font_size)
-        master_content_text_properties.set(namespaces("style:font-size-complex"), self.theme.content_font_size)
+        for span_styles in [
+            "content_span",
+            "content_span__strong",
+            "content_span__strikethrough",
+            "content_span__emphasis",
+            "content_span__underline",
+        ]:
+            master_content_text_properties = self.xpath(
+                "office:document-styles",
+                "office:automatic-styles",
+                f"style:style[@style:name='{span_styles}']",
+                "style:text-properties",
+            )
+            master_content_text_properties.set(namespaces("fo:color"), self.theme.content_color)
+            master_content_text_properties.set(namespaces("fo:font-size"), self.theme.content_font_size)
+            master_content_text_properties.set(namespaces("style:font-size-asian"), self.theme.content_font_size)
+            master_content_text_properties.set(namespaces("style:font-size-complex"), self.theme.content_font_size)
 
         default_slide_properties = self.xpath(
             "office:document-styles",
@@ -107,6 +115,9 @@ class Styles(XMLFile):
             TitleAndContentSlide("TitleAndContent", self.namespaces, self.theme),
             TitleAndCodeSlide("TitleAndCode", self.namespaces, self.theme),
             TitleCodeAndOutputSlide("TitleCodeAndOutput", self.namespaces, self.theme),
+            TitleAndImageSlide("TitleAndImage", self.namespaces, self.theme),
+            ImageSlide("Image", self.namespaces, self.theme),
+            TitleAndObjectSlide("TitleAndObject", self.namespaces, self.theme),
         ]
 
         for slide in slides:
@@ -130,4 +141,4 @@ class Styles(XMLFile):
                 },
             )
             background_style.append(graphic_properties)
-            office_styles.append(background_style.to_element())
+            self.automatic_styles.append(background_style.to_element())
