@@ -6,6 +6,7 @@ from lxml import etree
 from presentpy.constants import (
     CODE_HIGHLIGHT_PARAGRAPH_STYLE_NAME,
     DEFAULT_PAGE_LAYOUT_NAME,
+    DEFAULT_STYLE_NAME,
     DRAWING_PAGE_STYLE_NAME,
     MASTER_CONTENT_STYLE_NAME,
     MASTER_TITLE_STYLE_NAME,
@@ -35,8 +36,8 @@ class Content(XMLFile):
 
         drawing_page_properties = self.xpath(
             "office:document-content",
-            "office:styles",
-            "style:style[@style:name='masterStyle']",
+            "office:automatic-styles",
+            f"style:style[@style:name='{DEFAULT_STYLE_NAME}']",
             "style:drawing-page-properties",
         )
         drawing_page_properties.set(namespaces("draw:fill-color"), self.theme.background_color)

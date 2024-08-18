@@ -41,8 +41,8 @@ class Styles(XMLFile):
 
         drawing_page_properties = self.xpath(
             "office:document-styles",
-            "office:styles",
-            "style:style[@style:name='masterStyle']",
+            "office:automatic-styles",
+            f"style:style[@style:name='{DEFAULT_STYLE_NAME}']",
             "style:drawing-page-properties",
         )
         drawing_page_properties.set(namespaces("draw:fill-color"), self.theme.background_color)

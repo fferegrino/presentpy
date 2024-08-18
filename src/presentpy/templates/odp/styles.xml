@@ -40,11 +40,11 @@ office:version="1.2">
 		<style:page-layout style:name="pageLayout1">
 			<style:page-layout-properties style:print-orientation="landscape"/>
 		</style:page-layout>
-	</office:automatic-styles>
-	<office:styles>
 		<style:style style:family="drawing-page" style:name="masterStyle">
 			<style:drawing-page-properties draw:fill="solid" draw:opacity="100%" presentation:visibility="visible" draw:background-size="border" presentation:background-objects-visible="false" presentation:display-header="false" presentation:display-footer="false" presentation:display-page-number="false" presentation:display-date-time="false"/>
 		</style:style>
+	</office:automatic-styles>
+	<office:styles>
 		<style:style style:family="graphic" style:name="masterTitle">
             <style:graphic-properties draw:fill="none" draw:opacity="100%" draw:stroke="none" draw:textarea-vertical-align="middle" draw:textarea-horizontal-align="left" />
 			<style:paragraph-properties fo:line-height="90%" fo:text-align="left" style:tab-stop-distance="1in" fo:margin-left="0in" fo:margin-right="0in" fo:text-indent="0in" fo:margin-top="0in" fo:margin-bottom="0in" style:punctuation-wrap="hanging" style:vertical-align="auto" style:writing-mode="lr-tb">
