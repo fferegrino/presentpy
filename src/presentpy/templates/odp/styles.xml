@@ -93,7 +93,7 @@ office:version="1.2">
 				<style:text-properties fo:font-family="Arial" style:font-family-generic="swiss" style:font-pitch="variable" fo:font-size="100%"/>
 			</text:list-level-style-bullet>
 		</text:list-style>
-		<style:style style:family="graphic" style:name="masterTitle">
+		<style:style style:family="graphic" style:name="masterTitleFrame">
             <style:graphic-properties draw:fill="none" draw:opacity="100%" draw:stroke="none" draw:textarea-vertical-align="middle" draw:textarea-horizontal-align="left" />
 			<style:paragraph-properties fo:line-height="90%" fo:text-align="left" style:tab-stop-distance="1in" fo:margin-left="0in" fo:margin-right="0in" fo:text-indent="0in" fo:margin-top="0in" fo:margin-bottom="0in" style:punctuation-wrap="hanging" style:vertical-align="auto" style:writing-mode="lr-tb">
 				<style:tab-stops/>

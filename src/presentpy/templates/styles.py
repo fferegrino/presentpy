@@ -6,7 +6,7 @@ from presentpy.constants import (
     DEFAULT_STYLE_NAME,
     DRAWING_PAGE_STYLE_NAME,
     MASTER_CONTENT_STYLE_NAME,
-    MASTER_TITLE_STYLE_NAME,
+    MASTER_TITLE_FRAME_STYLE_NAME,
     OUTPUT_FRAME_STYLE_NAME,
 )
 from presentpy.namespaces import Namespaces
@@ -50,7 +50,7 @@ class Styles(XMLFile):
         master_title_text_properties = self.xpath(
             "office:document-styles",
             "office:automatic-styles",
-            f"style:style[@style:name='{MASTER_TITLE_STYLE_NAME}']",
+            f"style:style[@style:name='{MASTER_TITLE_FRAME_STYLE_NAME}']",
             "style:text-properties",
         )
         master_title_text_properties.set(namespaces("fo:color"), self.theme.title_color)

@@ -3,7 +3,7 @@ from presentpy.constants import (
     DRAWING_PAGE_STYLE_NAME,
     MASTER_CONTENT_STYLE_NAME,
     MASTER_SLIDE_PREFIX,
-    MASTER_TITLE_STYLE_NAME,
+    MASTER_TITLE_FRAME_STYLE_NAME,
     OUTPUT_FRAME_STYLE_NAME,
 )
 from presentpy.namespaces import Namespaces
@@ -178,7 +178,7 @@ class TitleSlide(SlideTag):
             title_y,
             w,
             title_h,
-            container_style_name=MASTER_TITLE_STYLE_NAME,
+            container_style_name=MASTER_TITLE_FRAME_STYLE_NAME,
             presentation_class="title",
         )
 
@@ -222,7 +222,7 @@ class TitleAndContentSlide(SlideTag):
             title_y,
             w,
             title_h,
-            container_style_name=MASTER_TITLE_STYLE_NAME,
+            container_style_name=MASTER_TITLE_FRAME_STYLE_NAME,
             presentation_class="title",
         )
 
@@ -279,7 +279,7 @@ class TitleAndCodeSlide(SlideTag):
             title_y,
             w,
             title_h,
-            container_style_name=MASTER_TITLE_STYLE_NAME,
+            container_style_name=MASTER_TITLE_FRAME_STYLE_NAME,
             presentation_class="title",
         )
 
@@ -336,7 +336,7 @@ class TitleCodeAndOutputSlide(SlideTag):
             title_y,
             w,
             title_h,
-            container_style_name=MASTER_TITLE_STYLE_NAME,
+            container_style_name=MASTER_TITLE_FRAME_STYLE_NAME,
             presentation_class="title",
         )
 
@@ -403,7 +403,7 @@ class TitleAndImageSlide(SlideTag):
             title_y,
             w,
             title_h,
-            container_style_name=MASTER_TITLE_STYLE_NAME,
+            container_style_name=MASTER_TITLE_FRAME_STYLE_NAME,
             presentation_class="title",
         )
 
@@ -549,7 +549,7 @@ class TitleAndObjectSlide(SlideTag):
             title_y,
             w,
             title_h,
-            container_style_name=MASTER_TITLE_STYLE_NAME,
+            container_style_name=MASTER_TITLE_FRAME_STYLE_NAME,
             presentation_class="title",
         )
 
