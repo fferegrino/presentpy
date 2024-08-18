@@ -44,7 +44,7 @@ class Content(XMLFile):
 
         master_title_text_properties = self.xpath(
             "office:document-content",
-            "office:styles",
+            "office:automatic-styles",
             f"style:style[@style:name='{MASTER_TITLE_STYLE_NAME}']",
             "style:text-properties",
         )
@@ -55,7 +55,7 @@ class Content(XMLFile):
 
         master_content_text_properties = self.xpath(
             "office:document-content",
-            "office:styles",
+            "office:automatic-styles",
             f"style:style[@style:name='{MASTER_CONTENT_STYLE_NAME}']",
             "style:text-properties",
         )
@@ -66,7 +66,7 @@ class Content(XMLFile):
 
         default_slide_properties = self.xpath(
             "office:document-content",
-            "office:styles",
+            "office:automatic-styles",
             f"style:style[@style:name='{DRAWING_PAGE_STYLE_NAME}']",
             "style:drawing-page-properties",
         )
@@ -74,7 +74,7 @@ class Content(XMLFile):
 
         highlighted_code_paragraph_style = self.xpath(
             "office:document-content",
-            "office:styles",
+            "office:automatic-styles",
             f"style:style[@style:name='{CODE_HIGHLIGHT_PARAGRAPH_STYLE_NAME}']",
             "style:text-properties",
         )
@@ -83,7 +83,7 @@ class Content(XMLFile):
 
         output_frame_text_properties = self.xpath(
             "office:document-content",
-            "office:styles",
+            "office:automatic-styles",
             f"style:style[@style:name='{OUTPUT_FRAME_STYLE_NAME}']",
             "style:text-properties",
         )

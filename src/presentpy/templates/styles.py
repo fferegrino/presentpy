@@ -28,7 +28,7 @@ class Styles(XMLFile):
         super().__init__(path, namespaces)
         self.theme = theme
 
-        office_styles = self.xpath("office:document-styles", "office:styles")
+        office_styles = self.xpath("office:document-styles", "office:automatic-styles")
 
         page_layout_properties = self.xpath(
             "office:document-styles",
@@ -49,7 +49,7 @@ class Styles(XMLFile):
 
         master_title_text_properties = self.xpath(
             "office:document-styles",
-            "office:styles",
+            "office:automatic-styles",
             f"style:style[@style:name='{MASTER_TITLE_STYLE_NAME}']",
             "style:text-properties",
         )
@@ -60,7 +60,7 @@ class Styles(XMLFile):
 
         master_content_text_properties = self.xpath(
             "office:document-styles",
-            "office:styles",
+            "office:automatic-styles",
             f"style:style[@style:name='{MASTER_CONTENT_STYLE_NAME}']",
             "style:text-properties",
         )
@@ -72,7 +72,7 @@ class Styles(XMLFile):
 
         default_slide_properties = self.xpath(
             "office:document-styles",
-            "office:styles",
+            "office:automatic-styles",
             f"style:style[@style:name='{DRAWING_PAGE_STYLE_NAME}']",
             "style:drawing-page-properties",
         )
@@ -80,7 +80,7 @@ class Styles(XMLFile):
 
         highlighted_code_paragraph_style = self.xpath(
             "office:document-styles",
-            "office:styles",
+            "office:automatic-styles",
             f"style:style[@style:name='{CODE_HIGHLIGHT_PARAGRAPH_STYLE_NAME}']",
             "style:text-properties",
         )
@@ -89,7 +89,7 @@ class Styles(XMLFile):
 
         output_frame_text_properties = self.xpath(
             "office:document-styles",
-            "office:styles",
+            "office:automatic-styles",
             f"style:style[@style:name='{OUTPUT_FRAME_STYLE_NAME}']",
             "style:text-properties",
         )
