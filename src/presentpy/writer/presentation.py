@@ -79,10 +79,16 @@ class Presentation:
                 output_p = Tag(
                     "text:p",
                     self.namespaces,
+                    {
+                        "text:style-name": "masterTitleParagraph",
+                    },
                 )
                 span = Tag(
                     "text:span",
                     self.namespaces,
+                    {
+                        "text:style-name": "masterTitleSpan",
+                    },
                 )
                 span.text = title
                 output_p.append(span)
@@ -139,7 +145,9 @@ class Presentation:
             attributes = {}
 
             if not isinstance(span, mistletoe.span_token.RawText):
-                attributes["text:style-name"] = f"span__{span.__class__.__name__}".lower()
+                attributes["text:style-name"] = f"content_span__{span.__class__.__name__}".lower()
+            else:
+                attributes["text:style-name"] = "content_span"
 
             span_tag = Tag(
                 "text:span",
@@ -154,10 +162,16 @@ class Presentation:
         output_p = Tag(
             "text:p",
             self.namespaces,
+            {
+                "text:style-name": "masterTitleParagraph",
+            },
         )
         span = Tag(
             "text:span",
             self.namespaces,
+            {
+                "text:style-name": "masterTitleSpan",
+            },
         )
         span.text = title
         output_p.append(span)
@@ -421,6 +435,14 @@ class Presentation:
 
         for style in self.styles:
             content_xml.automatic_styles.append(style.to_element())
+
+        from copy import deepcopy
+
+        for automatic_style in content_xml.automatic_styles:
+            content_xml.styles.append(deepcopy(automatic_style))
+
+        for automatic_style in styles_xml.automatic_styles:
+            styles_xml.styles.append(deepcopy(automatic_style))
 
         for slide in self.slides:
             content_xml.presentation.append(slide.to_element())
