@@ -21,7 +21,9 @@ docs-serve:
 fmt:
 	black .
 	ruff check --fix .
+	python utils/format_xml.py src/presentpy/templates/odp
 
 lint:
 	black --check .
 	ruff check .
+	python utils/format_xml.py src/presentpy/templates/odp --check

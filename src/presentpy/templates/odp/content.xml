@@ -1,169 +1,170 @@
 <?xml version="1.0" ?>
-<office:document-content	
-	xmlns:anim="urn:oasis:names:tc:opendocument:xmlns:animation:1.0"
-	xmlns:calcext="urn:org:documentfoundation:names:experimental:calc:xmlns:calcext:1.0"
-	xmlns:chart="urn:oasis:names:tc:opendocument:xmlns:chart:1.0"
-	xmlns:css3t="http://www.w3.org/TR/css3-text/"
-	xmlns:dc="http://purl.org/dc/elements/1.1/"
-	xmlns:dom="http://www.w3.org/2001/xml-events"
-	xmlns:dr3d="urn:oasis:names:tc:opendocument:xmlns:dr3d:1.0"
-	xmlns:draw="urn:oasis:names:tc:opendocument:xmlns:drawing:1.0"
-	xmlns:drawooo="http://openoffice.org/2010/draw"
-	xmlns:field="urn:openoffice:names:experimental:ooo-ms-interop:xmlns:field:1.0"
-	xmlns:fo="urn:oasis:names:tc:opendocument:xmlns:xsl-fo-compatible:1.0"
-	xmlns:form="urn:oasis:names:tc:opendocument:xmlns:form:1.0"
-	xmlns:formx="urn:openoffice:names:experimental:ooxml-odf-interop:xmlns:form:1.0"
-	xmlns:grddl="http://www.w3.org/2003/g/data-view#"
-	xmlns:loext="urn:org:documentfoundation:names:experimental:office:xmlns:loext:1.0"
-	xmlns:manifest="urn:oasis:names:tc:opendocument:xmlns:manifest:1.0"
-	xmlns:math="http://www.w3.org/1998/Math/MathML"
-	xmlns:meta="urn:oasis:names:tc:opendocument:xmlns:meta:1.0"
-	xmlns:number="urn:oasis:names:tc:opendocument:xmlns:datastyle:1.0"
-	xmlns:of="urn:oasis:names:tc:opendocument:xmlns:of:1.2"
-	xmlns:office="urn:oasis:names:tc:opendocument:xmlns:office:1.0"
-	xmlns:officeooo="http://openoffice.org/2009/office"
-	xmlns:ooo="http://openoffice.org/2004/office"
-	xmlns:oooc="http://openoffice.org/2004/calc"
-	xmlns:ooow="http://openoffice.org/2004/writer"
-	xmlns:presentation="urn:oasis:names:tc:opendocument:xmlns:presentation:1.0"
-	xmlns:rpt="http://openoffice.org/2005/report"
-	xmlns:script="urn:oasis:names:tc:opendocument:xmlns:script:1.0"
-	xmlns:smil="urn:oasis:names:tc:opendocument:xmlns:smil-compatible:1.0"
-	xmlns:style="urn:oasis:names:tc:opendocument:xmlns:style:1.0"
-	xmlns:svg="urn:oasis:names:tc:opendocument:xmlns:svg-compatible:1.0"
-	xmlns:table="urn:oasis:names:tc:opendocument:xmlns:table:1.0"
-	xmlns:tableooo="http://openoffice.org/2009/table"
-	xmlns:text="urn:oasis:names:tc:opendocument:xmlns:text:1.0"
-	xmlns:xforms="http://www.w3.org/2002/xforms"
-	xmlns:xhtml="http://www.w3.org/1999/xhtml"
-	xmlns:xlink="http://www.w3.org/1999/xlink"
-	xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+<office:document-content 
+	xmlns:anim="urn:oasis:names:tc:opendocument:xmlns:animation:1.0" 
+	xmlns:calcext="urn:org:documentfoundation:names:experimental:calc:xmlns:calcext:1.0" 
+	xmlns:chart="urn:oasis:names:tc:opendocument:xmlns:chart:1.0" 
+	xmlns:css3t="http://www.w3.org/TR/css3-text/" 
+	xmlns:dc="http://purl.org/dc/elements/1.1/" 
+	xmlns:dom="http://www.w3.org/2001/xml-events" 
+	xmlns:dr3d="urn:oasis:names:tc:opendocument:xmlns:dr3d:1.0" 
+	xmlns:draw="urn:oasis:names:tc:opendocument:xmlns:drawing:1.0" 
+	xmlns:drawooo="http://openoffice.org/2010/draw" 
+	xmlns:field="urn:openoffice:names:experimental:ooo-ms-interop:xmlns:field:1.0" 
+	xmlns:fo="urn:oasis:names:tc:opendocument:xmlns:xsl-fo-compatible:1.0" 
+	xmlns:form="urn:oasis:names:tc:opendocument:xmlns:form:1.0" 
+	xmlns:formx="urn:openoffice:names:experimental:ooxml-odf-interop:xmlns:form:1.0" 
+	xmlns:grddl="http://www.w3.org/2003/g/data-view#" 
+	xmlns:loext="urn:org:documentfoundation:names:experimental:office:xmlns:loext:1.0" 
+	xmlns:manifest="urn:oasis:names:tc:opendocument:xmlns:manifest:1.0" 
+	xmlns:math="http://www.w3.org/1998/Math/MathML" 
+	xmlns:meta="urn:oasis:names:tc:opendocument:xmlns:meta:1.0" 
+	xmlns:number="urn:oasis:names:tc:opendocument:xmlns:datastyle:1.0" 
+	xmlns:of="urn:oasis:names:tc:opendocument:xmlns:of:1.2" 
+	xmlns:office="urn:oasis:names:tc:opendocument:xmlns:office:1.0" 
+	xmlns:officeooo="http://openoffice.org/2009/office" 
+	xmlns:ooo="http://openoffice.org/2004/office" 
+	xmlns:oooc="http://openoffice.org/2004/calc" 
+	xmlns:ooow="http://openoffice.org/2004/writer" 
+	xmlns:presentation="urn:oasis:names:tc:opendocument:xmlns:presentation:1.0" 
+	xmlns:rpt="http://openoffice.org/2005/report" 
+	xmlns:script="urn:oasis:names:tc:opendocument:xmlns:script:1.0" 
+	xmlns:smil="urn:oasis:names:tc:opendocument:xmlns:smil-compatible:1.0" 
+	xmlns:style="urn:oasis:names:tc:opendocument:xmlns:style:1.0" 
+	xmlns:svg="urn:oasis:names:tc:opendocument:xmlns:svg-compatible:1.0" 
+	xmlns:table="urn:oasis:names:tc:opendocument:xmlns:table:1.0" 
+	xmlns:tableooo="http://openoffice.org/2009/table" 
+	xmlns:text="urn:oasis:names:tc:opendocument:xmlns:text:1.0" 
+	xmlns:xforms="http://www.w3.org/2002/xforms" 
+	xmlns:xhtml="http://www.w3.org/1999/xhtml" 
+	xmlns:xlink="http://www.w3.org/1999/xlink" 
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema" 
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 office:version="1.2">
 	<office:automatic-styles>
 		<style:style style:family="drawing-page" style:name="dp1">
-			<style:drawing-page-properties draw:fill="solid" draw:opacity="100%" presentation:visibility="visible" draw:background-size="border" presentation:background-objects-visible="false" presentation:display-header="false" presentation:display-footer="false" presentation:display-page-number="false" presentation:display-date-time="false"/>
+			<style:drawing-page-properties draw:background-size="border" draw:fill="solid" draw:opacity="100%" presentation:background-objects-visible="false" presentation:display-date-time="false" presentation:display-footer="false" presentation:display-header="false" presentation:display-page-number="false" presentation:visibility="visible"/>
 		</style:style>
 		<text:list-style style:name="list">
-			<text:list-level-style-bullet text:level="1" text:bullet-char="•">
-				<style:list-level-properties text:space-before="0in" text:min-label-width="0.25in"/>
-				<style:text-properties fo:font-family="Arial" style:font-family-generic="swiss" style:font-pitch="variable" fo:font-size="100%"/>
+			<text:list-level-style-bullet text:bullet-char="•" text:level="1">
+				<style:list-level-properties text:min-label-width="0.25in" text:space-before="0in"/>
+				<style:text-properties style:font-family-generic="swiss" style:font-pitch="variable" fo:font-family="Arial" fo:font-size="100%"/>
 			</text:list-level-style-bullet>
-			<text:list-level-style-bullet text:level="2" text:bullet-char="•">
-				<style:list-level-properties text:space-before="0.5in" text:min-label-width="0.25in"/>
-				<style:text-properties fo:font-family="Arial" style:font-family-generic="swiss" style:font-pitch="variable" fo:font-size="100%"/>
+			<text:list-level-style-bullet text:bullet-char="•" text:level="2">
+				<style:list-level-properties text:min-label-width="0.25in" text:space-before="0.5in"/>
+				<style:text-properties style:font-family-generic="swiss" style:font-pitch="variable" fo:font-family="Arial" fo:font-size="100%"/>
 			</text:list-level-style-bullet>
-			<text:list-level-style-bullet text:level="3" text:bullet-char="•">
-				<style:list-level-properties text:space-before="1in" text:min-label-width="0.25in"/>
-				<style:text-properties fo:font-family="Arial" style:font-family-generic="swiss" style:font-pitch="variable" fo:font-size="100%"/>
+			<text:list-level-style-bullet text:bullet-char="•" text:level="3">
+				<style:list-level-properties text:min-label-width="0.25in" text:space-before="1in"/>
+				<style:text-properties style:font-family-generic="swiss" style:font-pitch="variable" fo:font-family="Arial" fo:font-size="100%"/>
 			</text:list-level-style-bullet>
-			<text:list-level-style-bullet text:level="4" text:bullet-char="•">
-				<style:list-level-properties text:space-before="1.5in" text:min-label-width="0.25in"/>
-				<style:text-properties fo:font-family="Arial" style:font-family-generic="swiss" style:font-pitch="variable" fo:font-size="100%"/>
+			<text:list-level-style-bullet text:bullet-char="•" text:level="4">
+				<style:list-level-properties text:min-label-width="0.25in" text:space-before="1.5in"/>
+				<style:text-properties style:font-family-generic="swiss" style:font-pitch="variable" fo:font-family="Arial" fo:font-size="100%"/>
 			</text:list-level-style-bullet>
-			<text:list-level-style-bullet text:level="5" text:bullet-char="•">
-				<style:list-level-properties text:space-before="2in" text:min-label-width="0.25in"/>
-				<style:text-properties fo:font-family="Arial" style:font-family-generic="swiss" style:font-pitch="variable" fo:font-size="100%"/>
+			<text:list-level-style-bullet text:bullet-char="•" text:level="5">
+				<style:list-level-properties text:min-label-width="0.25in" text:space-before="2in"/>
+				<style:text-properties style:font-family-generic="swiss" style:font-pitch="variable" fo:font-family="Arial" fo:font-size="100%"/>
 			</text:list-level-style-bullet>
-			<text:list-level-style-bullet text:level="6" text:bullet-char="•">
-				<style:list-level-properties text:space-before="2.5in" text:min-label-width="0.25in"/>
-				<style:text-properties fo:font-family="Arial" style:font-family-generic="swiss" style:font-pitch="variable" fo:font-size="100%"/>
+			<text:list-level-style-bullet text:bullet-char="•" text:level="6">
+				<style:list-level-properties text:min-label-width="0.25in" text:space-before="2.5in"/>
+				<style:text-properties style:font-family-generic="swiss" style:font-pitch="variable" fo:font-family="Arial" fo:font-size="100%"/>
 			</text:list-level-style-bullet>
-			<text:list-level-style-bullet text:level="7" text:bullet-char="•">
-				<style:list-level-properties text:space-before="3in" text:min-label-width="0.25in"/>
-				<style:text-properties fo:font-family="Arial" style:font-family-generic="swiss" style:font-pitch="variable" fo:font-size="100%"/>
+			<text:list-level-style-bullet text:bullet-char="•" text:level="7">
+				<style:list-level-properties text:min-label-width="0.25in" text:space-before="3in"/>
+				<style:text-properties style:font-family-generic="swiss" style:font-pitch="variable" fo:font-family="Arial" fo:font-size="100%"/>
 			</text:list-level-style-bullet>
-			<text:list-level-style-bullet text:level="8" text:bullet-char="•">
-				<style:list-level-properties text:space-before="3.5in" text:min-label-width="0.25in"/>
-				<style:text-properties fo:font-family="Arial" style:font-family-generic="swiss" style:font-pitch="variable" fo:font-size="100%"/>
+			<text:list-level-style-bullet text:bullet-char="•" text:level="8">
+				<style:list-level-properties text:min-label-width="0.25in" text:space-before="3.5in"/>
+				<style:text-properties style:font-family-generic="swiss" style:font-pitch="variable" fo:font-family="Arial" fo:font-size="100%"/>
 			</text:list-level-style-bullet>
-			<text:list-level-style-bullet text:level="9" text:bullet-char="•">
-				<style:list-level-properties text:space-before="4in" text:min-label-width="0.25in"/>
-				<style:text-properties fo:font-family="Arial" style:font-family-generic="swiss" style:font-pitch="variable" fo:font-size="100%"/>
+			<text:list-level-style-bullet text:bullet-char="•" text:level="9">
+				<style:list-level-properties text:min-label-width="0.25in" text:space-before="4in"/>
+				<style:text-properties style:font-family-generic="swiss" style:font-pitch="variable" fo:font-family="Arial" fo:font-size="100%"/>
 			</text:list-level-style-bullet>
 		</text:list-style>
 		<style:style style:family="graphic" style:name="masterTitleFrame">
-            <style:graphic-properties draw:fill="none" draw:opacity="100%" draw:stroke="none" draw:textarea-vertical-align="middle" draw:textarea-horizontal-align="left" />
-			<style:paragraph-properties fo:line-height="90%" fo:text-align="left" style:tab-stop-distance="1in" fo:margin-left="0in" fo:margin-right="0in" fo:text-indent="0in" fo:margin-top="0in" fo:margin-bottom="0in" style:punctuation-wrap="hanging" style:vertical-align="auto" style:writing-mode="lr-tb">
+			<style:graphic-properties draw:fill="none" draw:opacity="100%" draw:stroke="none" draw:textarea-horizontal-align="left" draw:textarea-vertical-align="middle"/>
+			<style:paragraph-properties style:punctuation-wrap="hanging" style:tab-stop-distance="1in" style:vertical-align="auto" style:writing-mode="lr-tb" fo:line-height="90%" fo:margin-bottom="0in" fo:margin-left="0in" fo:margin-right="0in" fo:margin-top="0in" fo:text-align="left" fo:text-indent="0in">
 				<style:tab-stops/>
 			</style:paragraph-properties>
-			<style:text-properties fo:font-variant="normal" fo:text-transform="none" style:text-line-through-type="none" style:text-line-through-style="none" style:text-line-through-width="auto" style:text-line-through-color="font-color" style:text-position="0% 100%" fo:letter-spacing="0in" fo:font-style="normal" style:font-style-asian="normal" style:font-style-complex="normal" style:text-underline-type="none" style:text-underline-style="none" style:text-underline-width="auto" style:text-underline-color="font-color" fo:font-weight="normal" style:font-weight-asian="normal" style:font-weight-complex="normal" style:text-underline-mode="continuous" style:letter-kerning="false"/>
+			<style:text-properties style:font-style-asian="normal" style:font-style-complex="normal" style:font-weight-asian="normal" style:font-weight-complex="normal" style:letter-kerning="false" style:text-line-through-color="font-color" style:text-line-through-style="none" style:text-line-through-type="none" style:text-line-through-width="auto" style:text-position="0% 100%" style:text-underline-color="font-color" style:text-underline-mode="continuous" style:text-underline-style="none" style:text-underline-type="none" style:text-underline-width="auto" fo:font-style="normal" fo:font-variant="normal" fo:font-weight="normal" fo:letter-spacing="0in" fo:text-transform="none"/>
 		</style:style>
 		<style:style style:family="paragraph" style:name="masterTitleParagraph">
-			<style:paragraph-properties fo:line-height="90%" fo:text-align="left" style:tab-stop-distance="1in" fo:margin-left="0in" fo:margin-right="0in" fo:text-indent="0in" fo:margin-top="0.13889in" fo:margin-bottom="0in" style:punctuation-wrap="hanging" style:vertical-align="auto" style:writing-mode="lr-tb">
+			<style:paragraph-properties style:punctuation-wrap="hanging" style:tab-stop-distance="1in" style:vertical-align="auto" style:writing-mode="lr-tb" fo:line-height="90%" fo:margin-bottom="0in" fo:margin-left="0in" fo:margin-right="0in" fo:margin-top="0.13889in" fo:text-align="left" fo:text-indent="0in">
 				<style:tab-stops/>
 			</style:paragraph-properties>
-			<style:text-properties style:text-position="0% 100%" fo:letter-spacing="0in" fo:font-style="normal" style:font-style-asian="normal" style:font-style-complex="normal" style:text-underline-type="none" style:text-underline-style="none" style:text-underline-width="auto" style:text-underline-color="font-color" fo:font-weight="normal" style:font-weight-asian="normal" style:font-weight-complex="normal" style:text-underline-mode="continuous" style:letter-kerning="false"/>
+			<style:text-properties style:font-style-asian="normal" style:font-style-complex="normal" style:font-weight-asian="normal" style:font-weight-complex="normal" style:letter-kerning="false" style:text-position="0% 100%" style:text-underline-color="font-color" style:text-underline-mode="continuous" style:text-underline-style="none" style:text-underline-type="none" style:text-underline-width="auto" fo:font-style="normal" fo:font-weight="normal" fo:letter-spacing="0in"/>
 		</style:style>
 		<style:style style:family="text" style:name="masterTitleSpan">
 			<style:text-properties fo:color="#fec418"/>
 		</style:style>
 		<style:style style:family="graphic" style:name="masterContent">
-            <style:graphic-properties draw:fill="none" draw:opacity="100%" draw:stroke="none" />
-			<style:paragraph-properties fo:line-height="90%" fo:text-align="left" style:tab-stop-distance="1in" fo:margin-left="0in" fo:margin-right="0in" fo:text-indent="0in" fo:margin-top="0in" fo:margin-bottom="0in" style:punctuation-wrap="hanging" style:vertical-align="auto" style:writing-mode="lr-tb">
+			<style:graphic-properties draw:fill="none" draw:opacity="100%" draw:stroke="none"/>
+			<style:paragraph-properties style:punctuation-wrap="hanging" style:tab-stop-distance="1in" style:vertical-align="auto" style:writing-mode="lr-tb" fo:line-height="90%" fo:margin-bottom="0in" fo:margin-left="0in" fo:margin-right="0in" fo:margin-top="0in" fo:text-align="left" fo:text-indent="0in">
 				<style:tab-stops/>
 			</style:paragraph-properties>
-			<style:text-properties fo:font-variant="normal" fo:text-transform="none" style:text-line-through-type="none" style:text-line-through-style="none" style:text-line-through-width="auto" style:text-line-through-color="font-color" style:text-position="0% 100%" fo:font-size="0.5in" style:font-size-asian="0.5in" style:font-size-complex="0.5in" fo:letter-spacing="0in" fo:font-style="normal" style:font-style-asian="normal" style:font-style-complex="normal" style:text-underline-type="none" style:text-underline-style="none" style:text-underline-width="auto" style:text-underline-color="font-color" fo:font-weight="normal" style:font-weight-asian="normal" style:font-weight-complex="normal" style:text-underline-mode="continuous" style:letter-kerning="false"/>
+			<style:text-properties style:font-size-asian="0.5in" style:font-size-complex="0.5in" style:font-style-asian="normal" style:font-style-complex="normal" style:font-weight-asian="normal" style:font-weight-complex="normal" style:letter-kerning="false" style:text-line-through-color="font-color" style:text-line-through-style="none" style:text-line-through-type="none" style:text-line-through-width="auto" style:text-position="0% 100%" style:text-underline-color="font-color" style:text-underline-mode="continuous" style:text-underline-style="none" style:text-underline-type="none" style:text-underline-width="auto" fo:font-size="0.5in" fo:font-style="normal" fo:font-variant="normal" fo:font-weight="normal" fo:letter-spacing="0in" fo:text-transform="none"/>
 		</style:style>
 		<style:style style:family="paragraph" style:name="contentParagraph">
-			<style:paragraph-properties fo:line-height="90%" fo:text-align="left" style:tab-stop-distance="1in" fo:margin-left="0in" fo:margin-right="0in" fo:text-indent="0in" fo:margin-top="0.13889in" fo:margin-bottom="0in" style:punctuation-wrap="hanging" style:vertical-align="auto" style:writing-mode="lr-tb">
+			<style:paragraph-properties style:punctuation-wrap="hanging" style:tab-stop-distance="1in" style:vertical-align="auto" style:writing-mode="lr-tb" fo:line-height="90%" fo:margin-bottom="0in" fo:margin-left="0in" fo:margin-right="0in" fo:margin-top="0.13889in" fo:text-align="left" fo:text-indent="0in">
 				<style:tab-stops/>
 			</style:paragraph-properties>
-			<style:text-properties  style:text-position="0% 100%" fo:letter-spacing="0in" fo:font-style="normal" style:font-style-asian="normal" style:font-style-complex="normal" style:text-underline-type="none" style:text-underline-style="none" style:text-underline-width="auto" style:text-underline-color="font-color" fo:font-weight="normal" style:font-weight-asian="normal" style:font-weight-complex="normal" style:text-underline-mode="continuous" style:letter-kerning="false"/>
+			<style:text-properties style:font-style-asian="normal" style:font-style-complex="normal" style:font-weight-asian="normal" style:font-weight-complex="normal" style:letter-kerning="false" style:text-position="0% 100%" style:text-underline-color="font-color" style:text-underline-mode="continuous" style:text-underline-style="none" style:text-underline-type="none" style:text-underline-width="auto" fo:font-style="normal" fo:font-weight="normal" fo:letter-spacing="0in"/>
 		</style:style>
 		<style:style style:family="text" style:name="content_span">
-			<style:text-properties  style:text-position="0% 100%" fo:letter-spacing="0in" fo:font-style="normal" style:font-style-asian="normal" style:font-style-complex="normal" style:text-underline-type="none" style:text-underline-style="none" style:text-underline-width="auto" style:text-underline-color="font-color" fo:font-weight="normal" style:font-weight-asian="normal" style:font-weight-complex="normal" style:text-underline-mode="continuous" style:letter-kerning="false"/>
+			<style:text-properties style:font-style-asian="normal" style:font-style-complex="normal" style:font-weight-asian="normal" style:font-weight-complex="normal" style:letter-kerning="false" style:text-position="0% 100%" style:text-underline-color="font-color" style:text-underline-mode="continuous" style:text-underline-style="none" style:text-underline-type="none" style:text-underline-width="auto" fo:font-style="normal" fo:font-weight="normal" fo:letter-spacing="0in"/>
 		</style:style>
 		<style:style style:family="text" style:name="content_span__strong">
 			<style:text-properties fo:font-weight="bold"/>
 		</style:style>
 		<style:style style:family="text" style:name="content_span__strikethrough">
-			<style:text-properties style:text-line-through-type="single" style:text-line-through-style="solid" style:text-line-through-width="auto" style:text-line-through-color="font-color"  />
+			<style:text-properties style:text-line-through-color="font-color" style:text-line-through-style="solid" style:text-line-through-type="single" style:text-line-through-width="auto"/>
 		</style:style>
-		<style:style style:family="text" style:name="content_span__emphasis"> <!-- italic -->
-			<style:text-properties fo:font-style="italic" style:font-style-asian="italic" style:font-style-complex="italic" />
+		<style:style style:family="text" style:name="content_span__emphasis">
+			<!-- italic -->
+			<style:text-properties style:font-style-asian="italic" style:font-style-complex="italic" fo:font-style="italic"/>
 		</style:style>
 		<style:style style:family="text" style:name="content_span__underline">
-			<style:text-properties  style:text-underline-type="single" style:text-underline-style="solid" style:text-underline-width="auto" style:text-underline-color="font-color" />
+			<style:text-properties style:text-underline-color="font-color" style:text-underline-style="solid" style:text-underline-type="single" style:text-underline-width="auto"/>
 		</style:style>
 		<style:style style:family="paragraph" style:name="contentListParagraph">
-			<style:paragraph-properties fo:line-height="90%" fo:text-align="left" style:tab-stop-distance="1in" fo:margin-left="0.25in" fo:margin-right="0in" fo:text-indent="-0.25in" fo:margin-top="0.13889in" fo:margin-bottom="0in" style:punctuation-wrap="hanging" style:vertical-align="auto" style:writing-mode="lr-tb">
+			<style:paragraph-properties style:punctuation-wrap="hanging" style:tab-stop-distance="1in" style:vertical-align="auto" style:writing-mode="lr-tb" fo:line-height="90%" fo:margin-bottom="0in" fo:margin-left="0.25in" fo:margin-right="0in" fo:margin-top="0.13889in" fo:text-align="left" fo:text-indent="-0.25in">
 				<style:tab-stops/>
 			</style:paragraph-properties>
-			<style:text-properties  style:text-position="0% 100%" fo:letter-spacing="0in" fo:font-style="normal" style:font-style-asian="normal" style:font-style-complex="normal" style:text-underline-type="none" style:text-underline-style="none" style:text-underline-width="auto" style:text-underline-color="font-color" fo:font-weight="normal" style:font-weight-asian="normal" style:font-weight-complex="normal" style:text-underline-mode="continuous" style:letter-kerning="false"/>
+			<style:text-properties style:font-style-asian="normal" style:font-style-complex="normal" style:font-weight-asian="normal" style:font-weight-complex="normal" style:letter-kerning="false" style:text-position="0% 100%" style:text-underline-color="font-color" style:text-underline-mode="continuous" style:text-underline-style="none" style:text-underline-type="none" style:text-underline-width="auto" fo:font-style="normal" fo:font-weight="normal" fo:letter-spacing="0in"/>
 		</style:style>
 		<style:style style:family="drawing-page" style:name="defaultSlide">
-			<style:drawing-page-properties draw:fill="solid" draw:opacity="100%" presentation:visibility="visible" draw:background-size="border" presentation:background-objects-visible="true" presentation:background-visible="true" presentation:display-header="false" presentation:display-footer="false" presentation:display-page-number="false" presentation:display-date-time="false"/>
+			<style:drawing-page-properties draw:background-size="border" draw:fill="solid" draw:opacity="100%" presentation:background-objects-visible="true" presentation:background-visible="true" presentation:display-date-time="false" presentation:display-footer="false" presentation:display-header="false" presentation:display-page-number="false" presentation:visibility="visible"/>
 		</style:style>
 		<style:style style:family="paragraph" style:name="codeParagraph">
-			<style:paragraph-properties fo:line-height="100%" fo:text-align="left" style:tab-stop-distance="1in" fo:margin-left="0in" fo:margin-right="0in" fo:text-indent="0in" fo:margin-top="0in" fo:margin-bottom="0in" style:punctuation-wrap="hanging" style:vertical-align="auto" style:writing-mode="lr-tb">
-			<style:tab-stops/>
+			<style:paragraph-properties style:punctuation-wrap="hanging" style:tab-stop-distance="1in" style:vertical-align="auto" style:writing-mode="lr-tb" fo:line-height="100%" fo:margin-bottom="0in" fo:margin-left="0in" fo:margin-right="0in" fo:margin-top="0in" fo:text-align="left" fo:text-indent="0in">
+				<style:tab-stops/>
 			</style:paragraph-properties>
-			<style:text-properties fo:font-variant="normal" fo:text-transform="none" style:text-line-through-type="none" style:text-line-through-style="none" style:text-line-through-width="auto" style:text-line-through-color="font-color" style:text-position="0% 100%" fo:font-size="0.25in" style:font-size-asian="0.25in" style:font-size-complex="0.25in" fo:letter-spacing="0in" fo:font-style="normal" style:font-style-asian="normal" style:font-style-complex="normal" style:text-underline-type="none" style:text-underline-style="none" style:text-underline-width="auto" style:text-underline-color="font-color" fo:font-weight="normal" style:font-weight-asian="normal" style:font-weight-complex="normal" style:text-underline-mode="continuous" style:letter-kerning="false" fo:font-family="Courier New" style:font-family-complex="Courier New"/>
+			<style:text-properties style:font-family-complex="Courier New" style:font-size-asian="0.25in" style:font-size-complex="0.25in" style:font-style-asian="normal" style:font-style-complex="normal" style:font-weight-asian="normal" style:font-weight-complex="normal" style:letter-kerning="false" style:text-line-through-color="font-color" style:text-line-through-style="none" style:text-line-through-type="none" style:text-line-through-width="auto" style:text-position="0% 100%" style:text-underline-color="font-color" style:text-underline-mode="continuous" style:text-underline-style="none" style:text-underline-type="none" style:text-underline-width="auto" fo:font-family="Courier New" fo:font-size="0.25in" fo:font-style="normal" fo:font-variant="normal" fo:font-weight="normal" fo:letter-spacing="0in" fo:text-transform="none"/>
 		</style:style>
 		<style:style style:family="paragraph" style:name="highlightedCodeParagraph">
-			<style:paragraph-properties fo:line-height="100%" fo:text-align="left" style:tab-stop-distance="1in" fo:margin-left="0in" fo:margin-right="0in" fo:text-indent="0in" fo:margin-top="0in" fo:margin-bottom="0in" style:punctuation-wrap="hanging" style:vertical-align="auto" style:writing-mode="lr-tb">
-			<style:tab-stops/>
+			<style:paragraph-properties style:punctuation-wrap="hanging" style:tab-stop-distance="1in" style:vertical-align="auto" style:writing-mode="lr-tb" fo:line-height="100%" fo:margin-bottom="0in" fo:margin-left="0in" fo:margin-right="0in" fo:margin-top="0in" fo:text-align="left" fo:text-indent="0in">
+				<style:tab-stops/>
 			</style:paragraph-properties>
-			<style:text-properties fo:font-variant="normal" fo:text-transform="none" style:text-line-through-type="none" style:text-line-through-style="none" style:text-line-through-width="auto" style:text-line-through-color="font-color" style:text-position="0% 100%" fo:font-size="0.25in" style:font-size-asian="0.25in" style:font-size-complex="0.25in" fo:letter-spacing="0in" fo:font-style="normal" style:font-style-asian="normal" style:font-style-complex="normal" style:text-underline-type="none" style:text-underline-style="none" style:text-underline-width="auto" style:text-underline-color="font-color" fo:font-weight="bold" style:font-weight-asian="normal" style:font-weight-complex="normal" style:text-underline-mode="continuous" style:letter-kerning="false" fo:font-family="Courier New" style:font-family-complex="Courier New" />
+			<style:text-properties style:font-family-complex="Courier New" style:font-size-asian="0.25in" style:font-size-complex="0.25in" style:font-style-asian="normal" style:font-style-complex="normal" style:font-weight-asian="normal" style:font-weight-complex="normal" style:letter-kerning="false" style:text-line-through-color="font-color" style:text-line-through-style="none" style:text-line-through-type="none" style:text-line-through-width="auto" style:text-position="0% 100%" style:text-underline-color="font-color" style:text-underline-mode="continuous" style:text-underline-style="none" style:text-underline-type="none" style:text-underline-width="auto" fo:font-family="Courier New" fo:font-size="0.25in" fo:font-style="normal" fo:font-variant="normal" fo:font-weight="bold" fo:letter-spacing="0in" fo:text-transform="none"/>
 		</style:style>
 		<style:style style:family="graphic" style:name="codeFrame">
 			<style:graphic-properties draw:fill="none" draw:opacity="100%" draw:stroke="none"/>
 			<style:paragraph-properties style:font-independent-line-spacing="true" style:writing-mode="lr-tb"/>
-			<style:text-properties fo:font-family="Courier New" style:font-family-complex="Courier New"/>
+			<style:text-properties style:font-family-complex="Courier New" fo:font-family="Courier New"/>
 		</style:style>
 		<style:style style:family="graphic" style:name="outputFrame">
 			<style:graphic-properties draw:fill="none" draw:opacity="100%" draw:stroke="none"/>
 			<style:paragraph-properties style:font-independent-line-spacing="true" style:writing-mode="lr-tb"/>
-			<style:text-properties />
+			<style:text-properties/>
 		</style:style>
-		<style:presentation-page-layout style:name="Master1-PPL1" style:display-name="Title and Content">
-			<presentation:placeholder presentation:object="title" svg:x="0.91667in" svg:y="0.39931in" svg:width="11.49653in" svg:height="1.44965in"/>
-			<presentation:placeholder presentation:object="object" svg:x="0.91667in" svg:y="1.99653in" svg:width="11.49653in" svg:height="4.75868in"/>
+		<style:presentation-page-layout style:display-name="Title and Content" style:name="Master1-PPL1">
+			<presentation:placeholder presentation:object="title" svg:height="1.44965in" svg:width="11.49653in" svg:x="0.91667in" svg:y="0.39931in"/>
+			<presentation:placeholder presentation:object="object" svg:height="4.75868in" svg:width="11.49653in" svg:x="0.91667in" svg:y="1.99653in"/>
 		</style:presentation-page-layout>
 	</office:automatic-styles>
-	<office:styles />
+	<office:styles/>
 	<office:body>
-		<office:presentation />
+		<office:presentation/>
 	</office:body>
 </office:document-content>
