@@ -7,7 +7,13 @@ _PresentPy_ allows you to take your Jupyter Notebooks and turn them into slides 
 
 ## Installation
 
-I strongly recommend using `pipx` to install _PresentPy_:
+You can install _PresentPy_ directly into your Jupyter Lab installation using `pip`:
+
+```bash
+pip install presentpy-jupyter
+```
+
+If you want to use it as a standalone CLI tool, you can install it using `pipx` (or your favorite package manager) – the package is called `presentpy`:
 
 ```bash
 pipx install presentpy
