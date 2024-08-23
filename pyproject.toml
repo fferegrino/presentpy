@@ -47,7 +47,7 @@ tag_name = "v{new_version}"
 tag_message = "Bump version: {current_version} → {new_version}"
 allow_dirty = false
 commit = true
-message = "Bump version: {current_version} → {new_version}"
+message = "version: {current_version} → {new_version}"
 
 [[tool.bumpversion.files]]
 filename = "src/presentpy/__init__.py"
